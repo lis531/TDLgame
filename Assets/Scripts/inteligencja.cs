@@ -9,7 +9,7 @@ public class inteligencja : MonoBehaviour
 {
     public GameObject Target;
     public float speed = 1.5f;
-
+    public Transform other;
 
     void Start()
     {
@@ -21,6 +21,11 @@ public class inteligencja : MonoBehaviour
     {
         transform.LookAt(Target.gameObject.transform);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-
+        if(other)
+        {
+            float dist = Vector3.Distance(other.position, transform.position);
+            print("Distance to other" + dist);
+        }
+        
     }
 }
