@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    public float speed = 10.0f;
+    private float speed = 100.0f;
     //when button is pressed move the object forward
     void Update()
     {
@@ -25,10 +25,15 @@ public class Moving : MonoBehaviour
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
     }
-
-    //camera follow object
-    void LateUpdate()
+    //mouse rotation
+    void FixedUpdate()
     {
-        transform.LookAt(Camera.main.transform);
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+
+        Vector3 rot = transform.rotation.eulerAngles;
+        rot.y += mouseX * 2;
+        rot.x -= mouseY * 2;
+        transform.rotation = Quaternion.Euler(rot);
     }
 }
