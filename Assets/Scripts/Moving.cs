@@ -15,14 +15,10 @@ public class Moving : MonoBehaviour
     }
     void Update()
     {
+    Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
     turn.x += Input.GetAxis("Mouse X") * sensitivity;
     turn.y += Input.GetAxis("Mouse Y") * sensitivity;
     transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
     transform.Translate(Input.GetAxisRaw("Horizontal") * speed1, 0, Input.GetAxisRaw("Vertical") * speed1);
-    }
-    //camera follow the object
-    void LateUpdate()
-    {
-        transform.position = transform.position + deltaMove;
     }
 }
