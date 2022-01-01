@@ -25,15 +25,4 @@ public class Moving : MonoBehaviour
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
     }
-    //mouse rotation
-    void FixedUpdate()
-    {
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-
-        Vector3 rot = transform.rotation.eulerAngles;
-        rot.y += mouseX * 2;
-        rot.x -= mouseY * 2;
-        transform.rotation = Quaternion.Euler(rot);
-    }
 }
