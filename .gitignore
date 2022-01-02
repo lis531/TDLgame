@@ -36,5 +36,13 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+<<<<<<< Updated upstream
 *.dwlt
 *.log
+=======
+*.log
+Logs/shadercompiler-AssetImportWorker0.log
+Logs/AssetImportWorker0.log
+UserSettings/Layouts/default-2021.dwlt
+*.dwlt
+>>>>>>> Stashed changes

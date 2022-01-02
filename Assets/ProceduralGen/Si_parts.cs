@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< Updated upstream:Assets/ProceduralGen/Si_parts.cs
 using UnityEngine.GameObject;
+=======
+using UnityEngine;
+>>>>>>> Stashed changes:Assets/Scripts/Si_parts.cs
 
 public class Si_parts : MonoBehaviour
 {
