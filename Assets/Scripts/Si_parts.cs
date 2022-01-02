@@ -11,20 +11,12 @@ public class Si_parts : MonoBehaviour
     void Start()
     {
         //if Enemy isn's near to the Player then teleport Enemy near to the Player
-        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 10)
+        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
         {
-            transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+            transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
         }
     }
-    //Enemy can't see player through the wall
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Wall")
-        {
-            Enemy.transform.position = new Vector3(Player.transform.position.x + 5, Player.transform.position.y, Player.transform.position.z);
-        }
-    }
-    //Enemy can't go throught closed door
+    //Enemy can't see throught door 
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Door")
@@ -37,5 +29,5 @@ public class Si_parts : MonoBehaviour
     {
         Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, Player.transform.position, 0.1f);
     }
-    //
+    //Enemy can't see player and go through the wall
 }

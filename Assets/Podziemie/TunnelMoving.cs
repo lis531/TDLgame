@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TunnelMoving : MonoBehaviour
 {
-    const float sensitivity = 200.0f;
-    const float speed = 10.0f;
+    const float sensitivity = 300.0f;
+    const float speed = 5.0f;
 
     CharacterController character;
     private GameObject camera;
