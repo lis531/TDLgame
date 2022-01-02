@@ -10,10 +10,10 @@ public class Si_parts : MonoBehaviour
     public GameObject Door;
     void Start()
     {
-        //if Enemy is not near to the Player then teleport Enemy near to the Player
-        if (Enemy.transform.position.x - Player.transform.position.x > 5)
+        //if Enemy isn's near to the Player then teleport Enemy near to the Player
+        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 10)
         {
-            Enemy.transform.position = new Vector3(Player.transform.position.x + 5, Player.transform.position.y, Player.transform.position.z);
+            transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         }
     }
     //Enemy can't see player through the wall
@@ -37,5 +37,5 @@ public class Si_parts : MonoBehaviour
     {
         Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, Player.transform.position, 0.1f);
     }
-
+    //
 }
