@@ -15,7 +15,7 @@ D:/Projekty/GitHubRepos/Tdl_game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52264
+52517
 Successfully changed project path to: D:/Projekty/GitHubRepos/Tdl_game
 D:/Projekty/GitHubRepos/Tdl_game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,103 +47,106 @@ D:/Projekty/GitHubRepos/Tdl_game
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 446.80 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 95.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.7f1 (6bd9e232123f)
 [Subsystems] Discovering subsystems at path D:/Projekty/Unity Projects/2021.2.7f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Projekty/GitHubRepos/Tdl_game/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
+d3d12: loaded!
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
-    Vendor:   NVIDIA
-    VRAM:     6052 MB
-    Driver:   30.0.14.9649
+    Version:         Direct3D 12 [level 12.1]
+    Renderer:        NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:          NVIDIA
+    VRAM:            6052 MB
+    App VRAM Budget: 5284 MB
+    Driver:          30.0.14.9729
+d3d12: Profiler is enabled, but stable power state is not. GPU timing errors are expected.
 Initialize mono
 Mono path[0] = 'D:/Projekty/Unity Projects/2021.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Projekty/Unity Projects/2021.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Projekty/Unity Projects/2021.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Projekty/Unity Projects/2021.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006848 seconds.
+Registered in 0.006831 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 184.13 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 108.67 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.053 seconds
+- Completed reload, in  1.080 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2056ms)
-		BeginReloadAssembly (471ms)
+	ReloadAssembly (1081ms)
+		BeginReloadAssembly (186ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (9ms)
-		EndReloadAssembly (1422ms)
-			LoadAssemblies (458ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (755ms)
+			LoadAssemblies (186ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (309ms)
+			SetupTypeCache (171ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (815ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (475ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (46ms)
+				InitializePlatformSupportModulesInManaged (21ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (185ms)
-				BeforeProcessingInitializeOnLoad (16ms)
-				ProcessInitializeOnLoadAttributes (321ms)
-				ProcessInitializeOnLoadMethodAttributes (247ms)
+				RefreshPlugins (109ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (268ms)
+				ProcessInitializeOnLoadMethodAttributes (75ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009396 seconds.
+Registered in 0.014943 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 829.48 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 104.25 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  9.212 seconds
+- Completed reload, in  2.429 seconds
 Domain Reload Profiling:
-	ReloadAssembly (9214ms)
-		BeginReloadAssembly (1876ms)
+	ReloadAssembly (2430ms)
+		BeginReloadAssembly (202ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (34ms)
+			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (6207ms)
-			LoadAssemblies (1779ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (2097ms)
+			LoadAssemblies (165ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (843ms)
+			SetupTypeCache (389ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (483ms)
-			SetupLoadedEditorAssemblies (4477ms)
+			RebuildScriptCaches (150ms)
+			SetupLoadedEditorAssemblies (1361ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (111ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (830ms)
-				BeforeProcessingInitializeOnLoad (218ms)
-				ProcessInitializeOnLoadAttributes (2962ms)
-				ProcessInitializeOnLoadMethodAttributes (330ms)
-				AfterProcessingInitializeOnLoad (26ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (113ms)
+				ProcessInitializeOnLoadAttributes (911ms)
+				ProcessInitializeOnLoadMethodAttributes (211ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
-Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.28 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4572 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 50 unused Assets / (3.8 MB). Loaded Objects now: 5022.
-Memory consumption went from 236.1 MB to 232.4 MB.
-Total: 11.298800 ms (FindLiveObjects: 0.658800 ms CreateObjectMapping: 1.416300 ms MarkObjects: 8.251500 ms  DeleteObjects: 0.969900 ms)
+Unloading 4573 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (3.8 MB). Loaded Objects now: 5023.
+Memory consumption went from 249.2 MB to 245.5 MB.
+Total: 5.522600 ms (FindLiveObjects: 0.608800 ms CreateObjectMapping: 0.345800 ms MarkObjects: 3.599600 ms  DeleteObjects: 0.967300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -156,3 +159,260 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 848893.184050 seconds.
+  path: Assets/Podziemie/Podziemie.unity
+  artifactKey: Guid(062f075f160df404ab3a6ef0d74863e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Podziemie.unity using Guid(062f075f160df404ab3a6ef0d74863e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9797c4145407c6e424a8714cfc07c5c') in 0.032332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.234781 seconds.
+  path: Assets/Podziemie/Modele/BossRoom/BossRoom.prefab
+  artifactKey: Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/BossRoom/BossRoom.prefab using Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b) d3d12: upload buffer was full! Waited for COPY queue for 0.596 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.016 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 0.980 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 0.971 ms.
+d3d12: upload buffer was full! Waited for COPY queue for 1.065 ms.
+ -> (artifact id: '1f025bde79c2faf7d773a723bf1a2bd5') in 2.309105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.654830 seconds.
+  path: Assets/Podziemie/Modele/BossRoom/BossRoom.prefab
+  artifactKey: Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/BossRoom/BossRoom.prefab using Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3fe68ad3c5f9a28eaf7e8032e27132a') in 0.038792 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.598298 seconds.
+  path: Assets/Podziemie/Modele/Checkpoint/Checkpoint.prefab
+  artifactKey: Guid(6bd91b0b55a54aa4da046e1a238baec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Checkpoint/Checkpoint.prefab using Guid(6bd91b0b55a54aa4da046e1a238baec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdbfdcafa178986e1f450df2809d0b01') in 0.146331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.385973 seconds.
+  path: Assets/Podziemie/Modele/MediumRoom/MediumRoomMesh.prefab
+  artifactKey: Guid(c72dad108e0678b498d8439d59f2cbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/MediumRoom/MediumRoomMesh.prefab using Guid(c72dad108e0678b498d8439d59f2cbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '347fbad0a8f7c1c49e5e33e8386fbf9b') in 0.033077 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Podziemie/Modele/MediumRoom/MediumRoomTunnel.prefab
+  artifactKey: Guid(77fb259feeb9012469085dbf76370fc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/MediumRoom/MediumRoomTunnel.prefab using Guid(77fb259feeb9012469085dbf76370fc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff56b5a9319170a3a2c092eff49754e5') in 0.031852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.476022 seconds.
+  path: Assets/Podziemie/Modele/SmallRoom/SmallRoom.prefab
+  artifactKey: Guid(b76e84c075749f84caa2bc656b1ccb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/SmallRoom/SmallRoom.prefab using Guid(b76e84c075749f84caa2bc656b1ccb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801d92af3c3232a6f205bdae4e1fc75b') in 0.036709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 78.471723 seconds.
+  path: Assets/Podziemie/Rooms.blend
+  artifactKey: Guid(9b004aaeb9a43d44c86f0ffab95ab31d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Rooms.blend using Guid(9b004aaeb9a43d44c86f0ffab95ab31d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52125d57e1fdea7ffc4aafb4ec9196b6') in 0.010656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.953730 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRight.prefab
+  artifactKey: Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRight.prefab using Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '833d053dac57924e3855725295a73bf8') in 0.019289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '208d5b251586be174b236174a80a1cc8') in 0.061509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.514397 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRight.prefab
+  artifactKey: Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRight.prefab using Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e25a09b480fae873794892532d07b86d') in 0.006462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8801a874e7fef580b92a8a8afbe7219f') in 0.034316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.095140 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '108e27ff1b5dcb3f44896e39b8193387') in 0.082899 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.109704 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2acfb7a213a506478f190bc878fcd03c') in 0.039178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 284.875652 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc2e674896f8dae8d565e32f62678f0') in 0.045654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.952463 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e1510942150017d5de5cf8abd77448d') in 0.035655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 140.573006 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4f90f4da8dd432986cb8e031700dd28') in 0.031093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.596937 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4846eaf372c8dee5b54d93ecd0f49615') in 0.065323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.718960 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b931eb43cc3a14a9e6facc3b4e9d2b52') in 0.038145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.992625 seconds.
+  path: Assets/Podziemie/Modele/LLeft/LLeft.prefab
+  artifactKey: Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LLeft/LLeft.prefab using Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0861b9172edd009ebb33419c1148f232') in 0.020739 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Podziemie/Modele/LLeft/LLeftMesh.fbx
+  artifactKey: Guid(fccca584cfca9fb4b8030107b35fb1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LLeft/LLeftMesh.fbx using Guid(fccca584cfca9fb4b8030107b35fb1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee81b825fec91bcf5e2c35d9f7f8b9d8') in 0.034853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 65.344230 seconds.
+  path: Assets/Podziemie/Modele/LLeft/LLeft.prefab
+  artifactKey: Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LLeft/LLeft.prefab using Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29c63ba689498e7379ac55c73e3864e') in 0.023229 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Podziemie/Modele/LLeft/LLeftMesh.fbx
+  artifactKey: Guid(fccca584cfca9fb4b8030107b35fb1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LLeft/LLeftMesh.fbx using Guid(fccca584cfca9fb4b8030107b35fb1c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd6e9e952882cf3f210b5f063fcd85f7') in 0.031836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 113.959918 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRightMesh.fbx
+  artifactKey: Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRightMesh.fbx using Guid(9b745556ec907d742bd6dc626b252504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1ac223e6561fb22d3f4220c2b2c0ed5') in 0.031560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.211063 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRight.prefab
+  artifactKey: Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRight.prefab using Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60e9b574a856cd588a7a58aed788057c') in 0.034611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.103003 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRight.prefab
+  artifactKey: Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRight.prefab using Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f41a9a8de0befe5be4995b0ad0149db') in 0.024662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.693297 seconds.
+  path: Assets/Podziemie/Modele/T/T.prefab
+  artifactKey: Guid(7dc5ccebf447ff343876f86497e61027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/T/T.prefab using Guid(7dc5ccebf447ff343876f86497e61027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6073df20a2fe00ec4c850abb6b58fa3') in 0.025570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 421.483555 seconds.
+  path: Assets/Podziemie/Modele/TunelPhysicsMaterial.physicMaterial
+  artifactKey: Guid(f0846ed84813d0148b60cebff3428d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/TunelPhysicsMaterial.physicMaterial using Guid(f0846ed84813d0148b60cebff3428d7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81451a2c1553e7d378ce0dc7a7beda9f') in 0.011368 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.630724 seconds.
+  path: Assets/Podziemie/Modele/Tunnel/TunnelShortMesh.prefab
+  artifactKey: Guid(6560e7ef687bc134097de6f2de0ad06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Tunnel/TunnelShortMesh.prefab using Guid(6560e7ef687bc134097de6f2de0ad06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b94c5a7fe3ee8e0f8b886a1f0514f99f') in 0.065011 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.161425 seconds.
+  path: Assets/Podziemie/Modele/Tunnel/Tunnel.prefab
+  artifactKey: Guid(9581a4f5efcbd244cbe401385d936e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Tunnel/Tunnel.prefab using Guid(9581a4f5efcbd244cbe401385d936e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b934c1788809e4d0f4d193163c81a785') in 0.042963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.348098 seconds.
+  path: Assets/Podziemie/Modele/Tunnel/Tunnel.prefab
+  artifactKey: Guid(9581a4f5efcbd244cbe401385d936e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Tunnel/Tunnel.prefab using Guid(9581a4f5efcbd244cbe401385d936e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcea8d128f40b486fee7ef1c26a09c83') in 0.025017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.187145 seconds.
+  path: Assets/Podziemie/Modele/Checkpoint/Checkpoint.prefab
+  artifactKey: Guid(6bd91b0b55a54aa4da046e1a238baec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Checkpoint/Checkpoint.prefab using Guid(6bd91b0b55a54aa4da046e1a238baec5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c48e02456f3b496e83309e2db42a57c') in 0.034430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.752928 seconds.
+  path: Assets/Podziemie/Modele/BossRoom/BossRoom.prefab
+  artifactKey: Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/BossRoom/BossRoom.prefab using Guid(55336e3bac62f47478022ac148fc2572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d16c945e4c3817fe4d4750fcd4666d7') in 0.026453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.180856 seconds.
+  path: Assets/Podziemie/Modele/End/End.prefab
+  artifactKey: Guid(52a8b504e3b75f041b7191d2d640cc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/End/End.prefab using Guid(52a8b504e3b75f041b7191d2d640cc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48c11f11087c1f176e349598eef886b5') in 0.027570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.294177 seconds.
+  path: Assets/Podziemie/Modele/LLeft/LLeft.prefab
+  artifactKey: Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LLeft/LLeft.prefab using Guid(b40dd8052c02ced4584b8e06445358f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5680f57794b8c98e03900aeda22f816') in 0.030612 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.748038 seconds.
+  path: Assets/Podziemie/Modele/LRight/LRight.prefab
+  artifactKey: Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/LRight/LRight.prefab using Guid(ff19ab0078af93f4897e17ca37b01a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee044abe0dfa4494731559e49cef09b1') in 0.041624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.656878 seconds.
+  path: Assets/Podziemie/Modele/MediumRoom/MediumRoomMesh.prefab
+  artifactKey: Guid(c72dad108e0678b498d8439d59f2cbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/MediumRoom/MediumRoomMesh.prefab using Guid(c72dad108e0678b498d8439d59f2cbc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2648d4c4c700047ee1b6357f3d6ab632') in 0.040725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Podziemie/Modele/MediumRoom/MediumRoomTunnel.prefab
+  artifactKey: Guid(77fb259feeb9012469085dbf76370fc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/MediumRoom/MediumRoomTunnel.prefab using Guid(77fb259feeb9012469085dbf76370fc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03b93a9ec70c89ba8617c16b89d1de57') in 0.028196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.825520 seconds.
+  path: Assets/Podziemie/Modele/SmallRoom/SmallRoom.prefab
+  artifactKey: Guid(b76e84c075749f84caa2bc656b1ccb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/SmallRoom/SmallRoom.prefab using Guid(b76e84c075749f84caa2bc656b1ccb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5a338a8d4718348f43cd9b8a1d782e5') in 0.038030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.365969 seconds.
+  path: Assets/Podziemie/Modele/T/T.prefab
+  artifactKey: Guid(7dc5ccebf447ff343876f86497e61027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/T/T.prefab using Guid(7dc5ccebf447ff343876f86497e61027) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddc4b21d86f144e0faa932cc5af8ee8') in 0.040311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.973421 seconds.
+  path: Assets/Podziemie/Modele/Tunnel/TunnelShortMesh.prefab
+  artifactKey: Guid(6560e7ef687bc134097de6f2de0ad06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/Tunnel/TunnelShortMesh.prefab using Guid(6560e7ef687bc134097de6f2de0ad06b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68526cd26bb584196f25e2c78444b158') in 0.029671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.439044 seconds.
+  path: Assets/Podziemie/Modele/X/X.prefab
+  artifactKey: Guid(d2d1d95198b53c749aa94e6ca48e8687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Podziemie/Modele/X/X.prefab using Guid(d2d1d95198b53c749aa94e6ca48e8687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '940d8275b002ff1fa315aca0fda88912') in 0.038464 seconds 
