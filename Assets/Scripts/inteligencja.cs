@@ -17,7 +17,7 @@ public class inteligencja : MonoBehaviour
         if(other)
         {
             float dist = Vector3.Distance(other.position, transform.position);
-            Debug.log("Distance to other" + dist);
+            Debug.Log("Distance to other" + dist);
         }       
     }
 }
