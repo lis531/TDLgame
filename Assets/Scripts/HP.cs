@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HP : MonoBehaviour
 {
@@ -9,20 +10,16 @@ public class HP : MonoBehaviour
     //create variable for the gameobject
     public GameObject Player;
     public GameObject Enemy;
-    //if enemy touch the Player then Player lose 10 health
+    //if enemy touching the Player then Player loses 10 health every second
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             health -= 10;
-        }
-    }
-    //if hp is 0 then restart the game
-    void Update()
-    {
-        if (health <= 0)
-        {
-            Application.LoadLevel(Application.loadedLevel);
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }
