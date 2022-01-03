@@ -11,23 +11,39 @@ public class Si_parts : MonoBehaviour
     void Start()
     {
         //if Enemy isn's near to the Player then teleport Enemy near to the Player
-        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
+        if (Vector3.Distance(Enemy.transform.position, Player.transform.position) > 5)
         {
-            transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
+            Enemy.transform.position = new Vector3(Player.transform.position.x + Random.Range(-5, 5), Player.transform.position.y + Random.Range(-5, 5), Player.transform.position.z + Random.Range(-5, 5));
         }
     }
     //Enemy can't see throught door 
-    void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider Door)
     {
-        if (other.gameObject.tag == "Door")
+        if (Door.gameObject.tag == "Door")
         {
-            Enemy.transform.position = new Vector3(Player.transform.position.x + 5, Player.transform.position.y, Player.transform.position.z);
+            if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
+            {
+                transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
+            }
         }
     }
     //slowly move Enemy to the Player
     void Update()
     {
-        Enemy.transform.position = Vector3.MoveTowards(Enemy.transform.position, Player.transform.position, 0.1f);
+        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("Player").transform.position, Time.deltaTime * 0.5f);
+        }
     }
     //Enemy can't see player and go through the wall
+    void OnTriggerEnter(Collider Wall)
+    {
+        if (Wall.gameObject.tag == "Wall")
+        {
+            if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
+            {
+                transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
+            }
+        }
+    }
 }

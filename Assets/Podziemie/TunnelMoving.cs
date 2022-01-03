@@ -71,4 +71,24 @@ public class TunnelMoving : MonoBehaviour
 
         cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
     }
+    //player crouch
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Crouch")
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (character.height == 1.8f)
+                {
+                    character.height = 1.5f;
+                    character.center = new Vector3(0, 0.5f, 0);
+                }
+                else
+                {
+                    character.height = 1.8f;
+                    character.center = new Vector3(0, 1.0f, 0);
+                }
+            }
+        }
+    }
 }

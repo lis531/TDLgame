@@ -604,12 +604,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42631bbb30302c549bd82458a5178ed8, type: 3}
---- !u!4 &244583134 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4347688154004759947, guid: 42631bbb30302c549bd82458a5178ed8,
-    type: 3}
-  m_PrefabInstance: {fileID: 244583133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &244583135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
@@ -2024,15 +2018,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461694184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f4396f087db08844a2c32cfffb1074a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ed33b0c9c993f64da08269e81c75662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 244583135}
-  speed: 1.5
-  other: {fileID: 244583134}
-  obiekt1: {fileID: 1461694184}
-  obiekt2: {fileID: 244583135}
-  distance: 0
+  Player: {fileID: 244583135}
+  Wall: {fileID: 0}
+  Enemy: {fileID: 1461694184}
+  Door: {fileID: 0}
 --- !u!65 &1461694186
 BoxCollider:
   m_ObjectHideFlags: 0
