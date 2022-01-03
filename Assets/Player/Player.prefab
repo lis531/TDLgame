@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688153259844947}
-  m_LocalRotation: {x: -0.040655665, y: -0.06508776, z: -0.002654022, w: 0.9970475}
-  m_LocalPosition: {x: 0.28, y: -0.541, z: 0}
+  m_LocalRotation: {x: -0.03917572, y: -0.06535263, z: -0.0025677094, w: 0.9970896}
+  m_LocalPosition: {x: 0.3, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,8 +46,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 29125.596
-  m_Range: 10
-  m_SpotAngle: 49.1
+  m_Range: 25
+  m_SpotAngle: 50
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 17.83
+  m_Intensity: 18
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
-  m_InnerSpotPercent: 30.6
+  m_InnerSpotPercent: 30
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -278,7 +278,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.03
   far clip plane: 1000
   field of view: 70
   orthographic: 0
@@ -574,8 +574,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688153388525663}
-  m_LocalRotation: {x: -0.040655665, y: -0.06508776, z: -0.002654022, w: 0.9970475}
-  m_LocalPosition: {x: 0.28, y: -0.541, z: 0}
+  m_LocalRotation: {x: -0.03917572, y: -0.06535263, z: -0.0025677094, w: 0.9970896}
+  m_LocalPosition: {x: 0.3, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -596,7 +596,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2620.0317
   m_Range: 10
-  m_SpotAngle: 104.4
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -656,10 +656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14.355369
+  m_Intensity: 14
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
-  m_InnerSpotPercent: 58.8
+  m_InnerSpotPercent: 60
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 4347688154004759942}
   - component: {fileID: 4347688154004759943}
   - component: {fileID: 2802408337033953945}
+  - component: {fileID: 3813353094961345471}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -933,3 +934,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3813353094961345471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b50a732cb2e1443adba57c47ceb340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100

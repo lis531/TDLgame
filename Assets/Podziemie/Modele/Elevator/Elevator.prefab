@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3456035195908619013}
   - component: {fileID: 1697973909742624631}
   - component: {fileID: 3876179322919050750}
+  - component: {fileID: 2310726717845626715}
   m_Layer: 0
   m_Name: ElevatorDoorR
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6202293594142177920}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.01, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2310726717845626715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6202293594142177920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13693449, y: 2.1798878, z: 0.7126719}
+  m_Center: {x: 0.000000011175871, y: 0, z: -0.3563357}
 --- !u!1 &7505067122017662464
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +108,7 @@ GameObject:
   - component: {fileID: 4535736892056817940}
   - component: {fileID: 1982786286726097249}
   - component: {fileID: 4095877821604868417}
+  - component: {fileID: 6274661879665599374}
   m_Layer: 0
   m_Name: ElevatorDoorL
   m_TagString: Untagged
@@ -109,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7505067122017662464}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.01, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -166,6 +181,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6274661879665599374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505067122017662464}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13693449, y: 2.1798878, z: 0.7126719}
+  m_Center: {x: 0.00000009313226, y: 0.00000023841858, z: 0.36623287}
 --- !u!1 &7822896406807784902
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +206,7 @@ GameObject:
   - component: {fileID: 5797410269165156569}
   - component: {fileID: 8615525336791813139}
   - component: {fileID: 7260142901228229736}
+  - component: {fileID: 1087704378556480296}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -270,3 +299,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!64 &1087704378556480296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822896406807784902}
+  m_Material: {fileID: 13400000, guid: f0846ed84813d0148b60cebff3428d7c, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2745519390412981159, guid: 6d789a079b212734691682caf4512ca9, type: 3}

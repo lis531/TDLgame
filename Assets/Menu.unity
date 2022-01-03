@@ -802,7 +802,7 @@ MonoBehaviour:
   m_text: OPTIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8c7405235843ab45a78548c9d2f29b1, type: 2}
-  m_sharedMaterial: {fileID: -1697721246355107907, guid: d8c7405235843ab45a78548c9d2f29b1,
+  m_sharedMaterial: {fileID: -515815875040440812, guid: d8c7405235843ab45a78548c9d2f29b1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_text: PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8c7405235843ab45a78548c9d2f29b1, type: 2}
-  m_sharedMaterial: {fileID: -1697721246355107907, guid: d8c7405235843ab45a78548c9d2f29b1,
+  m_sharedMaterial: {fileID: -515815875040440812, guid: d8c7405235843ab45a78548c9d2f29b1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4235,7 +4235,7 @@ MonoBehaviour:
   m_text: QUIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8c7405235843ab45a78548c9d2f29b1, type: 2}
-  m_sharedMaterial: {fileID: -1697721246355107907, guid: d8c7405235843ab45a78548c9d2f29b1,
+  m_sharedMaterial: {fileID: -515815875040440812, guid: d8c7405235843ab45a78548c9d2f29b1,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4322,7 +4322,6 @@ GameObject:
   - component: {fileID: 1662243633}
   - component: {fileID: 1662243636}
   - component: {fileID: 1662243635}
-  - component: {fileID: 1662243637}
   - component: {fileID: 1662243634}
   m_Layer: 5
   m_Name: PlayButton
@@ -4446,18 +4445,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662243632}
   m_CullTransparentMesh: 1
---- !u!114 &1662243637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662243632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b99adc48d6f83b4c9417001ac7984df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1737366631
 GameObject:
   m_ObjectHideFlags: 0
@@ -5929,21 +5916,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3456035195908619013, guid: 40366098b429c644593ac6b15e170598,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3456035195908619013, guid: 40366098b429c644593ac6b15e170598,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4535736892056817940, guid: 40366098b429c644593ac6b15e170598,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7260142901228229736, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
       propertyPath: m_Animations.Array.data[2]
@@ -5962,7 +5934,7 @@ PrefabInstance:
     - target: {fileID: 7483665886403196796, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7483665886403196796, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
