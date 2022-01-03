@@ -1,17 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   public void PlayGane ()
+    Animation elevatorAnim;
+    Animation cameraAnim;
+    Animation menuAnim;
+
+    IEnumerator FlyAndLoad()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        elevatorAnim = GameObject.Find("Elevator").GetComponent<Animation>();
+        cameraAnim = GameObject.Find("Main Camera").GetComponent<Animation>();
+        menuAnim = transform.GetComponent<Animation>();
+
+        cameraAnim.Play();
+        elevatorAnim.Play();
+        menuAnim.Play();
+
+        yield return new WaitForSeconds(cameraAnim.clip.length);
+        SceneManager.LoadScene("Podziemie");
     }
+    public void PlayGame ()
+    {
+        StartCoroutine(FlyAndLoad());
+    }
+
     public void QuitGame()
     {
-        Debug.Log("Quit!"); 
         Application.Quit();
+    }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }
