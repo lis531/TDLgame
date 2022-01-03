@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class TunnelMoving : MonoBehaviour
 {
     const float sensitivity = 200.0f;
     float speed = 3.5f;
-
-    private StaminaBar stamina;
+  
 
     private CharacterController character;
     private GameObject cam;
@@ -28,7 +26,6 @@ public class TunnelMoving : MonoBehaviour
 
     void Start()
     {
-        stamina = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
         character = gameObject.GetComponent<CharacterController>();
         aSource = gameObject.GetComponent<AudioSource>();
         cam = transform.GetChild(0).gameObject;
@@ -58,13 +55,7 @@ public class TunnelMoving : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 5f;
-            stamina.UseStamina(1);
-            if (stamina.currentStamina == 0)
-            {
-                speed = 1.5f;
-            }
-
+            speed = 6f;
         }
         else
         {
@@ -94,8 +85,6 @@ public class TunnelMoving : MonoBehaviour
         targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
 
         cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
-
-        
     }
     //player crouch
     void OnControllerColliderHit(ControllerColliderHit hit)
