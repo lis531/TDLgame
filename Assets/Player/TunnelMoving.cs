@@ -55,7 +55,7 @@ public class TunnelMoving : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 5f;
+            speed = 6f;
         }
         else
         {
