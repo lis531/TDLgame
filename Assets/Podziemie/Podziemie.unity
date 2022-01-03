@@ -564,6 +564,16 @@ PrefabInstance:
       propertyPath: m_InnerSpotAngle
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4347688153376071520, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153376071520, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525656, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
