@@ -3,9 +3,10 @@ using System.Collections;
 
 public class TunnelMoving : MonoBehaviour
 {
+    
     const float sensitivity = 200.0f;
     float speed = 3.5f;
-  
+    
 
     private CharacterController character;
     private GameObject cam;
@@ -53,9 +54,12 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 6f;
+            StaminaBar.instance.UseStamina(1);
+            
         }
         else
         {
