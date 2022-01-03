@@ -4,7 +4,8 @@ using System.Collections;
 public class TunnelMoving : MonoBehaviour
 {
     const float sensitivity = 200.0f;
-    const float speed = 3.5f;
+    float speed = 3.5f;
+  
 
     private CharacterController character;
     private GameObject cam;
@@ -52,12 +53,26 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
-        // Poruszanie sie postaci
-        character.Move(
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 5f;
+        }
+        else
+        {
+            speed = 3.5f;
+        }
+
+        
+        
+            // Poruszanie sie postaci
+            character.Move(
             ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
             (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
             speed * Time.deltaTime                           // Skalowanie
         );
+        
+      
+        
 
         if (PlayerMoves() && !isStepping)
             StartCoroutine(PlayStep());
