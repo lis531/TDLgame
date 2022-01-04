@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Si_parts : MonoBehaviour
 {
-    public GameObject Player;
     HP hp;
-
-    public GameObject Wall;
-    public GameObject Door;
+    public GameObject Player;
+    public GameObject Enemy;
 
     private bool canAttack = true;
     public float attackCooldown = 1.0f;
@@ -33,17 +31,13 @@ public class Si_parts : MonoBehaviour
     {
         hp = Player.GetComponent<HP>();
 
-        //if Enemy isn's near to the Player then teleport Enemy near to the Player
-        if (Vector3.Distance(transform.position, GameObject.Find("Player").transform.position) > 100)
-            transform.position = GameObject.Find("Player").transform.position + new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
-        
-    }
-    //Enemy can't see throught door 
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Door")
-            transform.position = new Vector3(Player.transform.position.x + 5, Player.transform.position.y, Player.transform.position.z);
-        
+        //if Enemy isn's 50 meters to the Player then teleport Enemy 10 meters to the Player
+        if (Vector3.Distance(Enemy.transform.position, Player.transform.position) > 50)
+        {
+            Enemy.transform.position = Player.transform.position + new Vector3(10, 0, 0);
+        }
+        //Enemy can't see through any objects
+        Enemy.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
     }
 
     void Update()

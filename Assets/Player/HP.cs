@@ -9,8 +9,9 @@ public class HP : MonoBehaviour
     { 
         health -= damage;
         if (health <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            
-        
+        {
+            SceneManager.LoadScene("Menu");
+        }
+
     }
 }
