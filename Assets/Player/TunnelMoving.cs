@@ -7,23 +7,29 @@ public class TunnelMoving : MonoBehaviour
     const float sensitivity = 200.0f;
 
     public float walkSpeed = 4.0f;
+    public float crouchSpeed = 1.2f;
     public float runSpeed  = 6.0f;
     float currentSpeed = 3.5f;
 
+    private Animation anim;
+    private AudioSource aSource;
     private StaminaBar staminaBar;
     private CharacterController character;
     private GameObject cam;
 
     float targetCamRot = 0;
 
-    AudioSource aSource;
     public AudioClip[] stepSounds;
     public float walkStepOffset;
+    public float crouchStepOffset;
     public float runStepOffset;
     float currentStepOffset;
 
+    public float crouchHeightOffset;
+
     bool isStepping = false;
     bool isRunning = false;
+    bool isCrouching = false;
 
     // METODY TunnelMoving.cs//
     bool PlayerMoves()
@@ -35,15 +41,40 @@ public class TunnelMoving : MonoBehaviour
 
     void BeginRun()
     {
-        currentSpeed = runSpeed;
-        currentStepOffset = runStepOffset;
-        isRunning = true;
+        if (!isCrouching)
+        {
+            currentSpeed = runSpeed;
+            currentStepOffset = runStepOffset;
+            isRunning = true;
+        }
     }
     void EndRun()
     {
+        if (!isCrouching)
+        {
+            currentSpeed = walkSpeed;
+            currentStepOffset = walkStepOffset;
+            isRunning = false;
+        }
+    }
+
+    void BeginCrouch()
+    {
+        isCrouching = true;
+        currentSpeed = crouchSpeed;
+        currentStepOffset = crouchStepOffset;
+
+        anim.clip = anim.GetClip("Crouch");
+        anim.Play();
+    }
+    void EndCrouch()
+    {
+        isCrouching = false;
         currentSpeed = walkSpeed;
         currentStepOffset = walkStepOffset;
-        isRunning = false;
+
+        anim.clip = anim.GetClip("UnCrouch");
+        anim.Play();
     }
 
 
@@ -75,9 +106,10 @@ public class TunnelMoving : MonoBehaviour
     void Start()
     {
         staminaBar = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
-        character = gameObject.GetComponent<CharacterController>();
-        aSource = gameObject.GetComponent<AudioSource>();
-        cam = transform.GetChild(0).gameObject;
+        character = GetComponent<CharacterController>();
+        aSource  = GetComponent<AudioSource>();
+        anim    = GetComponent<Animation>();
+        cam    = transform.GetChild(0).gameObject;
 
         currentSpeed = walkSpeed;
         currentStepOffset = walkStepOffset;
@@ -87,37 +119,45 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
-        // Rozpoczynanie biegania
-        if (Input.GetKey(KeyCode.LeftShift) && staminaBar.canRun)
-            BeginRun();
+        // Bieganie
+            // Rozpoczynanie biegania
+            if (Input.GetKey(KeyCode.LeftShift) && staminaBar.canRun)
+                BeginRun();
 
-        // Konczenie biegania
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || !staminaBar.canRun)
-            EndRun();
+            // Konczenie biegania
+            else if (Input.GetKeyUp(KeyCode.LeftShift) || !staminaBar.canRun)
+                EndRun();
 
-        // Zuzycie / Regeneracja staminy
-        if (isRunning)
-            staminaBar.UseStamina();
-        else
-            staminaBar.RegenStamina();
+        // Stamina
+            // Zuzycie / Regeneracja staminy
+            if (isRunning)
+                staminaBar.UseStamina();
+            else
+                staminaBar.RegenStamina();
+
+        // Kucanie
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+                BeginCrouch();
+            else if (Input.GetKeyUp(KeyCode.LeftControl))
+                EndCrouch();
 
 
         // Poruszanie sie postaci
-        character.Move(
-        ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
-        (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
-        currentSpeed * Time.deltaTime);                    // Skalowanie
-        
-        if (PlayerMoves() && !isStepping)
-            StartCoroutine(PlayStep());
+            character.Move(
+            ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
+            (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
+            currentSpeed * Time.deltaTime);                    // Skalowanie
+            
+            if (PlayerMoves() && !isStepping)
+                StartCoroutine(PlayStep());
 
         // Obrot postaci lewo/prawo
-        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime, 0));
+            transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime, 0));
 
         // Ruch kamera gora/dol
-        targetCamRot += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
+            targetCamRot += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+            targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
 
-        cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
+            cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
     }
 }
