@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Si_parts : MonoBehaviour
+public class AI : MonoBehaviour
 {
     HP hp;
     public GameObject Player;
@@ -36,8 +36,6 @@ public class Si_parts : MonoBehaviour
         {
             Enemy.transform.position = Player.transform.position + new Vector3(10, 0, 0);
         }
-        //Enemy can't see through any objects
-        Enemy.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
     }
 
     void Update()

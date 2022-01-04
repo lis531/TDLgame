@@ -12,6 +12,5 @@ public class HP : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
-
     }
 }
