@@ -245,10 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33999938, g: 0.8490566, b: 0.31639373, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.04411769, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -359,7 +359,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &177741922
 RectTransform:
@@ -657,20 +657,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 244583133}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &244583141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244583135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb698b0f39578cd42a3011f5e1bf36d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepSounds: []
-  stepOffset: 0.5
 --- !u!1001 &257299476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1204,7 +1190,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &461996831
 RectTransform:
@@ -1313,7 +1299,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &485538376
 RectTransform:
@@ -1609,7 +1595,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &609990758
 RectTransform:
@@ -2052,7 +2038,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!224 &808763861
 RectTransform:
@@ -2123,7 +2109,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.391
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2139,9 +2125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968af27861f654442a74709e1a3c150d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaBar: {fileID: 808763862}
   maxStamina: 350
   currentStamina: 0
+  staminaUsage: 100
+  staminaRegen: 50
+  canRun: 1
 --- !u!1001 &848585714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4075,7 +4063,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &2073953227
 MonoBehaviour:

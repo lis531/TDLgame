@@ -1,61 +1,49 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class StaminaBar : MonoBehaviour
 {
-    public Slider staminaBar;
+    Slider staminaBar;
     
-    public int maxStamina = 350;
-    public int currentStamina;
-    private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
-    private Coroutine regen;
-    public static StaminaBar instance;
+    public float maxStamina = 350.0f;
+    public float currentStamina;
+    public float staminaUsage = 100.0f;
+    public float staminaRegen = 50.0f;
+    public bool canRun = true;
 
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
     void Start()
     {
-        currentStamina = maxStamina;
-        staminaBar.maxValue = maxStamina;
-        staminaBar.value = maxStamina;
+        staminaBar = GetComponent<Slider>();
+        staminaBar.value = staminaBar.maxValue = currentStamina = maxStamina;
     }
 
-    public void UseStamina(int amount)
+    public void UseStamina()
     {
-        if(currentStamina - amount >= 0)
-        {
-            currentStamina -= amount;
-            staminaBar.value = currentStamina;
+        currentStamina -= (staminaUsage * Time.deltaTime);
 
-            if (regen != null)
-                StopCoroutine(regen);
-
-            regen = StartCoroutine(RegenStamina());
-        }
-        else
-        {
-            Debug.Log("nie ma energi");
-        }
+        if(currentStamina <= 0)
+            StartCoroutine(StaminaCooldown());
     }
-    
-    private IEnumerator RegenStamina()
+    public void RegenStamina()
     {
+        currentStamina += staminaRegen * Time.deltaTime;
+
+        if (currentStamina >= maxStamina)
+            currentStamina = maxStamina;
+    }
+
+    private void Update()
+    {
+        staminaBar.value = currentStamina;
+    }
+
+    IEnumerator StaminaCooldown()
+    {
+        canRun = false;
+        currentStamina = 0;
         yield return new WaitForSeconds(2);
-
-        while (currentStamina < maxStamina) 
-        {
-            currentStamina += maxStamina / 100;
-            staminaBar.value = currentStamina;
-            yield return regenTick;
-        }
-        regen = null;
-    
+        canRun = true;
     }
 }

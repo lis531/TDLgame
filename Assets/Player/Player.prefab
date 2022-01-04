@@ -814,12 +814,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb698b0f39578cd42a3011f5e1bf36d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 3
+  runSpeed: 6
   stepSounds:
   - {fileID: 8300000, guid: b129ed45588282247a69ba106ed4d91c, type: 3}
   - {fileID: 8300000, guid: 7d6080677aeb4554486ee5b72125db70, type: 3}
   - {fileID: 8300000, guid: 7cd9ca2f52010db48b3a9f099e19943f, type: 3}
   - {fileID: 8300000, guid: 83d7bab1ddea6bf4093f4965df7de692, type: 3}
-  stepOffset: 0.5
+  walkStepOffset: 0.5
+  runStepOffset: 0.25
 --- !u!143 &4347688154004759943
 CharacterController:
   m_ObjectHideFlags: 0

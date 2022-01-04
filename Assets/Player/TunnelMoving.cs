@@ -1,15 +1,16 @@
- using UnityEngine;
+using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class TunnelMoving : MonoBehaviour
 {
+    // MEMBERZY TunnelMoving.cs //
     const float sensitivity = 200.0f;
-    float speed = 3.5f;
 
-    private StaminaBar stamina;
-  
+    public float walkSpeed = 4.0f;
+    public float runSpeed  = 6.0f;
+    float currentSpeed = 3.5f;
 
+    private StaminaBar staminaBar;
     private CharacterController character;
     private GameObject cam;
 
@@ -17,67 +18,95 @@ public class TunnelMoving : MonoBehaviour
 
     AudioSource aSource;
     public AudioClip[] stepSounds;
-    public float stepOffset = 0.5f;
-    bool isStepping = false;
-    GameObject player;
+    public float walkStepOffset;
+    public float runStepOffset;
+    float currentStepOffset;
 
+    bool isStepping = false;
+    bool isRunning = false;
+
+    // METODY TunnelMoving.cs//
     bool PlayerMoves()
     {
-        if (Input.GetAxis("Vertical") + Input.GetAxis("Horizontal") != 0)
+        if ((Input.GetAxis("Vertical") != 0) || ( Input.GetAxis("Horizontal") != 0))
             return true;
         else return false;
     }
 
-    void Start()
+    void BeginRun()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        stamina = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
-        character = gameObject.GetComponent<CharacterController>();
-        aSource = gameObject.GetComponent<AudioSource>();
-        cam = transform.GetChild(0).gameObject;
-
-        Cursor.lockState = CursorLockMode.Locked;
+        currentSpeed = runSpeed;
+        currentStepOffset = runStepOffset;
+        isRunning = true;
     }
+    void EndRun()
+    {
+        currentSpeed = walkSpeed;
+        currentStepOffset = walkStepOffset;
+        isRunning = false;
+    }
+
 
     IEnumerator PlayStep()
     {
         isStepping = true;
 
-        AudioClip clip = stepSounds[Random.Range(0, stepSounds.Length)];
-        aSource.PlayOneShot(clip);
+        if (stepSounds.Length != 0)
+        {
+            AudioClip clip = stepSounds[Random.Range(0, stepSounds.Length)];
+            aSource.PlayOneShot(clip);
+        }
+        else
+            Debug.LogError("Dzwieki krokow nie dzialaja, bo nie ma zadnych dzwiekow przypisanych do skryptu \"TunnelMoving\" na Playerze");
+
 
         aSource.pitch = Random.Range(0.9f, 1.1f);
         aSource.volume = Random.Range(0.75f, 1.0f);
 
-        yield return new WaitForSeconds(stepOffset);
+        yield return new WaitForSeconds(currentStepOffset);
 
         if (PlayerMoves())
             StartCoroutine(PlayStep());
         else
             isStepping = false;
     }
+    
+    // FUNCKCJE UNITY //
+    void Start()
+    {
+        staminaBar = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
+        character = gameObject.GetComponent<CharacterController>();
+        aSource = gameObject.GetComponent<AudioSource>();
+        cam = transform.GetChild(0).gameObject;
+
+        currentSpeed = walkSpeed;
+        currentStepOffset = walkStepOffset;
+
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = 5f;
-            stamina.UseStamina(1);
-            if (stamina.currentStamina == 0)
-            {
-                speed = 1.5f;
-            }
-        }
+        // Rozpoczynanie biegania
+        if (Input.GetKey(KeyCode.LeftShift) && staminaBar.canRun)
+            BeginRun();
+
+        // Konczenie biegania
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || !staminaBar.canRun)
+            EndRun();
+
+        // Zuzycie / Regeneracja staminy
+        if (isRunning)
+            staminaBar.UseStamina();
         else
-        {
-            speed = 3.5f;
-        }
-        
+            staminaBar.RegenStamina();
+
+
         // Poruszanie sie postaci
-            character.Move(
-            ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
-            (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
-            speed * Time.deltaTime);                        // Skalowanie
+        character.Move(
+        ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
+        (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
+        currentSpeed * Time.deltaTime);                    // Skalowanie
         
         if (PlayerMoves() && !isStepping)
             StartCoroutine(PlayStep());
