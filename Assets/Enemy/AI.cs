@@ -36,6 +36,8 @@ public class AI : MonoBehaviour
         {
             Enemy.transform.position = Player.transform.position + new Vector3(10, 0, 0);
         }
+        //enemy can't see player though any object
+        Enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(Player.transform.position);
     }
 
     void Update()
