@@ -657,6 +657,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 244583133}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &244583141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244583135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb698b0f39578cd42a3011f5e1bf36d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepSounds: []
+  stepOffset: 0.5
 --- !u!1001 &257299476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2126,6 +2140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaBar: {fileID: 808763862}
+  maxStamina: 350
+  currentStamina: 0
 --- !u!1001 &848585714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2398,11 +2414,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076810360945044544, guid: 91d54ecfbc006694fb8daaf4112ec3bb,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6076810360945044544, guid: 91d54ecfbc006694fb8daaf4112ec3bb,
         type: 3}
