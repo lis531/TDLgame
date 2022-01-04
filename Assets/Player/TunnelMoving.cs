@@ -19,6 +19,7 @@ public class TunnelMoving : MonoBehaviour
     public AudioClip[] stepSounds;
     public float stepOffset = 0.5f;
     bool isStepping = false;
+    GameObject player;
 
     bool PlayerMoves()
     {
@@ -29,6 +30,7 @@ public class TunnelMoving : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         stamina = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
         character = gameObject.GetComponent<CharacterController>();
         aSource = gameObject.GetComponent<AudioSource>();
@@ -70,19 +72,13 @@ public class TunnelMoving : MonoBehaviour
         {
             speed = 3.5f;
         }
-
         
-        
-            // Poruszanie sie postaci
+        // Poruszanie sie postaci
             character.Move(
             ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
             (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
-            speed * Time.deltaTime                           // Skalowanie
-        );
+            speed * Time.deltaTime);                        // Skalowanie
         
-      
-        
-
         if (PlayerMoves() && !isStepping)
             StartCoroutine(PlayStep());
 
@@ -94,27 +90,5 @@ public class TunnelMoving : MonoBehaviour
         targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
 
         cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
-
-        
-    }
-    //player crouch
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Crouch")
-        {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                if (character.height == 1.8f)
-                {
-                    character.height = 1.5f;
-                    character.center = new Vector3(0, 0.5f, 0);
-                }
-                else
-                {
-                    character.height = 1.8f;
-                    character.center = new Vector3(0, 1.0f, 0);
-                }
-            }
-        }
     }
 }
