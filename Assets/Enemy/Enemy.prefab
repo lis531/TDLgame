@@ -96,9 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed33b0c9c993f64da08269e81c75662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 0}
   Player: {fileID: 0}
-  Enemy: {fileID: 0}
-  attackCooldown: 1
-  attackDistance: 2
-  attackDamage: 10
-  movementSpeed: 5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 5
+  health: 100
+  timeBetweenAtacks: 0.5
+  projectile: {fileID: 0}
+  sightRange: 20
+  attackRange: 12
+  playerInSightRange: 0
+  playerInAttackRange: 0

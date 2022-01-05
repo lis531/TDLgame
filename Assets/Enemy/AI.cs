@@ -1,53 +1,115 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AI : MonoBehaviour
 {
-    HP hp;
-    public GameObject Player;
-    public GameObject Enemy;
+    public NavMeshAgent agent;
+    public Transform Player;
+    public LayerMask whatIsGround, whatIsPlayer;
 
-    private bool canAttack = true;
-    public float attackCooldown = 1.0f;
-    public float attackDistance = 2.0f;
-    public float attackDamage = 10.0f;
+    public Vector3 walkPoint;
+    bool walkPointSet;
+    public float walkPointRange;
 
-    public float movementSpeed = 10.0f;
+    public float health;
+    public float timeBetweenAtacks;
+    bool alreadyAtacked;
+    public GameObject projectile;
 
-    IEnumerator DealDamage()
+    public float sightRange, attackRange;
+    public bool playerInSightRange, playerInAttackRange;
+
+    private void Awake()
     {
-        // Deal Damage
-        hp.DealDamage(attackDamage);
-
-        // Cooldown Begin
-        canAttack = false;
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
-        // Cooldown End
+        Player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
     }
 
-    void Start()
+    private void Update()
     {
-        hp = Player.GetComponent<HP>();
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        //if Enemy isn's 50 meters to the Player then teleport Enemy 10 meters to the Player
-        if (Vector3.Distance(Enemy.transform.position, Player.transform.position) > 50)
-        {
-            Enemy.transform.position = Player.transform.position + new Vector3(10, 0, 0);
-        }
-        //enemy can't see player though any object
-        Enemy.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(Player.transform.position);
+        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
-    void Update()
+    private void Patroling()
     {
-        transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, movementSpeed * Time.deltaTime);
+        if (!walkPointSet) SearchWalkPoint();
 
-        if (canAttack)
+        if (walkPointSet)
         {
-            if (Vector3.Distance(transform.position, Player.transform.position) < attackDistance)
-                StartCoroutine(DealDamage());
+            agent.SetDestination(walkPoint);
         }
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        if (distanceToWalkPoint.magnitude < 1f)
+        {
+            walkPointSet = false;
+        }
+    }
+
+    private void SearchWalkPoint()
+    {
+        float randomZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            walkPointSet = true;
+    }
+
+    private void ChasePlayer()
+    {
+        agent.SetDestination(Player.position);
+    }
+
+    private void AttackPlayer()
+    {
+        agent.SetDestination(transform.position);
+
+        transform.LookAt(Player);
+
+        if (!alreadyAtacked)
+        {
+            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            //destroy projectile after 2 seconds
+            Destroy(rb.gameObject, 2f);
+            //if rb touches player then destroy rb
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, attackRange, whatIsPlayer))
+            {
+                Destroy(rb.gameObject);
+                health -= 1;
+            }
+            alreadyAtacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAtacks);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        alreadyAtacked = false;
+    }
+
+    public void TakeDamage()
+    {
+        health -= 1;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 }
