@@ -30,7 +30,6 @@ public class MainMenu : MonoBehaviour
     {
         cameraAnim.clip = cameraAnim.GetClip("FlyToElevator");
         menuAnim.clip = menuAnim.GetClip("DisappeaMenu");
-        //optionsAnim.clip = optionsAnim.GetClip("SettingsAppear");
 
         cameraAnim.Play();
         elevatorAnim.Play();
