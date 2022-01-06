@@ -40,6 +40,7 @@ public class GraphicsSettings : MonoBehaviour
         { 
             case Setting.Highest:
                 blocker.transform.position = highestToggle.transform.GetChild(0).position;
+                highestToggle.isOn = true;
                 mediumToggle.isOn = false;
                 lowestToggle.isOn = false;
 
@@ -49,6 +50,7 @@ public class GraphicsSettings : MonoBehaviour
             case Setting.Medium:
                 blocker.transform.position = mediumToggle.transform.GetChild(0).position;
                 highestToggle.isOn = false;
+                mediumToggle.isOn = true;
                 lowestToggle.isOn = false;
 
                 PlayerPrefs.SetInt("GraphicsLevel", 1);
@@ -58,6 +60,7 @@ public class GraphicsSettings : MonoBehaviour
                 blocker.transform.position = lowestToggle.transform.GetChild(0).position;
                 highestToggle.isOn = false;
                 mediumToggle.isOn = false;
+                lowestToggle.isOn = true;
 
                 PlayerPrefs.SetInt("GraphicsLevel", 0);
                 break;
@@ -67,13 +70,17 @@ public class GraphicsSettings : MonoBehaviour
     }
     #endregion
 
-    public void CheckVSyncToggle(Toggle vSyncToggle)
+    #region VSync
+    Toggle vSyncToggle;
+
+    public void CheckVSyncToggle()
     {
         if (vSyncToggle.isOn)
             PlayerPrefs.SetInt("VSyncLevel", 1);
         else
             PlayerPrefs.SetInt("VSyncLevel", 0);
     }
+    #endregion
 
     void Start()
     {
@@ -81,5 +88,24 @@ public class GraphicsSettings : MonoBehaviour
         mediumToggle  = graphicalSettings.transform.GetChild(1).GetComponent<Toggle>();
         lowestToggle  = graphicalSettings.transform.GetChild(2).GetComponent<Toggle>();
         blocker       = graphicalSettings.transform.GetChild(3).gameObject;
+        vSyncToggle   = transform.GetChild(1).GetComponent<Toggle>();
+        
+        switch (PlayerPrefs.GetInt("GraphicsLevel"))
+        {
+            case 0:
+                SetQuality(Setting.Lowest);
+                break;
+            case 1:
+                SetQuality(Setting.Medium);
+                break;
+            case 2:
+                SetQuality(Setting.Highest);
+                break;
+        }
+
+        if (PlayerPrefs.GetInt("VSyncLevel") == 1)
+            vSyncToggle.isOn = true;
+        else
+            vSyncToggle.isOn = false;
     }
 }
