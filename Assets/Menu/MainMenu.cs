@@ -28,6 +28,10 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator FlyAndLoad()
     {
+        cameraAnim.clip = cameraAnim.GetClip("FlyToElevator");
+        menuAnim.clip = menuAnim.GetClip("DisappeaMenu");
+        //optionsAnim.clip = optionsAnim.GetClip("SettingsAppear");
+
         cameraAnim.Play();
         elevatorAnim.Play();
         menuAnim.Play();

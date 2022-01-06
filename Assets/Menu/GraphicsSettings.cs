@@ -70,6 +70,7 @@ public class GraphicsSettings : MonoBehaviour
     }
     #endregion
 
+    #region VSync
     Toggle vSyncToggle;
 
     public void CheckVSyncToggle()
@@ -79,6 +80,7 @@ public class GraphicsSettings : MonoBehaviour
         else
             PlayerPrefs.SetInt("VSyncLevel", 0);
     }
+    #endregion
 
     void Start()
     {
@@ -87,7 +89,7 @@ public class GraphicsSettings : MonoBehaviour
         lowestToggle  = graphicalSettings.transform.GetChild(2).GetComponent<Toggle>();
         blocker       = graphicalSettings.transform.GetChild(3).gameObject;
         vSyncToggle   = transform.GetChild(1).GetComponent<Toggle>();
-
+        
         switch (PlayerPrefs.GetInt("GraphicsLevel"))
         {
             case 0:
