@@ -84,7 +84,7 @@ public class AI : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, attackRange, whatIsPlayer))
             {
                 Destroy(rb.gameObject);
-                health -= 1;
+                health -= 25;
             }
             alreadyAtacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAtacks);
@@ -98,7 +98,7 @@ public class AI : MonoBehaviour
 
     public void TakeDamage()
     {
-        health -= 1;
+        health -= 25;
         if (health <= 0)
         {
             SceneManager.LoadScene("Menu");
