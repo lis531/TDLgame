@@ -15,7 +15,6 @@ public class AI : MonoBehaviour
     public float health;
     public float timeBetweenAtacks;
     bool alreadyAtacked;
-    public GameObject projectile;
 
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -74,20 +73,12 @@ public class AI : MonoBehaviour
 
         transform.LookAt(Player);
 
-        if (!alreadyAtacked)
+        //deal damage if player is in range
+        if (playerInAttackRange && !alreadyAtacked)
         {
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            //destroy projectile after 2 seconds
-            Destroy(rb.gameObject, 2f);
-            //if rb touches player then destroy rb
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, attackRange, whatIsPlayer))
-            {
-                Destroy(rb.gameObject);
-                health -= 25;
-            }
             alreadyAtacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAtacks);
+            Invoke("ResetAttack", timeBetweenAtacks);
+            health -= 25;
         }
     }
 
