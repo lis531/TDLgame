@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.3369, g: 325.0498, b: 430.21924, a: 1}
+  m_IndirectSpecularColor: {r: 0.33371285, g: 0.49977273, b: 0.8330078, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -682,13 +682,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844941, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_Intensity
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153259844941, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_CustomSpotLightShadowCone
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_Range
+      value: 349.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_Intensity
-      value: 32768
+      value: 8192
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -765,10 +775,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525657, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Range
+      value: 349.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_Intensity
-      value: 2048
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525663, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -1389,6 +1414,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: -5.560882e+35
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 8.21e-43
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 7.1e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 301372817084072929, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_Layer
@@ -4685,7 +4730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1502748457
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -145,7 +145,8 @@ PlayerSettings:
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
-  useHDRDisplay: 1
+  enableOpenGLProfilerGPURecorders: 0
+  useHDRDisplay: 0
   D3DHDRBitDepth: 1
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
@@ -820,6 +821,7 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+  vcxProjDefaultLanguage: 
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
