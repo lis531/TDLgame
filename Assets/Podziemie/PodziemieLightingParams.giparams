@@ -6,7 +6,7 @@ LightmapParameters:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New LightmapParameters
+  m_Name: PodziemieLightingParams
   serializedVersion: 3
   resolution: 1
   clusterResolution: 0.5
