@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   maxFogDistance:
     m_OverrideState: 1
-    m_Value: 25
+    m_Value: 30
   mipFogMaxMip:
     m_OverrideState: 0
     m_Value: 0.5
@@ -48,7 +48,7 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 20
   enableVolumetricFog:
     m_OverrideState: 0
     m_Value: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 10.351358
+    m_Value: 10.3
   compensation:
     m_OverrideState: 0
     m_Value: 1.35
@@ -257,16 +257,16 @@ MonoBehaviour:
     m_Value: -0.6
   contrast:
     m_OverrideState: 1
-    m_Value: 60
+    m_Value: 50
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.85195935, g: 0.759434, b: 1, a: 1}
+    m_Value: {r: 0.86605257, g: 0.8021093, b: 0.9716981, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: -4
   saturation:
     m_OverrideState: 1
-    m_Value: 7.1
+    m_Value: 30
 --- !u!114 &-6117829314741238317
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -291,7 +291,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.375
+    m_Value: 0.3
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -307,37 +307,6 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 0
     m_Value: 1
---- !u!114 &-2919751053173695945
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7593b3a9277ac4696b20006c21dde2, type: 3}
-  m_Name: VisualEnvironment
-  m_EditorClassIdentifier: 
-  active: 1
-  skyType:
-    m_OverrideState: 1
-    m_Value: 3
-  cloudType:
-    m_OverrideState: 0
-    m_Value: 0
-  skyAmbientMode:
-    m_OverrideState: 0
-    m_Value: 0
-  windOrientation:
-    m_OverrideState: 0
-    m_Value: 0
-  windSpeed:
-    m_OverrideState: 0
-    m_Value: 100
-  fogType:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +327,6 @@ MonoBehaviour:
   - {fileID: 2067565602726577381}
   - {fileID: -6307133686178516004}
   - {fileID: -7190083896204875382}
-  - {fileID: -2919751053173695945}
 --- !u!114 &2067565602726577381
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -374,10 +342,10 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 7
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.6
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -405,7 +373,7 @@ MonoBehaviour:
     m_Value: 0.7
   intensity:
     m_OverrideState: 1
-    m_Value: 0.691
+    m_Value: 0.311
   scatter:
     m_OverrideState: 1
     m_Value: 0.646

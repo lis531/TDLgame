@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33365822, g: 0.4997341, b: 0.8330078, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -617,12 +617,12 @@ PrefabInstance:
     - target: {fileID: 4347688153259844941, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_InnerSpotPercent
-      value: 30.87734
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844941, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_CustomSpotLightShadowCone
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -637,12 +637,12 @@ PrefabInstance:
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_SpotAngle
-      value: 37.0182
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_InnerSpotAngle
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -759,6 +759,11 @@ PrefabInstance:
       propertyPath: useVolumetric
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525657, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_InnerSpotPercent
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_Range
@@ -772,7 +777,7 @@ PrefabInstance:
     - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_SpotAngle
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -1398,6 +1403,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -1416,7 +1451,7 @@ PrefabInstance:
     - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 301372817084072929, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
@@ -1432,6 +1467,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714518872402941664, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 13.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714518872402941664, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_LightUnit
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4736449955782763364, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
@@ -1498,10 +1563,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6141743702269784138, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 13.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6141743702269784138, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_LightUnit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197324254920802548, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 13.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 6197324254920802548, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_LightUnit
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7104978830708106571, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296079852606063104, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 13.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296079852606063104, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_LightUnit
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9581a4f5efcbd244cbe401385d936e6e, type: 3}
@@ -2587,6 +2702,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 85235829564586093, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 301372817084072929, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_Layer
@@ -2601,6 +2751,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4736449955782763364, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
@@ -2671,6 +2841,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1541.3728
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
+        type: 3}
+      propertyPath: m_UseViewFrustumForShadowCasterCull
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9581a4f5efcbd244cbe401385d936e6e, type: 3}
