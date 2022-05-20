@@ -40,7 +40,6 @@ public class AI : MonoBehaviour
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
-        
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if (distanceToWalkPoint.magnitude < 1f)
@@ -68,12 +67,17 @@ public class AI : MonoBehaviour
 
         transform.LookAt(new Vector3(transform.position.x, player.position.y, transform.position.z));
 
-        //deal damage if player is in range
         if (playerInAttackRange && !alreadyAtacked)
         {
             alreadyAtacked = true;
             Invoke("ResetAttack", timeBetweenAtacks);
             health -= 25;
+            
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
