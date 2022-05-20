@@ -631,6 +631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153259844942, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_Intensity
       value: 32768
       objectReference: {fileID: 0}
@@ -768,6 +773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Range
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525658, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -1451,7 +1461,7 @@ PrefabInstance:
     - target: {fileID: 149845023958681811, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 301372817084072929, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
@@ -1486,7 +1496,7 @@ PrefabInstance:
     - target: {fileID: 2825043917722962471, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3714518872402941664, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
@@ -1606,7 +1616,7 @@ PrefabInstance:
     - target: {fileID: 7465162688408231623, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8296079852606063104, guid: 9581a4f5efcbd244cbe401385d936e6e,
         type: 3}
