@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 public class AI : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public Transform Player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public Transform player;
 
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -17,22 +16,22 @@ public class AI : MonoBehaviour
     bool alreadyAtacked;
 
     public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    bool playerInSightRange, playerInAttackRange;
 
     private void Awake()
     {
-        Player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        playerInSightRange  = (Vector3.Distance(transform.position, player.position) < sightRange);
+        playerInAttackRange = (Vector3.Distance(transform.position, player.position) < attackRange);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (playerInSightRange  && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange &&  playerInSightRange ) AttackPlayer();
     }
 
     private void Patroling()
@@ -40,15 +39,12 @@ public class AI : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
-        {
             agent.SetDestination(walkPoint);
-        }
+        
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         if (distanceToWalkPoint.magnitude < 1f)
-        {
             walkPointSet = false;
-        }
     }
 
     private void SearchWalkPoint()
@@ -58,20 +54,19 @@ public class AI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        walkPointSet = true;
     }
 
     private void ChasePlayer()
     {
-        agent.SetDestination(Player.position);
+        agent.SetDestination(player.position);
     }
 
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
 
-        transform.LookAt(Player);
+        transform.LookAt(new Vector3(transform.position.x, player.position.y, transform.position.z));
 
         //deal damage if player is in range
         if (playerInAttackRange && !alreadyAtacked)
@@ -91,9 +86,8 @@ public class AI : MonoBehaviour
     {
         health -= 25;
         if (health <= 0)
-        {
             SceneManager.LoadScene("Menu");
-        }
+        
     }
 
     private void OnDrawGizmosSelected()
