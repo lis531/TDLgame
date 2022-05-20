@@ -1119,8 +1119,8 @@
     "m_ObjectId": "5b427081ca104c44bab0d68b99ddb0e8",
     "m_NormalDropOffSpace": 0,
     "m_BlendPreserveSpecular": true,
-    "m_ReceiveDecals": true,
-    "m_ReceiveSSR": true,
+    "m_ReceiveDecals": false,
+    "m_ReceiveSSR": false,
     "m_ReceiveSSRTransparent": false,
     "m_SpecularAA": false,
     "m_SpecularOcclusionMode": 1,
@@ -1351,7 +1351,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.Rendering.HighDefinition.ShaderGraph.SystemData",
     "m_ObjectId": "7e574dbae5c74f6fac7ce009142fb4a5",
-    "m_MaterialNeedsUpdateHash": 529,
+    "m_MaterialNeedsUpdateHash": 0,
     "m_SurfaceType": 0,
     "m_RenderingPass": 1,
     "m_BlendMode": 0,
@@ -1376,7 +1376,7 @@
     "m_TessellationBackFaceCullEpsilon": -0.25,
     "m_TessellationMaxDisplacement": 0.009999999776482582,
     "m_Version": 1,
-    "inspectorFoldoutMask": 0
+    "inspectorFoldoutMask": 9
 }
 
 {
