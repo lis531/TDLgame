@@ -41,6 +41,8 @@ public class TunnelMoving : MonoBehaviour
 
     void BeginRun()
     {
+        Debug.Log("Begins run");
+
         if (!isCrouching)
         {
             currentSpeed = runSpeed;
@@ -50,6 +52,8 @@ public class TunnelMoving : MonoBehaviour
     }
     void EndRun()
     {
+        Debug.Log("Ends run");
+
         if (!isCrouching)
         {
             currentSpeed = walkSpeed;
