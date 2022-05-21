@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Eq : MonoBehaviour
+public class Equipment : MonoBehaviour
 {
     public GameObject EquimpentUI;
     public GameObject EquimpentUI2;
@@ -12,7 +12,7 @@ public class Eq : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Tab)) 
+        if (Input.GetKey(KeyCode.Tab))
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
