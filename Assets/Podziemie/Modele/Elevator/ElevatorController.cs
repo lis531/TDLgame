@@ -8,14 +8,19 @@ public class ElevatorController : MonoBehaviour
 
     public AudioClip elevatorOpenClose;
     public AudioClip elevatorRide;
+    public AudioClip elevatorBeep;
 
     public ElevatorController otherElevator;
 
     private Transform elevatorCenter;
     private Transform playerTransform;
 
-    public float elevatorDoorsWaitTime = 3.0f;
     public float elevatorRideTime = 3.0f;
+
+    public bool openByDefault = false;
+
+    [HideInInspector]
+    public bool isRiding = false;
 
     void OnDrawGizmos()
     {
@@ -24,9 +29,6 @@ public class ElevatorController : MonoBehaviour
         Transform center = transform.Find("ElevatorCenter").transform;
 
         Gizmos.DrawWireCube(center.position, center.localScale*2);
-
-        Gizmos.DrawSphere(center.position + (center.forward * 2), 0.22f);
-        Gizmos.DrawLine(center.position, center.position+(center.forward * 2));
     }
 
     void Start()
@@ -38,8 +40,8 @@ public class ElevatorController : MonoBehaviour
 
         elevatorCenter = transform.Find("ElevatorCenter").transform;
 
-        if(otherElevator == null)
-             anim.Play("OpenElevator");
+        if(openByDefault)
+            OpenElevator();
     }
 
     void RideToAnotherLevel()
@@ -72,20 +74,15 @@ public class ElevatorController : MonoBehaviour
 
     IEnumerator ElevatorCoroutine()
     {
-        aSource.loop = false;
-        aSource.clip = elevatorOpenClose;
-
-        aSource.Play();
-        anim.Play("OpenElevator");
-
-        yield return new WaitForSeconds(anim.clip.length);
-
-        yield return new WaitForSeconds(elevatorDoorsWaitTime);
+        isRiding = true;
+        otherElevator.isRiding = true;
 
         aSource.Play();
         anim.Play("CloseElevator");
 
-        yield return new WaitForSeconds(anim.clip.length);
+        float closeTime = anim.clip.length;
+
+        yield return new WaitForSeconds(closeTime);
 
         aSource.clip = elevatorRide;
         aSource.loop = true;
@@ -96,12 +93,31 @@ public class ElevatorController : MonoBehaviour
         if(IsPlayerInside())
             RideToAnotherLevel();
 
-        aSource.Stop();
+        aSource.clip = elevatorBeep;
+        aSource.loop = false;
+        aSource.Play();
+
+        yield return new WaitForSeconds(0.25f);
+
+        otherElevator.OpenElevator();
+
+        yield return new WaitForSeconds(closeTime);
+
+        isRiding = false;
+        otherElevator.isRiding = false;
     }
 
     public void OpenElevator()
     {
-        if(otherElevator is not null)
+        aSource.loop = false;
+        aSource.clip = elevatorOpenClose;
+
+        aSource.Play();
+        anim.Play("OpenElevator");
+    }
+    public void BeginRideToAnotherLevel()
+    {
+        if(otherElevator is not null && !isRiding)
             StartCoroutine(ElevatorCoroutine());
     }
 }

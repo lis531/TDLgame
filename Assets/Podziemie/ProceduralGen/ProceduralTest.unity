@@ -2702,15 +2702,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2620516673762154446, guid: 40366098b429c644593ac6b15e170598,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503204938862911710, guid: 40366098b429c644593ac6b15e170598,
+        type: 3}
+      propertyPath: openByDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3503204938862911710, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
       propertyPath: otherElevator
       value: 
       objectReference: {fileID: 372234918}
-    - target: {fileID: 4149774103655102725, guid: 40366098b429c644593ac6b15e170598,
+    - target: {fileID: 4927948873038243579, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
-      propertyPath: m_Pitch
-      value: 0.6
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6270868639936553690, guid: 40366098b429c644593ac6b15e170598,
+        type: 3}
+      propertyPath: arrowUp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6657180146817737267, guid: 40366098b429c644593ac6b15e170598,
         type: 3}

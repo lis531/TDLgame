@@ -23,8 +23,8 @@ public class PlayerInteract : MonoBehaviour
             else if (hit.collider.CompareTag(doorTag))
                 hit.collider.transform.parent.gameObject.GetComponent<DoorController>().Open();
 
-                else if (hit.collider.CompareTag(elevatorTag))
-                    hit.collider.transform.parent.gameObject.GetComponent<ElevatorController>().OpenElevator();
+            else if (hit.collider.CompareTag(elevatorTag))
+                hit.collider.transform.GetComponent<ButtonPanelController>().PressButton();
         }
     }
 
