@@ -1013,6 +1013,7 @@ MonoBehaviour:
   interactionDistance: 3
   keycardTag: Keycard
   doorTag: DoorPart
+  elevatorTag: ElevatorPart
 --- !u!114 &265098741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4094,6 +4095,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 3503204938862911710, guid: 40366098b429c644593ac6b15e170598,
+        type: 3}
+      propertyPath: openByDefault
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6202293594142177920, guid: 40366098b429c644593ac6b15e170598,
         type: 3}
       propertyPath: m_Layer
