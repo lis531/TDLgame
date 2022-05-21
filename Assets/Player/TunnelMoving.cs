@@ -13,7 +13,6 @@ public class TunnelMoving : MonoBehaviour
 
     private Animation anim;
     private AudioSource aSource;
-    private StaminaBar staminaBar;
     private CharacterController character;
     private GameObject cam;
 
@@ -59,7 +58,8 @@ public class TunnelMoving : MonoBehaviour
             currentSpeed = walkSpeed;
             currentStepOffset = walkStepOffset;
             isRunning = false;
-            StartCoroutine(StaminaCooldown1());
+
+            PlayerStamina.instance.TryMakePlayerTired();
         }
     }
 
@@ -108,7 +108,6 @@ public class TunnelMoving : MonoBehaviour
     // FUNCKCJE UNITY //
     void Start()
     {
-        staminaBar = GameObject.Find("Canvas/Stamina").GetComponent<StaminaBar>();
         character = GetComponent<CharacterController>();
         aSource  = GetComponent<AudioSource>();
         anim    = GetComponent<Animation>();
@@ -124,19 +123,19 @@ public class TunnelMoving : MonoBehaviour
     {
         // Bieganie
             // Rozpoczynanie biegania
-            if (Input.GetKey(KeyCode.LeftShift) && staminaBar.canRun)
+            if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted)
                 BeginRun();
 
             // Konczenie biegania
-            else if (Input.GetKeyUp(KeyCode.LeftShift) || !staminaBar.canRun)
+            else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerStamina.instance.exhausted)
                 EndRun();
 
         // Stamina
             // Zuzycie / Regeneracja staminy
             if (isRunning)
-                staminaBar.UseStamina();
+                PlayerStamina.instance.TryConsumeStamina();
             else
-                staminaBar.RegenStamina();
+                PlayerStamina.instance.TryRegenStamina();
 
         // Kucanie
             if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -162,11 +161,5 @@ public class TunnelMoving : MonoBehaviour
             targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
 
             cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
-    }
-    public IEnumerator StaminaCooldown1()
-    {
-        staminaBar.canRegen = false;
-        yield return new WaitForSeconds(0.2f);
-        staminaBar.canRegen = true;
     }
 }

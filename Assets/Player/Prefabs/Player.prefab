@@ -45,7 +45,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 29125.596
+  m_Intensity: 32768
   m_Range: 25
   m_SpotAngle: 50
   m_InnerSpotAngle: 21.80208
@@ -286,7 +286,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 1
-  backgroundColorHDR: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 0}
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -594,7 +594,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2620.0317
+  m_Intensity: 2048
   m_Range: 10
   m_SpotAngle: 100
   m_InnerSpotAngle: 1
@@ -776,9 +776,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4347688154004759947}
   - component: {fileID: 4347688154004759942}
+  - component: {fileID: 1417080997626903325}
+  - component: {fileID: 7381809975505975749}
+  - component: {fileID: 1491184426386336635}
+  - component: {fileID: 7130535090279908347}
   - component: {fileID: 4347688154004759943}
   - component: {fileID: 2802408337033953945}
-  - component: {fileID: 3813353094961345471}
   - component: {fileID: 1962298302658853365}
   m_Layer: 0
   m_Name: Player
@@ -827,6 +830,68 @@ MonoBehaviour:
   crouchStepOffset: 1
   runStepOffset: 0.25
   crouchHeightOffset: 0.6
+--- !u!114 &1417080997626903325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc406ad1de03efd489d529fa59876bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 350
+  stamina: 0
+  staminaUsageRate: 100
+  staminaRegenRate: 100
+  tiredTime: 0.5
+  exhaustedTime: 1.5
+  tired: 0
+  exhausted: 0
+--- !u!114 &7381809975505975749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958b32f983aceaf46b620492d32ad8c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 3
+  keycardTag: Keycard
+  doorTag: DoorPart
+  elevatorTag: ElevatorPart
+--- !u!114 &1491184426386336635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186a4d00d18bbb2418c66fa420fd07e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7130535090279908347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7c06a23f21c941879b1ea0b4eb1dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latarka: {fileID: 4347688153259844947}
+  latarka1: {fileID: 4347688153388525663}
 --- !u!143 &4347688154004759943
 CharacterController:
   m_ObjectHideFlags: 0
@@ -941,19 +1006,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3813353094961345471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347688154004759946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b50a732cb2e1443adba57c47ceb340, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!111 &1962298302658853365
 Animation:
   m_ObjectHideFlags: 0

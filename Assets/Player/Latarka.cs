@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Latarka : MonoBehaviour
 {
     public GameObject latarka;
     public GameObject latarka1;
+    
     void Start()
     {
         latarka.SetActive(false);
@@ -13,15 +12,10 @@ public class Latarka : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && latarka.activeSelf == false && latarka1.activeSelf == false)
+        if (Input.GetKeyDown(KeyCode.T))
         {
-            latarka.SetActive(true);
-            latarka1.SetActive(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.T) && latarka.activeSelf == true && latarka1.activeSelf == true)
-        {
-            latarka.SetActive(false);
-            latarka1.SetActive(false);
+            latarka.SetActive(!latarka.activeSelf);
+            latarka1.SetActive(!latarka1.activeSelf);
         }
     }
 }
