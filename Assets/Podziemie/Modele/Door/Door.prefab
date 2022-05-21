@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2141697455980158881}
   m_Layer: 0
   m_Name: DoorLeft
-  m_TagString: Untagged
+  m_TagString: DoorPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 2635293429989272830}
   m_Layer: 0
   m_Name: DoorRight
-  m_TagString: Untagged
+  m_TagString: DoorPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ed71d90633934b8fe90c09d02f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useGenerator: 0
+  doorOpenTime: 3
+  doorOpenSound: {fileID: 8300000, guid: c6fa52c195168bb40b6961ac40924e0f, type: 3}
+  doorErrorSound: {fileID: 8300000, guid: 238f74c2edee4df4ab368f0e3610a11c, type: 3}
 --- !u!82 &-2533046163444710018
 AudioSource:
   m_ObjectHideFlags: 0

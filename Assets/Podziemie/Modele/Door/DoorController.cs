@@ -1,19 +1,18 @@
 using UnityEngine;
+using System.Collections;
 
 public class DoorController : MonoBehaviour
 {
     Animation anim;
     AudioSource aSource;
-    GameObject player;
-
-    public bool useGenerator = false;
-    bool wasUsed = false;
-
-    Generator generator;
 
     bool isOpen = false;
+    bool playingErrorSound = false;
 
-    const float interactionDistance = 2.0f;
+    public float doorOpenTime = 3.0f;
+
+    public AudioClip doorOpenSound;
+    public AudioClip doorErrorSound;
 
     void OnDrawGizmos()
     {
@@ -23,32 +22,29 @@ public class DoorController : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position+ (transform.right * 2));
     }
 
-    private void Start()
+    void Start()
     {
-        if(useGenerator)
-            generator = GameObject.Find("Generator").GetComponent<Generator>();
-
         anim = transform.GetComponent<Animation>();
         aSource = transform.GetComponent<AudioSource>();
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Open()
+    IEnumerator OpenCoroutine()
     {
-        if(useGenerator && !wasUsed)
-            generator.GenerateAt(transform.position, transform.right);
-
         anim.Stop();
         anim.clip = anim.GetClip("Open");
         anim.Play();
 
+        aSource.clip = doorOpenSound;
         aSource.Stop();
         aSource.Play();
 
-        wasUsed = true;
         isOpen = true;
+
+        yield return new WaitForSeconds(doorOpenTime);
+
+        Close();
     }
-    public void Close()
+    void Close()
     {
         anim.Stop();
         anim.clip = anim.GetClip("Close");
@@ -60,22 +56,30 @@ public class DoorController : MonoBehaviour
         isOpen = false;
     }
 
-    public void ChangeState()
+    IEnumerator PlayErrorSound()
     {
-        if(!anim.isPlaying)
-        {
-            if (isOpen)
-                Close();
-            else
-                Open();
-        }
+        aSource.clip = doorErrorSound;
+
+        aSource.Stop();
+        aSource.Play();
+
+        playingErrorSound = true;
+
+        yield return new WaitForSeconds(0.4f);
+
+        playingErrorSound = false;
     }
 
-    void Update()
+    public void Open()
     {
-        if (Input.GetKeyDown("e"))
-            if(Vector3.Distance(transform.position, player.transform.position) < interactionDistance &&
-               Vector3.Dot(player.transform.forward, (transform.position - player.transform.position).normalized) > 0.65)
-                ChangeState();
+        if(!isOpen && !playingErrorSound)
+        {
+            if(PlayerInventory.hasKeycard)
+                StartCoroutine(OpenCoroutine());
+            else
+                StartCoroutine(PlayErrorSound());
+            
+        }
+
     }
 }

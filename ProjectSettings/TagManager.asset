@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TunnelPart
+  - Keycard
+  - DoorPart
   layers:
   - Default
   - TransparentFX
