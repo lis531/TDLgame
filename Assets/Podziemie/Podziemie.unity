@@ -666,6 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153259844947, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_Name
+      value: SpotLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153259844947, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
@@ -806,13 +811,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4347688153388525663, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_Name
+      value: SpotLight1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525663, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: runSpeed
-      value: 4.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -822,12 +832,12 @@ PrefabInstance:
     - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: runStepOffset
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: walkStepOffset
-      value: 0.55
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -857,7 +867,11 @@ PrefabInstance:
     - target: {fileID: 4347688154004759947, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< Updated upstream
       value: -0.62699986
+=======
+      value: -0.54
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759947, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -3094,9 +3108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxStamina: 350
   currentStamina: 0
-  staminaUsage: 100
+  staminaUsage: 85
   staminaRegen: 50
   canRun: 1
+  canRegen: 1
 --- !u!1001 &848585714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3767,6 +3782,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8174305fe58ce34ab816086a1a56b8c, type: 3}
+--- !u!1 &1033841105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4347688153388525663, guid: 42631bbb30302c549bd82458a5178ed8,
+    type: 3}
+  m_PrefabInstance: {fileID: 244583133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1042086701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4347688153259844947, guid: 42631bbb30302c549bd82458a5178ed8,
+    type: 3}
+  m_PrefabInstance: {fileID: 244583133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1097875356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5595,12 +5622,35 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 848585714}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!4 &2104317976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7976850251299025670, guid: f50e8e45f6fb38442b75fc8820127de8,
     type: 3}
   m_PrefabInstance: {fileID: 933237006}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!1 &2096700235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4347688153376071526, guid: 42631bbb30302c549bd82458a5178ed8,
+    type: 3}
+  m_PrefabInstance: {fileID: 244583133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2096700241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096700235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7c06a23f21c941879b1ea0b4eb1dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  latarka: {fileID: 1042086701}
+  latarka1: {fileID: 1033841105}
+>>>>>>> Stashed changes
 --- !u!1001 &2142572222
 PrefabInstance:
   m_ObjectHideFlags: 0

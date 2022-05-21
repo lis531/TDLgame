@@ -12,6 +12,7 @@ public class StaminaBar : MonoBehaviour
     public float staminaUsage = 100.0f;
     public float staminaRegen = 50.0f;
     public bool canRun = true;
+    public bool canRegen = true;
 
     void Start()
     {
@@ -28,10 +29,12 @@ public class StaminaBar : MonoBehaviour
     }
     public void RegenStamina()
     {
-        currentStamina += staminaRegen * Time.deltaTime;
-
-        if (currentStamina >= maxStamina)
-            currentStamina = maxStamina;
+        if (canRegen)
+        {
+            currentStamina += (staminaRegen * Time.deltaTime);
+            if (currentStamina > maxStamina)
+                currentStamina = maxStamina;
+        }
     }
 
     private void Update()

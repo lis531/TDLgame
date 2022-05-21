@@ -55,6 +55,7 @@ public class TunnelMoving : MonoBehaviour
             currentSpeed = walkSpeed;
             currentStepOffset = walkStepOffset;
             isRunning = false;
+            StartCoroutine(StaminaCooldown1());
         }
     }
 
@@ -89,8 +90,6 @@ public class TunnelMoving : MonoBehaviour
         }
         else
             Debug.LogError("Dzwieki krokow nie dzialaja, bo nie ma zadnych dzwiekow przypisanych do skryptu \"TunnelMoving\" na Playerze");
-
-
         aSource.pitch = Random.Range(0.9f, 1.1f);
         aSource.volume = Random.Range(0.75f, 1.0f);
 
@@ -159,5 +158,11 @@ public class TunnelMoving : MonoBehaviour
             targetCamRot = Mathf.Clamp(targetCamRot, -89.99f, 89.99f);
 
             cam.transform.localRotation = Quaternion.Euler(-targetCamRot, 0, 0);
+    }
+    public IEnumerator StaminaCooldown1()
+    {
+        staminaBar.canRegen = false;
+        yield return new WaitForSeconds(0.2f);
+        staminaBar.canRegen = true;
     }
 }
