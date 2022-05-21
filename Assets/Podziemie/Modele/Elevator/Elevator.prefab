@@ -296,7 +296,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
   - {fileID: 2100000, guid: d7b6c6ad5f7708040b4ac19682ecd2d1, type: 2}
-  - {fileID: 2100000, guid: d4d502b04af971f4ca04376b71a58443, type: 2}
+  - {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
   - {fileID: 2100000, guid: d7b6c6ad5f7708040b4ac19682ecd2d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -367,6 +367,8 @@ MonoBehaviour:
   elevatorBeep: {fileID: 8300000, guid: d0129ad097dba5c438ac03dfa029f035, type: 3}
   otherElevator: {fileID: 0}
   elevatorRideTime: 3
+  openByDefault: 0
+  isRiding: 0
 --- !u!82 &4149774103655102725
 AudioSource:
   m_ObjectHideFlags: 0

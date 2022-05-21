@@ -132,6 +132,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 2319016972030063605, guid: c72dad108e0678b498d8439d59f2cbc4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     - target: {fileID: 3487441403018725530, guid: c72dad108e0678b498d8439d59f2cbc4,
         type: 3}
       propertyPath: m_RootOrder
@@ -399,6 +404,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051566684}
     m_Modifications:
+    - target: {fileID: 761115164076243360, guid: b76e84c075749f84caa2bc656b1ccb12,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     - target: {fileID: 1265786672726071413, guid: b76e84c075749f84caa2bc656b1ccb12,
         type: 3}
       propertyPath: m_Name
@@ -5191,6 +5201,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     - target: {fileID: 6281381671994285122, guid: 6560e7ef687bc134097de6f2de0ad06b,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
