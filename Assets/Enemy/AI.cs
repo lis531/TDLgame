@@ -26,12 +26,14 @@ public class AI : MonoBehaviour
 
     private void Update()
     {
+        
         playerInSightRange  = (Vector3.Distance(transform.position, player.position) < sightRange);
         playerInAttackRange = (Vector3.Distance(transform.position, player.position) < attackRange);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange  && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange &&  playerInSightRange ) AttackPlayer();
+        
     }
 
     private void Patroling()
