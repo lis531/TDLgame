@@ -6,6 +6,7 @@ public class PlayerInteract : MonoBehaviour
 
     public string keycardTag = "Keycard";
     public string doorTag = "DoorPart";
+    public string elevatorTag = "ElevatorPart";
 
     void Interact()
     {
@@ -21,6 +22,9 @@ public class PlayerInteract : MonoBehaviour
 
             else if (hit.collider.CompareTag(doorTag))
                 hit.collider.transform.parent.gameObject.GetComponent<DoorController>().Open();
+
+                else if (hit.collider.CompareTag(elevatorTag))
+                    hit.collider.transform.parent.gameObject.GetComponent<ElevatorController>().OpenElevator();
         }
     }
 
