@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331669712123302260}
-  - component: {fileID: -1535426129112904527}
-  - component: {fileID: 3529513799551634309}
-  - component: {fileID: 1708265969681624132}
+  - component: {fileID: 8349690859095995853}
   m_Layer: 0
   m_Name: Brancher
   m_TagString: Untagged
@@ -34,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1535426129112904527
+--- !u!114 &8349690859095995853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,39 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce08b697962ec374b9e20f5861e67d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tunnel: {fileID: 8874250209959298786, guid: 9581a4f5efcbd244cbe401385d936e6e, type: 3}
-  Room: {fileID: 8577775502359370674, guid: 4d58dc34261736d47aa1906dd5d0025f, type: 3}
-  LRight: {fileID: 2892661349869085668, guid: ff19ab0078af93f4897e17ca37b01a1c, type: 3}
-  LLeft: {fileID: 7327123274226763755, guid: b40dd8052c02ced4584b8e06445358f1, type: 3}
-  T: {fileID: 5366468999245971331, guid: 7dc5ccebf447ff343876f86497e61027, type: 3}
-  X: {fileID: 5703397020229175187, guid: d2d1d95198b53c749aa94e6ca48e8687, type: 3}
-  End: {fileID: 1563637163707241374, guid: 52a8b504e3b75f041b7191d2d640cc38, type: 3}
---- !u!65 &3529513799551634309
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8405294436892192378}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8, y: 4, z: 8}
-  m_Center: {x: 0, y: 0, z: 4.2}
---- !u!54 &1708265969681624132
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8405294436892192378}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
+  generator: {fileID: 0}
+  tunnel: {fileID: 4736449955782763364, guid: 9581a4f5efcbd244cbe401385d936e6e, type: 3}
+  room: {fileID: 4264400692549751328, guid: c72dad108e0678b498d8439d59f2cbc4, type: 3}
+  door: {fileID: 6854191106963977978, guid: 91d54ecfbc006694fb8daaf4112ec3bb, type: 3}
+  lRight: {fileID: 2892661349869085668, guid: ff19ab0078af93f4897e17ca37b01a1c, type: 3}
+  lLeft: {fileID: 7327123274226763755, guid: b40dd8052c02ced4584b8e06445358f1, type: 3}
+  t: {fileID: 5366468999245971331, guid: 7dc5ccebf447ff343876f86497e61027, type: 3}
+  x: {fileID: 5703397020229175187, guid: d2d1d95198b53c749aa94e6ca48e8687, type: 3}
+  end: {fileID: 1563637163707241374, guid: 52a8b504e3b75f041b7191d2d640cc38, type: 3}

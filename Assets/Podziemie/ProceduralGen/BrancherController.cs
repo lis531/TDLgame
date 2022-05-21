@@ -1,234 +1,125 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BrancherController : MonoBehaviour
 {
     const int maxSteps = 100;
+    int steps = 0;
 
-    public GameObject Tunnel;
-    public GameObject Room;
-    public GameObject LRight;
-    public GameObject LLeft;
-    public GameObject T;
-    public GameObject X;
-    public GameObject End;
+    public Generator generator;
 
-    GameObject previouslySpawned = null;
-    GameObject spawnedPrefab = null;
+    public GameObject tunnel;
+    public GameObject room;
+    public GameObject door;
+    public GameObject lRight;
+    public GameObject lLeft;
+    public GameObject t;
+    public GameObject x;
+    public GameObject end;
 
-    Collider col;
+    private Transform tunnelsParent;
 
-    BranchersSpawner bs;
-
-    private int MoveOffset()
+    void OnDrawGizmos()
     {
-        if (previouslySpawned != null)
-        {
-            // Jezeli to tunel
-            if (previouslySpawned == Tunnel)
-                return 8;
-
-            // Jezeli to pokoj
-            else if (previouslySpawned == Room)
-                return 16;
-
-            // Jezeli to jakies rozwidlenie
-            else
-                return 2;
-
-        }
-
-        return 0;
-    }
-    private void MoveBrancher()
-    {
-        transform.Translate(Vector3.forward * MoveOffset());
-    }
-    private void MoveBrancherLeft()
-    {
-        transform.Translate(Vector3.forward);
-        transform.Translate(Vector3.left);
-        transform.Rotate(new Vector3(0, -90, 0));
-    }
-    private void MoveBrancherRight()
-    {
-        transform.Translate(Vector3.forward);
-        transform.Translate(Vector3.right);
-        transform.Rotate(new Vector3(0, 90, 0));
+        Gizmos.color = new Color(0.0f, 0f, 1f, 1f);
+    
+        Gizmos.DrawSphere(transform.position+(transform.forward*1.5f), 0.22f);
+        Gizmos.DrawLine(transform.position, transform.position+(transform.forward*1.5f));
     }
 
-    public void SpawnTunnel()
+    void SpawnPart(GameObject part, float yRotationOffset = 0)
     {
-        spawnedPrefab = Instantiate(Tunnel, transform.position, transform.rotation);
-        previouslySpawned = Tunnel;
-
-        MoveBrancher();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-    }
-    private void SpawnRoom()
-    {
-        spawnedPrefab = Instantiate(Room, transform.position, transform.rotation);
-        previouslySpawned = Room;
-
-        MoveBrancher();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-
-        SpawnTunnel();
-    }
-    private void SpawnLRight()
-    {
-        spawnedPrefab = Instantiate(LRight, transform.position, transform.rotation);
-        previouslySpawned = LRight;
-
-        MoveBrancherRight();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-
-        SpawnTunnel();
-    }
-    private void SpawnLLeft()
-    {
-        spawnedPrefab = Instantiate(LLeft, transform.position, transform.rotation);
-        previouslySpawned = LLeft;
-
-        MoveBrancherLeft();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-
-        SpawnTunnel();
-    }
-    private void SpawnT()
-    {
-        spawnedPrefab =  Instantiate(T, transform.position, transform.rotation);
-        previouslySpawned = T;
-
-        bs.SpawnBrancher(gameObject, BranchersSpawner.Dir.Left);
-
-        MoveBrancherRight();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-
-        SpawnTunnel();
-    }
-    private void SpawnX()
-    {
-        spawnedPrefab = Instantiate(X, transform.position, transform.rotation);
-        previouslySpawned = X;
-
-        bs.SpawnBrancher(gameObject, BranchersSpawner.Dir.Left);
-        bs.SpawnBrancher(gameObject, BranchersSpawner.Dir.Right);
-
-        MoveBrancher();
-
-        spawnedPrefab.GetComponent<Collider>().isTrigger = false;
-
-        SpawnTunnel();
+        GameObject partInstance = Instantiate(part, transform.position, Quaternion.identity);
+        partInstance.transform.parent = tunnelsParent;
+        partInstance.transform.Rotate(new Vector3(0, transform.rotation.y + 180 + yRotationOffset, 0), Space.Self);
+        steps++;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void SpawnDoor(float xOffset, float zOffset, float yRotationOffset)
     {
-        if(collision.transform.CompareTag("TunnelPart"))
-        {
-            Instantiate(End, transform.position, transform.rotation);
-            Destroy(gameObject);
-            Debug.Log("Col");
-        }
+        transform.position += (transform.forward * zOffset) + (transform.right * xOffset);
+        SpawnPart(door, yRotationOffset);
+    }
+    void SpawnTunnel()
+    {
+        SpawnPart(tunnel, 0);
+        SpawnDoor(0, 8, -90);
+        OnGenerationFinish();
+    }
+    void SpawnRoom()
+    {
+        SpawnPart(room, -90);
+        OnGenerationFinish();
+    }
+    void SpawnLRight()
+    {
+        SpawnPart(lRight, 0);
+        SpawnDoor(2, 2, 0);
+        OnGenerationFinish();
+    }
+    void SpawnLLeft()
+    {
+        SpawnPart(lLeft, 0);
+        SpawnDoor(-2, 2, 0);
+        OnGenerationFinish();
+    }
+    void SpawnT()
+    {
+        SpawnPart(t, 180);
+        SpawnDoor(-2, 2, 0);
+        SpawnDoor(4, 0, 0);
+        OnGenerationFinish();
+    }
+    void SpawnX()
+    {
+        SpawnPart(x, -90);
+        SpawnDoor(-2, 2, 0);
+        SpawnDoor(4, 0, 0);
+        SpawnDoor(-2, 2, 90);
+        OnGenerationFinish();
+    }
+    void SpawnEnd()
+    {
+        SpawnPart(end, -90);
+        OnGenerationFinish();
     }
 
-    void SpawnRandomSegment()
+    void OnGenerationFinish()
     {
-        int rand = Random.Range(0, 20);
+        Destroy(gameObject);
+    }
 
-        switch(rand)
+    public void BeginGeneration()
+    {
+        tunnelsParent = GameObject.Find("Tunnels").transform;
+
+        int choice = Random.Range(0, 7);
+
+        switch(choice)
         {
             case 0:
                 SpawnTunnel();
                 break;
             case 1:
-                SpawnTunnel();
+                SpawnRoom();
                 break;
             case 2:
-                SpawnTunnel();
+                SpawnLRight();
                 break;
             case 3:
-                SpawnTunnel();
+                SpawnLLeft();
                 break;
             case 4:
-                SpawnTunnel();
+                SpawnT();
                 break;
             case 5:
-                SpawnTunnel();
+                SpawnX();
                 break;
             case 6:
-                SpawnTunnel();
+                SpawnEnd();
                 break;
-            case 7:
-                SpawnLLeft();
+            default:
+                Debug.LogError("BrancherController::Start() - Invalid choice value: " + choice);
                 break;
-            case 8:
-                SpawnLLeft();
-                break;
-            case 9:
-                SpawnLLeft();
-                break;
-            case 10:
-                SpawnLRight();
-                break;
-            case 11:
-                SpawnLRight();
-                break;
-            case 12:
-                SpawnLRight();
-                break;
-            case 13:
-                SpawnT();
-                break;
-            case 14:
-                SpawnT();
-                break;
-            case 15:
-                SpawnX();
-                break;
-            case 16:
-                SpawnX();
-                break;
-            case 17:
-                SpawnRoom();
-                break;
-            case 18:
-                SpawnRoom();
-                break;
-            case 19:
-                SpawnRoom();
-                break;
-        }
-
-        previouslySpawned.GetComponent<Collider>().isTrigger = false;
-    }
-
-
-    IEnumerator test()
-    {
-        for (int steps = 0; steps < maxSteps; steps++)
-        {
-            SpawnRandomSegment();
-            yield return new WaitForSeconds(0.2f);
-        }
-
-        Instantiate(End, transform.position, transform.rotation);
-        Destroy(gameObject);
-    }
-
-    void Awake()
-    {
-        bs = GameObject.Find("ProceduralGenerator").GetComponent<BranchersSpawner>();
-        col = transform.GetComponent<Collider>();
-
-        SpawnTunnel();
-
-        StartCoroutine(test());
+        }     
     }
 }
