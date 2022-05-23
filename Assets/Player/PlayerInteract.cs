@@ -7,6 +7,7 @@ public class PlayerInteract : MonoBehaviour
     public string keycardTag = "Keycard";
     public string doorTag = "DoorPart";
     public string elevatorTag = "ElevatorPart";
+    public string medkitTag = "Medkit";
 
     void Interact()
     {
@@ -17,7 +18,13 @@ public class PlayerInteract : MonoBehaviour
             if (hit.collider.CompareTag(keycardTag) && !PlayerInventory.hasKeycard)
             {
                 PlayerInventory.hasKeycard = true;
-                Destroy( hit.collider.gameObject);
+                Destroy(hit.collider.gameObject);
+            }
+
+            else if (hit.collider.CompareTag(medkitTag) && !PlayerInventory.hasMedkit)
+            {
+                PlayerInventory.hasMedkit = true;
+                Destroy(hit.collider.gameObject);
             }
 
             else if (hit.collider.CompareTag(doorTag))

@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 4347688154004759943}
   - component: {fileID: 2802408337033953945}
   - component: {fileID: 1962298302658853365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -818,17 +818,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb698b0f39578cd42a3011f5e1bf36d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3
+  walkSpeed: 2.5
   crouchSpeed: 1
-  runSpeed: 6
+  runSpeed: 4
   stepSounds:
   - {fileID: 8300000, guid: b129ed45588282247a69ba106ed4d91c, type: 3}
   - {fileID: 8300000, guid: 7d6080677aeb4554486ee5b72125db70, type: 3}
   - {fileID: 8300000, guid: 7cd9ca2f52010db48b3a9f099e19943f, type: 3}
   - {fileID: 8300000, guid: 83d7bab1ddea6bf4093f4965df7de692, type: 3}
-  walkStepOffset: 0.5
-  crouchStepOffset: 1
-  runStepOffset: 0.25
+  walkStepOffset: 0.55
+  crouchStepOffset: 0.7
+  runStepOffset: 0.4
   crouchHeightOffset: 0.6
 --- !u!114 &1417080997626903325
 MonoBehaviour:
@@ -866,6 +866,7 @@ MonoBehaviour:
   keycardTag: Keycard
   doorTag: DoorPart
   elevatorTag: ElevatorPart
+  medkitTag: Medkit
 --- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0

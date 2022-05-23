@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 public class AI : MonoBehaviour
 {
@@ -11,7 +10,6 @@ public class AI : MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
-    public float health;
     public float timeBetweenAtacks;
     bool alreadyAtacked;
 
@@ -73,27 +71,14 @@ public class AI : MonoBehaviour
         {
             alreadyAtacked = true;
             Invoke("ResetAttack", timeBetweenAtacks);
-            health -= 25;
-            
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-                SceneManager.LoadScene("GameOver");
-            }
+            Health.health -= 25;
+            Debug.Log("Player atacked");
         }
     }
 
     private void ResetAttack()
     {
         alreadyAtacked = false;
-    }
-
-    public void TakeDamage()
-    {
-        health -= 25;
-        if (health <= 0)
-            SceneManager.LoadScene("Menu");
-        
     }
 
     private void OnDrawGizmosSelected()

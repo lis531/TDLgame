@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Menu/Menu.unity
     guid: acd94383a3522584fb6e14c8cf71008b
   - enabled: 1
-    path: Assets/Podziemie/Podziemie.unity
-    guid: 062f075f160df404ab3a6ef0d74863e2
+    path: Assets/ScenaPodziemie/Podziemie.unity
+    guid: a13002848037fe841a161c00246fe79a
   - enabled: 1
     path: Assets/Other/GameOver.unity
     guid: d5dabd8367b945b468235c1f875a510a
