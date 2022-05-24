@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class AI : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class AI : MonoBehaviour
     public AudioClip aClip;
     private AudioSource aSource;
 
+    public LayerMask walkingLayer;
+
     public Vector3 walkPoint;
-    bool walkPointSet;
     public float walkPointRange;
 
     public float health;
@@ -21,6 +23,10 @@ public class AI : MonoBehaviour
     public float sightRange, attackRange;
     bool playerInSightRange, playerInAttackRange;
 
+    public float updateTime = 8.0f;
+
+    bool isWalking = false;
+
     private void Start()
     {
         player = GameObject.Find("Player").transform;
@@ -28,37 +34,56 @@ public class AI : MonoBehaviour
         aSource = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    void Update()
     {
         playerInSightRange  = (Vector3.Distance(transform.position, player.position) < sightRange);
         playerInAttackRange = (Vector3.Distance(transform.position, player.position) < attackRange);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange  && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange &&  playerInSightRange ) AttackPlayer();
+        if(playerInAttackRange)
+            AttackPlayer();
+
+        else if(playerInSightRange)
+            ChasePlayer();
         
-    }
-
-    private void Patroling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
+        else if(Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(walkPoint.x, walkPoint.z)) < 1.0f && isWalking)
+        {
+            isWalking = false;
+            Debug.Log("Looking for new walk point");
+            SearchWalkPoint();
+        }
+        else if(!isWalking)
+            SearchWalkPoint();
     }
 
     private void SearchWalkPoint()
     {
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
+        bool hitValidPoint = false;
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        uint steps = 0;
 
-        walkPointSet = true;
+        while(!hitValidPoint && steps < 1000)
+        {
+            Vector2 randDir = new Vector2(Random.Range(-walkPointRange, walkPointRange), Random.Range(-walkPointRange, walkPointRange)).normalized;
+            float randDist = Random.Range(1.0f, walkPointRange);
+
+            int randomNode = Random.Range(0, Nodes.nodes.Length);
+            Vector3 nodePos = Nodes.nodes[randomNode].position;
+
+            walkPoint = new Vector3(nodePos.x + (randDir.x * randDist), transform.position.y, nodePos.z + (randDir.y * randDist));
+
+            RaycastHit hit;
+            if (Physics.Raycast(walkPoint+Vector3.up, -Vector3.up, out hit, 10.0f, walkingLayer))
+                hitValidPoint = true;
+
+            steps++;
+        }
+
+        if(steps > 999)
+            Debug.LogWarning("Failed to find a position for the AI to walk to");
+
+        isWalking = true;
+
+        agent.SetDestination(walkPoint);
     }
 
     private void ChasePlayer()
@@ -73,19 +98,13 @@ public class AI : MonoBehaviour
     {
         agent.SetDestination(transform.position);
 
-        transform.LookAt(new Vector3(transform.position.x, player.position.y, transform.position.z));
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
 
         if (playerInAttackRange && !alreadyAtacked)
         {
             alreadyAtacked = true;
             Invoke("ResetAttack", timeBetweenAtacks);
-            health -= 25;
-            
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-                SceneManager.LoadScene("GameOver");
-            }
+            Health.health -= 25;
         }
     }
 
@@ -106,7 +125,15 @@ public class AI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(walkPoint, 0.3f);
+        Gizmos.DrawLine(walkPoint+Vector3.up, walkPoint+Vector3.down);
+        Gizmos.DrawLine(transform.position, walkPoint);
+
+        Gizmos.DrawWireSphere(transform.position, walkPointRange);
     }
 }

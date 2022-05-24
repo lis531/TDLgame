@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8473717406964835900}
   - component: {fileID: 5943702986004763382}
   - component: {fileID: 5130580496570255501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TunnelShortMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

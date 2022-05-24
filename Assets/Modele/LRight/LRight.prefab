@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1495413957128468219}
   - component: {fileID: 3685123565731791409}
   - component: {fileID: 5860942592257257352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LRight
   m_TagString: TunnelPart
   m_Icon: {fileID: 0}

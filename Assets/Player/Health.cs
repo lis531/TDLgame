@@ -14,11 +14,10 @@ public class Health : MonoBehaviour
     void Update()
     {
         healthBar.value = health;
-        Debug.Log(health);
+
         if (health <= 0)
-        {
             SceneManager.LoadScene("GameOver");
-        }
+        
     }
 
 
