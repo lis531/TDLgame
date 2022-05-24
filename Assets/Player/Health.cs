@@ -9,12 +9,11 @@ public class Health : MonoBehaviour
     void Start()
     {   
         health = 100;
-        healthBar = GetComponent<Slider>();
-        healthBar.value = health;
-        
+        healthBar = gameObject.GetComponent<Slider>();
     }
     void Update()
     {
+        healthBar.value = health;
         Debug.Log(health);
         if (health <= 0)
         {

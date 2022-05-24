@@ -71,7 +71,7 @@ public class AI : MonoBehaviour
         {
             alreadyAtacked = true;
             Invoke("ResetAttack", timeBetweenAtacks);
-            Health.health -= 25;
+            Health.health -= 10;
             Debug.Log("Player atacked");
         }
     }
