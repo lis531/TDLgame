@@ -1,30 +1,35 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class AI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
 
+    public AudioClip aClip;
+    private AudioSource aSource;
+
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
 
+    public float health;
     public float timeBetweenAtacks;
     bool alreadyAtacked;
 
     public float sightRange, attackRange;
     bool playerInSightRange, playerInAttackRange;
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        aSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        
         playerInSightRange  = (Vector3.Distance(transform.position, player.position) < sightRange);
         playerInAttackRange = (Vector3.Distance(transform.position, player.position) < attackRange);
 
@@ -59,6 +64,9 @@ public class AI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        
+        if(!aSource.isPlaying)
+            aSource.PlayOneShot(aClip);
     }
 
     private void AttackPlayer()
@@ -71,14 +79,27 @@ public class AI : MonoBehaviour
         {
             alreadyAtacked = true;
             Invoke("ResetAttack", timeBetweenAtacks);
-            Health.health -= 10;
-            Debug.Log("Player atacked");
+            health -= 25;
+            
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
     private void ResetAttack()
     {
         alreadyAtacked = false;
+    }
+
+    public void TakeDamage()
+    {
+        health -= 25;
+        if (health <= 0)
+            SceneManager.LoadScene("Menu");
+        
     }
 
     private void OnDrawGizmosSelected()
