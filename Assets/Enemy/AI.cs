@@ -5,6 +5,7 @@ public class AI : MonoBehaviour
 {
     private NavMeshAgent m_NavMeshAgent;
     private Transform    m_PlayerTransform;
+    private DetectDoor   m_DoorDetector;
     
     [Header("Pan Bialy Navigation")]
 
@@ -19,6 +20,8 @@ public class AI : MonoBehaviour
     public float m_SightRange, m_AttackRange;
     private bool m_AlreadyAtacked;
 
+    public float m_DoorOpenTime;
+
     [Header("FOV of Pan Bialy")]
 
     [Range(0.0f,180.0f)]
@@ -26,6 +29,10 @@ public class AI : MonoBehaviour
     public uint  m_DebugFovRays = 16;
 
     private bool m_IsWalking = false;
+
+    private bool m_WalkingEnabled = true;
+
+    private DoorController m_DoorInFront;
 
     Vector3 AtEnemyY(Vector3 vec)
     {
@@ -77,13 +84,37 @@ public class AI : MonoBehaviour
     {
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_NavMeshAgent    = GetComponent<NavMeshAgent>();
+        m_DoorDetector    = GetComponent<DetectDoor>();
     }
     void Update()
     {
+        if(!m_WalkingEnabled) 
+        {
+            m_NavMeshAgent.Warp(transform.position);
+            return;
+        }
+
         float distanceToPlayer = DistanceToPlayer();
 
         bool playerInSightRange  = (distanceToPlayer < m_SightRange);
         bool playerInAttackRange = (distanceToPlayer < m_AttackRange);
+
+        GameObject door = m_DoorDetector.CollidedWithDoor();
+
+        if(door != null)
+        {
+            m_DoorInFront = door.GetComponent<DoorController>();
+
+            if(!m_DoorInFront.IsOpen())
+            {
+                DisableWalking();
+
+                Invoke("EnableWalking", m_DoorOpenTime + 0.5f);
+                Invoke("OpenDoor", m_DoorOpenTime);
+
+                return;
+            }
+        }
 
         if(PlayerIsVisible() && playerInSightRange)
         {
@@ -138,15 +169,11 @@ public class AI : MonoBehaviour
     private void ChasePlayer()
     {
         SetWalkPoint(m_PlayerTransform.position);
-
-        transform.LookAt(AtEnemyY(m_PlayerTransform.position));
     }
 
     private void AttackPlayer()
     {
         SetWalkPoint(m_PlayerTransform.position);
-
-        transform.LookAt(new Vector3(m_PlayerTransform.position.x, transform.position.y, m_PlayerTransform.position.z));
 
         if (!m_AlreadyAtacked)
         {
@@ -157,10 +184,38 @@ public class AI : MonoBehaviour
             Health.health -= 25;
         }
     }
+
     private void ResetAttack()
     {   
         m_AlreadyAtacked = false;
     }
+
+    private void OpenDoor()
+    {
+        Transform door = m_DoorInFront.transform;
+
+        if(Vector3.Dot(transform.forward, door.right) < 0.0f)
+            transform.position = door.position + (door.right*m_DoorDetector.m_DetectRange);
+        else
+            transform.position = door.position - (door.right*m_DoorDetector.m_DetectRange);
+
+        transform.LookAt(AtEnemyY(door.position));
+
+
+        m_DoorInFront.ForceOpen();
+        m_DoorInFront = null;
+    }
+    
+    public void EnableWalking()
+    {
+        m_WalkingEnabled = true;
+        SetWalkPoint(m_WalkPoint);
+    }
+    public void DisableWalking()
+    {
+        m_WalkingEnabled = false;
+    }
+
     #endregion
 
     #region Debug Methods

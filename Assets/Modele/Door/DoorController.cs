@@ -56,6 +56,11 @@ public class DoorController : MonoBehaviour
         isOpen = false;
     }
 
+    public bool IsOpen()
+    {
+        return isOpen;
+    }
+
     IEnumerator PlayErrorSound()
     {
         aSource.clip = doorErrorSound;
@@ -68,6 +73,12 @@ public class DoorController : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         playingErrorSound = false;
+    }
+
+public void ForceOpen()
+    {
+        if(!isOpen)
+            StartCoroutine(OpenCoroutine());  
     }
 
     public void Open()
