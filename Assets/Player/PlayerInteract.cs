@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
     public string doorTag = "DoorPart";
     public string elevatorTag = "ElevatorPart";
     public string medkitTag = "Medkit";
+    public string gogglesTag = "Goggles";
 
     void Interact()
     {
@@ -20,24 +21,32 @@ public class PlayerInteract : MonoBehaviour
                 PlayerInventory.hasKeycard = true;
                 Destroy(hit.collider.gameObject);
             }
-
             else if (hit.collider.CompareTag(medkitTag) && !PlayerInventory.hasMedkit)
             {
                 PlayerInventory.hasMedkit = true;
                 Destroy(hit.collider.gameObject);
             }
-
+            else if (hit.collider.CompareTag(gogglesTag))
+            {
+                PlayerInventory.hasGoggles = true;
+                Destroy(hit.collider.gameObject);
+            }
             else if (hit.collider.CompareTag(doorTag))
+            {
                 hit.collider.transform.parent.gameObject.GetComponent<DoorController>().Open();
-
+            }
             else if (hit.collider.CompareTag(elevatorTag))
+            {
                 hit.collider.transform.GetComponent<ButtonPanelController>().PressButton();
+            }
         }
     }
 
     void Update()
     {
         if(Input.GetKeyDown("e"))
+        {
             Interact();
+        }
     }
 }

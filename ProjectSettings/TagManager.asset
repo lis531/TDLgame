@@ -9,11 +9,11 @@ TagManager:
   - DoorPart
   - ElevatorPart
   - Medkit
+  - Goggles
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
   - Water
   - UI
   - whatIsGround
