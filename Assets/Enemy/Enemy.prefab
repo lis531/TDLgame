@@ -161,7 +161,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6069962393280702354}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.52
+  m_Radius: 0.5
   m_Speed: 3
   m_Acceleration: 12
   avoidancePriority: 50
@@ -195,7 +195,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 18
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsGlobal: 0
   priority: 50
-  blendDistance: 5
+  blendDistance: 7
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 0c21590e3679d3b49b330ff8262f9a1c, type: 2}
 --- !u!65 &7972310764075628860
@@ -347,5 +347,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 3, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 3, z: 5}
+  m_Center: {x: -0.840539, y: 0, z: 0}

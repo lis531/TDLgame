@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.HighDefinition;
 
 public class NightVisionGoggles : MonoBehaviour
 {
@@ -13,21 +12,12 @@ public class NightVisionGoggles : MonoBehaviour
         if (Input.GetKeyDown("n") && PlayerInventory.hasGoggles && !TurnedOn)
         {
             TurnedOn = true;
-        }
-        else if (Input.GetKeyDown("n") && TurnedOn)
-        {
-            TurnedOn = false;
-        }
-        //if (TurnedOn) load profile NightVision
-        //else load profile GlobalVolume
-        if (TurnedOn)
-        {
             volume.profile = NightVisonProfile;
         }
-        else
+        else if (Input.GetKeyDown("n") && TurnedOn && PlayerInventory.hasGoggles)
         {
+            TurnedOn = false;
             volume.profile = GlobalVolumeProfile;
         }
-
     }
 }

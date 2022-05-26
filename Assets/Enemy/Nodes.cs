@@ -22,7 +22,6 @@ public class Nodes : MonoBehaviour
                     Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(j).position);
             }
         }
-
     }
  
     void Start()

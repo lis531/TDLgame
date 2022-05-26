@@ -5,26 +5,23 @@ public class TunnelMoving : MonoBehaviour
 {
     // MEMBERZY TunnelMoving.cs //
     const float sensitivity = 200.0f;
-
     public float walkSpeed = 4.0f;
     public float crouchSpeed = 1.2f;
     public float runSpeed  = 6.0f;
     float currentSpeed = 3.5f;
 
-    private Animation anim;
-    private AudioSource aSource;
-    private CharacterController character;
-    private GameObject cam;
-
-    float targetCamRot = 0;
-
-    public AudioClip[] stepSounds;
     public float walkStepOffset;
     public float crouchStepOffset;
     public float runStepOffset;
     float currentStepOffset;
-
     public float crouchHeightOffset;
+
+    private Animation anim;
+    private AudioSource aSource;
+    private CharacterController character;
+    private GameObject cam;
+    float targetCamRot = 0;
+    public AudioClip[] stepSounds;
 
     bool isStepping = false;
     bool isRunning = false;
