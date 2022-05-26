@@ -5018,7 +5018,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 87433b1d7769ece47a148a3a6a972826, type: 2}
 --- !u!4 &1502748458
 Transform:
   m_ObjectHideFlags: 0
@@ -5046,8 +5046,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821d683e289459f47a36d25e5904730d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NightVision: {fileID: 0}
-  GlobalVolume: {fileID: 0}
+  volume: {fileID: 1502748457}
+  NightVisonProfile: {fileID: 11400000, guid: 87433b1d7769ece47a148a3a6a972826, type: 2}
+  GlobalVolumeProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466,
+    type: 2}
 --- !u!1001 &1521935086
 PrefabInstance:
   m_ObjectHideFlags: 0
