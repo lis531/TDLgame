@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa862c7ed629e34f8251729b4e1ee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 4680039948621580629}
+  enemycialo: {fileID: 4680039948621580629}
+  enemy: {fileID: 6069962393280702354}
   volume: {fileID: 9181014725490550505}
 --- !u!82 &593930504266748981
 AudioSource:
