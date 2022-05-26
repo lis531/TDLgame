@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class NightVisionGoggles : MonoBehaviour
 {
-    bool TurnedOn;
+    public static bool TurnedOn;
     public Volume volume;
     public VolumeProfile NightVisonProfile;
     public VolumeProfile GlobalVolumeProfile;

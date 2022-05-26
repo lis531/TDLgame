@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6069962393280702447}
   - component: {fileID: 6069962393280702441}
   - component: {fileID: 2711586236870063451}
+  - component: {fileID: 1348020671536411927}
   - component: {fileID: 593930504266748981}
   - component: {fileID: 3383168391677737244}
   m_Layer: 0
@@ -174,6 +175,20 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 3
+--- !u!114 &1348020671536411927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069962393280702354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa862c7ed629e34f8251729b4e1ee40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4680039948621580629}
+  volume: {fileID: 9181014725490550505}
 --- !u!82 &593930504266748981
 AudioSource:
   m_ObjectHideFlags: 0
@@ -347,5 +362,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 3, z: 5}
-  m_Center: {x: -0.840539, y: 0, z: 0}
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
