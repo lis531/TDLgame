@@ -105,14 +105,17 @@ public class AI : MonoBehaviour
         {
             m_DoorInFront = door.GetComponent<DoorController>();
 
-            if(!m_DoorInFront.IsOpen())
+            if(m_DoorInFront != null)
             {
-                DisableWalking();
+                if(!m_DoorInFront.IsOpen())
+                {
+                    DisableWalking();
 
-                Invoke("EnableWalking", m_DoorOpenTime + 0.5f);
-                Invoke("OpenDoor", m_DoorOpenTime);
+                    Invoke("EnableWalking", m_DoorOpenTime + 0.5f);
+                    Invoke("OpenDoor", m_DoorOpenTime);
 
-                return;
+                    return;
+                }
             }
         }
 
