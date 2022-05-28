@@ -116,11 +116,11 @@ public class TunnelMoving : MonoBehaviour
     {
         // Bieganie
             // Rozpoczynanie biegania
-            if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted)
+            if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted && Input.GetKey(KeyCode.W))
                 BeginRun();
 
             // Konczenie biegania
-            else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerStamina.instance.exhausted)
+            else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerStamina.instance.exhausted || !Input.GetKey(KeyCode.W))
                 EndRun();
 
         // Stamina
