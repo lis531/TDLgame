@@ -21,7 +21,7 @@ public class AI : MonoBehaviour
     private bool m_AlreadyAtacked;
 
     public float m_DoorOpenTime;
-
+    private CapsuleCollider m_capsule;
     [Header("FOV of Pan Bialy")]
 
     [Range(0.0f,180.0f)]
@@ -82,12 +82,20 @@ public class AI : MonoBehaviour
     #region AI Core
     private void Start()
     {
+        m_capsule = GetComponent<CapsuleCollider>();
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_NavMeshAgent    = GetComponent<NavMeshAgent>();
         m_DoorDetector    = GetComponent<DetectDoor>();
     }
     void Update()
     {
+        //if player enter capsule ChasePlayer
+        if(m_capsule.bounds.Contains(m_PlayerTransform.position))
+        {
+            ChasePlayer();
+            return;
+        }
+
         if(!m_WalkingEnabled) 
         {
             m_NavMeshAgent.Warp(transform.position);

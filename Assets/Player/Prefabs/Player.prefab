@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688153259844947}
-  m_LocalRotation: {x: -0.03917572, y: -0.06535263, z: -0.0025677094, w: 0.9970896}
-  m_LocalPosition: {x: 0.3, y: -0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4347688153376071521}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -4.67, y: -7.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4347688153259844942
 Light:
   m_ObjectHideFlags: 0
@@ -46,12 +46,12 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 32768
-  m_Range: 25
+  m_Range: 12.582872
   m_SpotAngle: 50
-  m_InnerSpotAngle: 21.80208
+  m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_ShapeRadius: 0.025
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 1
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_ShadowVariant: 0
   m_ShadowPrecision: 0
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
@@ -246,7 +246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688153376071526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.553, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -271,7 +271,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 16.21707
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -280,7 +280,7 @@ Camera:
     height: 1
   near clip plane: 0.03
   far clip plane: 1000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -293,7 +293,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
-  m_AllowDynamicResolution: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -574,14 +574,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688153388525663}
-  m_LocalRotation: {x: -0.03917572, y: -0.06535263, z: -0.0025677094, w: 0.9970896}
-  m_LocalPosition: {x: 0.3, y: -0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4347688153376071521}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -4.67, y: -7.47, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &4347688153388525658
 Light:
   m_ObjectHideFlags: 0
@@ -594,13 +594,13 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2048
+  m_Intensity: 4096
   m_Range: 10
-  m_SpotAngle: 100
+  m_SpotAngle: 80
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 14
+  m_Intensity: 15
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 60
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_ShadowVariant: 0
   m_ShadowPrecision: 0
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
@@ -799,13 +799,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347688154004759946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.627, z: 1.715}
+  m_LocalPosition: {x: 0, y: -0.627, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4347688153376071521}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4347688154004759942
 MonoBehaviour:
@@ -822,15 +822,15 @@ MonoBehaviour:
   walkSpeed: 3
   crouchSpeed: 1
   runSpeed: 5
+  walkStepOffset: 0.55
+  crouchStepOffset: 0.7
+  runStepOffset: 0.4
+  crouchHeightOffset: 0.6
   stepSounds:
   - {fileID: 8300000, guid: b129ed45588282247a69ba106ed4d91c, type: 3}
   - {fileID: 8300000, guid: 7d6080677aeb4554486ee5b72125db70, type: 3}
   - {fileID: 8300000, guid: 7cd9ca2f52010db48b3a9f099e19943f, type: 3}
   - {fileID: 8300000, guid: 83d7bab1ddea6bf4093f4965df7de692, type: 3}
-  walkStepOffset: 0.55
-  crouchStepOffset: 0.7
-  runStepOffset: 0.4
-  crouchHeightOffset: 0.6
 --- !u!114 &1417080997626903325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,6 +868,7 @@ MonoBehaviour:
   doorTag: DoorPart
   elevatorTag: ElevatorPart
   medkitTag: Medkit
+  gogglesTag: Goggles
 --- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +932,7 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.5
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0

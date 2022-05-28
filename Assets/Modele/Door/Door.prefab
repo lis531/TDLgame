@@ -17,7 +17,7 @@ GameObject:
   m_TagString: DoorPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3897641243908934605
 Transform:
@@ -115,7 +115,7 @@ GameObject:
   m_TagString: DoorPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7333198343657955635
 Transform:
@@ -234,7 +234,7 @@ Transform:
   - {fileID: 3897641243908934605}
   - {fileID: 7333198343657955635}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7204335841001726949
 MeshFilter:

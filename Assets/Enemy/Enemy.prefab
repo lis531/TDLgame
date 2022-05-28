@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1348020671536411927}
   - component: {fileID: 593930504266748981}
   - component: {fileID: 3383168391677737244}
+  - component: {fileID: 7194219051192526542}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -113,14 +114,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6069962393280702354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.62, z: 18.78}
+  m_LocalPosition: {x: 24, y: 0.6, z: -21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5456400279208088559}
   - {fileID: 3334506953974293626}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6069962393280702447
 MeshFilter:
@@ -221,23 +222,41 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.10298661
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: -9.713897
+      outSlope: -9.713897
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.20597322
+      value: 0.5
+      inSlope: -2.4284742
+      outSlope: -2.4284742
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.41194645
+      value: 0.2354126
+      inSlope: -0.843582
+      outSlope: -0.843582
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4587301
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.103027746
+      outSlope: -0.103027746
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -302,6 +321,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   m_DetectRange: 3
+--- !u!136 &7194219051192526542
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069962393280702354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9181014725490550505
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3334506953974293626}
   - component: {fileID: 8020378428922175809}
-  - component: {fileID: 7972310764075628860}
+  - component: {fileID: 3362582675288339422}
   m_Layer: 0
   m_Name: EnemyVolume
   m_TagString: Untagged
@@ -352,8 +385,8 @@ MonoBehaviour:
   blendDistance: 7
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 0c21590e3679d3b49b330ff8262f9a1c, type: 2}
---- !u!65 &7972310764075628860
-BoxCollider:
+--- !u!136 &3362582675288339422
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -362,6 +395,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 3, z: 4}
+  m_Radius: 2
+  m_Height: 0
+  m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
