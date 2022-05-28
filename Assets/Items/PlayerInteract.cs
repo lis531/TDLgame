@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour
             }
             else if (hit.collider.CompareTag(doorTag))
             {
-                hit.collider.transform.parent.gameObject.GetComponent<DoorController>().Open();
+                hit.collider.transform.parent.gameObject.GetComponent<DoorController>().Door();
             }
             else if (hit.collider.CompareTag(elevatorTag))
             {

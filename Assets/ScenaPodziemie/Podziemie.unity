@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: a13002848037fe841a161c00246fe79a
+  m_OcclusionCullingData: {fileID: 36300000, guid: fe0e05d787316ed4d805161b430be368,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -2430,6 +2431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735630515}
+  - component: {fileID: 735630516}
   m_Layer: 0
   m_Name: Level0
   m_TagString: Untagged
@@ -2461,6 +2463,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!192 &735630516
+OcclusionArea:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735630514}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+  m_IsViewVolume: 1
 --- !u!1001 &767272343
 PrefabInstance:
   m_ObjectHideFlags: 0

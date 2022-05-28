@@ -6,10 +6,11 @@ public class DoorController : MonoBehaviour
     Animation anim;
     AudioSource aSource;
 
-    bool isOpen = false;
+    public static bool isOpen = false;
     bool playingErrorSound = false;
+    public bool canOpen = true;
 
-    public float doorOpenTime = 3.0f;
+    public float time;
 
     public AudioClip doorOpenSound;
     public AudioClip doorErrorSound;
@@ -28,39 +29,36 @@ public class DoorController : MonoBehaviour
         aSource = transform.GetComponent<AudioSource>();
     }
 
-    IEnumerator OpenCoroutine()
+    public void Door()
     {
-        anim.Stop();
-        anim.clip = anim.GetClip("Open");
-        anim.Play();
-
-        aSource.clip = doorOpenSound;
-        aSource.Stop();
-        aSource.Play();
-
-        isOpen = true;
-
-        yield return new WaitForSeconds(doorOpenTime);
-
-        Close();
+        if (PlayerInventory.hasKeycard)
+        {
+            if(!isOpen && !anim.isPlaying && canOpen)
+            {
+                StartCoroutine(OpenCoroutine());
+            }
+            else if(isOpen && !anim.isPlaying && canOpen)
+            {
+                StartCoroutine(CloseCoroutine());
+            }
+        }
+        else if (!playingErrorSound)
+        {
+            StartCoroutine(PlayErrorSound());
+        }
     }
-    void Close()
-    {
-        anim.Stop();
-        anim.clip = anim.GetClip("Close");
-        anim.Play();
-
-        aSource.Stop();
-        aSource.Play();
-
-        isOpen = false;
-    }
-
+    
+    #region AI
     public bool IsOpen()
     {
         return isOpen;
     }
-
+    public void ForceOpen()
+    {
+        if(!isOpen)
+            StartCoroutine(OpenCoroutine()); 
+    }
+    #endregion
     IEnumerator PlayErrorSound()
     {
         aSource.clip = doorErrorSound;
@@ -74,23 +72,33 @@ public class DoorController : MonoBehaviour
 
         playingErrorSound = false;
     }
-
-public void ForceOpen()
+    IEnumerator OpenCoroutine()
     {
-        if(!isOpen)
-            StartCoroutine(OpenCoroutine());  
+        canOpen = false;
+        anim.Stop();
+        anim.clip = anim.GetClip("Open");
+        anim.Play();
+
+        aSource.clip = doorOpenSound;
+        aSource.Stop();
+        aSource.Play();
+
+        isOpen = true;
+        yield return new WaitForSeconds(time);
+        canOpen = true;
     }
-
-    public void Open()
+    IEnumerator CloseCoroutine()
     {
-        if(!isOpen && !playingErrorSound)
-        {
-            if(PlayerInventory.hasKeycard)
-                StartCoroutine(OpenCoroutine());
-            else
-                StartCoroutine(PlayErrorSound());
-            
-        }
+        canOpen = false;
+        anim.Stop();
+        anim.clip = anim.GetClip("Close");
+        anim.Play();
 
+        aSource.Stop();
+        aSource.Play();
+
+        isOpen = false;
+        yield return new WaitForSeconds(time);
+        canOpen = true;
     }
 }
