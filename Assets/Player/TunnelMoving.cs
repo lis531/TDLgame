@@ -37,7 +37,7 @@ public class TunnelMoving : MonoBehaviour
 
     void BeginRun()
     {
-        if (!isCrouching && PlayerMoves())
+        if (!isCrouching)
         {
             currentSpeed = runSpeed;
             currentStepOffset = runStepOffset;
@@ -51,7 +51,6 @@ public class TunnelMoving : MonoBehaviour
             currentSpeed = walkSpeed;
             currentStepOffset = walkStepOffset;
             isRunning = false;
-
             PlayerStamina.instance.TryMakePlayerTired();
         }
     }
@@ -116,9 +115,8 @@ public class TunnelMoving : MonoBehaviour
     {
         // Bieganie
             // Rozpoczynanie biegania
-            if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted)
+            if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted && PlayerMoves())
                 BeginRun();
-
             // Konczenie biegania
             else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerStamina.instance.exhausted)
                 EndRun();

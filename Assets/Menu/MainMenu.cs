@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     public GameObject fadeOut;
     public GameObject options;
 
+    bool Animation = false;
+
     Animation elevatorAnim;
     Animation cameraAnim;
     Animation menuAnim;
@@ -29,7 +31,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator FlyAndLoad()
     {
         cameraAnim.clip = cameraAnim.GetClip("FlyToElevator");
-        menuAnim.clip = menuAnim.GetClip("DisappeaMenu");
+        menuAnim.clip = menuAnim.GetClip("DisappearMenu");
 
         cameraAnim.Play();
         elevatorAnim.Play();
@@ -39,6 +41,11 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(cameraAnim.clip.length);
         SceneManager.LoadScene("Podziemie");
     }
+    IEnumerator WaitForAnimation()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Animation = false;
+    }
 
     public void PlayGame ()
     {
@@ -47,25 +54,35 @@ public class MainMenu : MonoBehaviour
 
     public void GoToOptions()
     {
-        cameraAnim.clip = cameraAnim.GetClip("GoToOptions");
-        cameraAnim.Play();
+        if (!Animation)
+        {
+            Animation = true;
+            cameraAnim.clip = cameraAnim.GetClip("GoToOptions");
+            cameraAnim.Play();
 
-        menuAnim.clip = menuAnim.GetClip("DisappeaMenu");
-        menuAnim.Play();
+            menuAnim.clip = menuAnim.GetClip("DisappearMenu");
+            menuAnim.Play();
 
-        optionsAnim.clip = optionsAnim.GetClip("SettingsAppear");
-        optionsAnim.Play();
+            optionsAnim.clip = optionsAnim.GetClip("SettingsAppear");
+            optionsAnim.Play();
+            StartCoroutine(WaitForAnimation());
+        }
     }
     public void GoBackToMenu()
     {
-        cameraAnim.clip = cameraAnim.GetClip("GoToMenu");
-        cameraAnim.Play();
+        if (!Animation)
+        {
+            Animation = true;
+            cameraAnim.clip = cameraAnim.GetClip("GoToMenu");
+            cameraAnim.Play();
 
-        menuAnim.clip = menuAnim.GetClip("AppearMenu");
-        menuAnim.Play();
+            menuAnim.clip = menuAnim.GetClip("AppearMenu");
+            menuAnim.Play();
 
-        optionsAnim.clip = optionsAnim.GetClip("SettingsDisappear");
-        optionsAnim.Play();
+            optionsAnim.clip = optionsAnim.GetClip("SettingsDisappear");
+            optionsAnim.Play();
+            StartCoroutine(WaitForAnimation());
+        }
     }
 
     public void QuitGame()
