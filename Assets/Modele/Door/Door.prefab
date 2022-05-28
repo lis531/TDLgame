@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2141697455980158881}
   m_Layer: 6
   m_Name: DoorLeft
-  m_TagString: Untagged
+  m_TagString: DoorEnemyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 2635293429989272830}
   m_Layer: 6
   m_Name: DoorRight
-  m_TagString: Untagged
+  m_TagString: DoorEnemyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

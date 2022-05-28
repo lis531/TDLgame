@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DoorLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   m_DetectRange: 3
 --- !u!136 &7194219051192526542
 CapsuleCollider:
