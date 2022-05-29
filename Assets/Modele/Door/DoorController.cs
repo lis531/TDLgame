@@ -6,7 +6,7 @@ public class DoorController : MonoBehaviour
     Animation anim;
     AudioSource aSource;
 
-    public static bool isOpen = false;
+    private bool isOpen = false;
     bool playingErrorSound = false;
     public bool canOpen = true;
 
@@ -34,18 +34,12 @@ public class DoorController : MonoBehaviour
         if (PlayerInventory.hasKeycard)
         {
             if(!isOpen && !anim.isPlaying && canOpen)
-            {
                 StartCoroutine(OpenCoroutine());
-            }
             else if(isOpen && !anim.isPlaying && canOpen)
-            {
                 StartCoroutine(CloseCoroutine());
-            }
         }
         else if (!playingErrorSound)
-        {
             StartCoroutine(PlayErrorSound());
-        }
     }
     
     #region AI

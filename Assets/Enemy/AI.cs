@@ -13,7 +13,6 @@ public class AI : MonoBehaviour
     public LayerMask m_WalkingLayer;
 
     public Vector3 m_WalkPoint;
-    public float   m_RandomDistanceFromNode;
 
     [Header("Pan Bialy Properties")]
 
@@ -93,7 +92,7 @@ public class AI : MonoBehaviour
     #endregion
 
     #region AI Core
-    private void Start()
+    private void Awake()
     {
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_NavMeshAgent    = GetComponent<NavMeshAgent>();
@@ -162,34 +161,11 @@ public class AI : MonoBehaviour
     #region AI Actions
     private void SearchWalkPoint()
     {
-        bool pointIsOnFloor = false;
+        int randomNodeIndex = Random.Range(0, Nodes.nodes.Length);
 
-        uint steps = 0;
+        Vector3 nodePos = AtEnemyY(Nodes.nodes[randomNodeIndex].position);
 
-        Vector3 newWalkPoint = new Vector3(0.0f,0.0f,0.0f);
-
-        while(!pointIsOnFloor && steps < 1000)
-        {
-            Vector3 randDir = new Vector3(Random.Range(-10.0f, 10.0f), 0.0f, Random.Range(-10.0f, 10.0f)).normalized;
-            float   randDist = Random.Range(0.0f, m_RandomDistanceFromNode);
-
-            int randomNodeIndex = Random.Range(0, Nodes.nodes.Length);
-
-            Vector3 nodePos    = AtEnemyY(Nodes.nodes[randomNodeIndex].position);
-            Vector3 nodeOffset = randDir*randDist;
-
-            newWalkPoint = nodePos + nodeOffset;
-
-            if (Physics.Raycast(newWalkPoint+Vector3.up, -Vector3.up, 10.0f, m_WalkingLayer))
-                pointIsOnFloor = true;
-
-            steps++;
-        }
-
-        if(steps > 999)
-            Debug.LogWarning("Failed to find a valid position for the AI to walk to");
-
-        SetWalkPoint(newWalkPoint);
+        SetWalkPoint(nodePos);
     }
 
     private void ChasePlayer()
@@ -296,7 +272,6 @@ public class AI : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawSphere(m_WalkPoint, 0.3f);
         Gizmos.DrawLine(transform.position, m_WalkPoint);
-        Gizmos.DrawWireSphere(m_WalkPoint, m_RandomDistanceFromNode);
     }
     #endregion
 }
