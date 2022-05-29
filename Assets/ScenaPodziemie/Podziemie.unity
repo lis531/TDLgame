@@ -3859,6 +3859,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abb7871aa7f866b409209ab42d8ff66d, type: 2}
     - target: {fileID: 6281381671994285122, guid: 6560e7ef687bc134097de6f2de0ad06b,
         type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
@@ -6071,6 +6076,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abb7871aa7f866b409209ab42d8ff66d, type: 2}
     - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
