@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 339787961}
   - component: {fileID: 339787962}
   m_Layer: 5
-  m_Name: Highest
+  m_Name: High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 871815568}
   - component: {fileID: 871815569}
   m_Layer: 5
-  m_Name: Lowest
+  m_Name: Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
