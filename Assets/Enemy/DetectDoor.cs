@@ -14,7 +14,15 @@ public class DetectDoor : MonoBehaviour
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, m_DetectRange, m_DoorLayer))
-            return hit.collider.transform.parent.gameObject;
+        {
+            GameObject door = hit.collider.transform.parent.gameObject;
+            DoorController controller = door.GetComponent<DoorController>();
+            if(controller != null)
+            {
+                if(!controller.IsOpen())
+                    return door;
+            }
+        }
         return null;
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6434272732715143924}
   - component: {fileID: 9128752172818179646}
   - component: {fileID: -418687065169109811}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: LLeft
   m_TagString: TunnelPart
   m_Icon: {fileID: 0}

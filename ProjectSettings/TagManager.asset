@@ -10,14 +10,16 @@ TagManager:
   - ElevatorPart
   - Medkit
   - Goggles
+  - DoorEnemyPart
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Water
+  - Water
   - UI
-  - whatIsGround
   - DoorLayerMask
+  - WalkableForAI
   - 
   - 
   - 

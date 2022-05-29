@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1709852899096065394}
   - component: {fileID: 3485339086671708600}
   - component: {fileID: -7134595675089673686}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: MediumRoomTunnel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

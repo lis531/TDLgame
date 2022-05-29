@@ -5,6 +5,7 @@ public class AI : MonoBehaviour
 {
     private NavMeshAgent m_NavMeshAgent;
     private Transform    m_PlayerTransform;
+    private Latarka      m_Latarka;
     private DetectDoor   m_DoorDetector;
     
     [Header("Pan Bialy Navigation")]
@@ -20,8 +21,9 @@ public class AI : MonoBehaviour
     public float m_SightRange, m_AttackRange;
     private bool m_AlreadyAtacked;
 
+    public int m_BehaviourUpdateTickRate = 40;
+
     public float m_DoorOpenTime;
-    private CapsuleCollider m_capsule;
     [Header("FOV of Pan Bialy")]
 
     [Range(0.0f,180.0f)]
@@ -38,6 +40,29 @@ public class AI : MonoBehaviour
     {
         return new Vector3(vec.x, transform.position.y, vec.z);
     }
+    bool IsPointInFOV(Vector3 point)
+    {
+        return (Vector3.Angle(transform.forward, (AtEnemyY(point) - transform.position).normalized) < m_FOVEulers/2.0f);
+    }
+    bool IsDirInFOV(Vector3 dir)
+    {
+        return (Vector3.Angle(transform.forward, dir) < m_FOVEulers/2.0f);
+    }
+    bool IsPointVisible(Vector3 point)
+    {
+        if(!IsPointInFOV(point))
+            return false;
+
+        if(Vector3.Distance(transform.position, AtEnemyY(point)) > m_SightRange)
+            return false;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, (AtEnemyY(point) - transform.position).normalized, out hit, m_SightRange))
+            if(!hit.collider.CompareTag("Player"))
+                return false;
+
+        return true;
+    }
 
     #region Player Related Methods
     Vector3 DirectionToPlayer()
@@ -47,18 +72,6 @@ public class AI : MonoBehaviour
     float DistanceToPlayer()
     {
         return Vector3.Distance(AtEnemyY(m_PlayerTransform.position), transform.position);
-    }
-    bool PlayerIsVisible()
-    {
-        if(Vector3.Angle(transform.forward, DirectionToPlayer()) > m_FOVEulers/2.0f)
-            return false;
-
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, DirectionToPlayer(), out hit, m_SightRange))
-            if(!hit.collider.CompareTag("Player"))
-                return false;
-
-        return true;
     }
     #endregion
 
@@ -82,15 +95,17 @@ public class AI : MonoBehaviour
     #region AI Core
     private void Start()
     {
-        m_capsule = GetComponent<CapsuleCollider>();
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         m_NavMeshAgent    = GetComponent<NavMeshAgent>();
         m_DoorDetector    = GetComponent<DetectDoor>();
+        m_Latarka         = m_PlayerTransform.GetComponent<Latarka>();
+
+        InvokeRepeating("UpdateBehaviour", 0.0f, 1.0f / (float)m_BehaviourUpdateTickRate);
     }
-    void Update()
+    void UpdateBehaviour()
     {
         //if player enter capsule ChasePlayer
-        if(m_capsule.bounds.Contains(m_PlayerTransform.position))
+        if(Vector3.Distance(transform.position, m_PlayerTransform.position) < 1.2f || IsFlashlightVisible())
         {
             ChasePlayer();
             return;
@@ -127,7 +142,7 @@ public class AI : MonoBehaviour
             }
         }
 
-        if(PlayerIsVisible() && playerInSightRange)
+        if(IsPointVisible(m_PlayerTransform.position) && playerInSightRange)
         {
             if(playerInAttackRange)
                 AttackPlayer();
@@ -136,7 +151,7 @@ public class AI : MonoBehaviour
                 ChasePlayer();
         }
         
-        else if(DistanceToWalkPoint() < 0.5f && m_IsWalking)
+        else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
             SearchWalkPoint();
 
         else if(!m_IsWalking)
@@ -212,11 +227,21 @@ public class AI : MonoBehaviour
 
         transform.LookAt(AtEnemyY(door.position));
 
-
         m_DoorInFront.ForceOpen();
         m_DoorInFront = null;
     }
     
+    private bool IsFlashlightVisible()
+    {
+        foreach(Vector3 point in Latarka.m_LatarkaPoints)
+        {
+            if(IsPointVisible(point))
+                return true;
+        }
+
+        return false;
+    }
+
     public void EnableWalking()
     {
         m_WalkingEnabled = true;

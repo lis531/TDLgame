@@ -893,8 +893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a7c06a23f21c941879b1ea0b4eb1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  latarka: {fileID: 4347688153259844947}
-  latarka1: {fileID: 4347688153388525663}
+  m_Latarka0: {fileID: 4347688153259844947}
+  m_Latarka1: {fileID: 4347688153388525663}
+  m_LatarkaRange: 10
+  m_LatarkaAngles: 45
+  latarkaUpdateTickRate: 10
+  latarkaSubSteps: 2
 --- !u!143 &4347688154004759943
 CharacterController:
   m_ObjectHideFlags: 0

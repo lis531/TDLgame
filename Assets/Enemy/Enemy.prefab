@@ -98,7 +98,6 @@ GameObject:
   - component: {fileID: 1348020671536411927}
   - component: {fileID: 593930504266748981}
   - component: {fileID: 3383168391677737244}
-  - component: {fileID: 7194219051192526542}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -147,10 +146,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_WalkPoint: {x: 0, y: 0, z: 0}
-  m_RandomDistanceFromNode: 2
+  m_RandomDistanceFromNode: 1
   m_TimeBetweenAtacks: 2
   m_SightRange: 7
   m_AttackRange: 2
+  m_BehaviourUpdateTickRate: 20
   m_DoorOpenTime: 5
   m_FOVEulers: 130
   m_DebugFovRays: 32
@@ -163,12 +163,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 6069962393280702354}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.55
+  m_Radius: 0.5
   m_Speed: 3
   m_Acceleration: 12
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -321,20 +321,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   m_DetectRange: 3
---- !u!136 &7194219051192526542
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069962393280702354}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9181014725490550505
 GameObject:
   m_ObjectHideFlags: 0
