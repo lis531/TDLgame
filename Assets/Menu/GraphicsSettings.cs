@@ -9,6 +9,7 @@ public class GraphicsSettings : MonoBehaviour
     private Toggle lowToggle;
     private GameObject blocker;
     public GameObject graphicalSettings;
+    public bool isFullScreen;
 
     public void CheckSetting(Toggle toggle)
     {
@@ -56,13 +57,17 @@ public class GraphicsSettings : MonoBehaviour
             QualitySettings.vSyncCount = 0;
     }
     #endregion
+    public void SetFullScreen()
+    {
+        Screen.fullScreen = isFullScreen;
+    }
 
     void Start()
     {
         highToggle = graphicalSettings.transform.GetChild(0).GetComponent<Toggle>();
-        mediumToggle  = graphicalSettings.transform.GetChild(1).GetComponent<Toggle>();
-        lowToggle  = graphicalSettings.transform.GetChild(2).GetComponent<Toggle>();
-        blocker       = graphicalSettings.transform.GetChild(3).gameObject;
-        vSyncToggle   = transform.GetChild(1).GetComponent<Toggle>();
+        mediumToggle = graphicalSettings.transform.GetChild(1).GetComponent<Toggle>();
+        lowToggle = graphicalSettings.transform.GetChild(2).GetComponent<Toggle>();
+        blocker = graphicalSettings.transform.GetChild(3).gameObject;
+        vSyncToggle = transform.GetChild(1).GetComponent<Toggle>();
     }
 }
