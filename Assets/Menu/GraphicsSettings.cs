@@ -20,7 +20,7 @@ public class GraphicsSettings : MonoBehaviour
                 highToggle.isOn = true;
                 mediumToggle.isOn = false;
                 lowToggle.isOn = false;
-                Invoke("CheckVSyncToggle", 0f);
+                CheckVSyncToggle();
                 QualitySettings.SetQualityLevel(0);
             }
             else if (toggle.gameObject.name == "Medium")
@@ -29,7 +29,7 @@ public class GraphicsSettings : MonoBehaviour
                 highToggle.isOn = false;
                 mediumToggle.isOn = true;
                 lowToggle.isOn = false;
-                Invoke("CheckVSyncToggle", 0f);
+                CheckVSyncToggle();
                 QualitySettings.SetQualityLevel(1);
             }
             else if (toggle.gameObject.name == "Low")
@@ -38,7 +38,7 @@ public class GraphicsSettings : MonoBehaviour
                 highToggle.isOn = false;
                 mediumToggle.isOn = false;
                 lowToggle.isOn = true;
-                Invoke("CheckVSyncToggle", 0f);
+                CheckVSyncToggle();
                 QualitySettings.SetQualityLevel(2);
             }
         }
