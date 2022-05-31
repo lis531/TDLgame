@@ -13,6 +13,6 @@ public class StaminaBar : MonoBehaviour
 
     private void Update()
     {
-        staminaBar.value = PlayerStamina.instance.stamina;
+        staminaBar.value = PlayerStamina.stamina;
     }
 }

@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 4347688154004759942}
   - component: {fileID: 1417080997626903325}
   - component: {fileID: 7381809975505975749}
+  - component: {fileID: 6693490019576552050}
   - component: {fileID: 1491184426386336635}
   - component: {fileID: 7130535090279908347}
   - component: {fileID: 4347688154004759943}
@@ -805,7 +806,7 @@ Transform:
   m_Children:
   - {fileID: 4347688153376071521}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4347688154004759942
 MonoBehaviour:
@@ -869,6 +870,18 @@ MonoBehaviour:
   elevatorTag: ElevatorPart
   medkitTag: Medkit
   gogglesTag: Goggles
+--- !u!114 &6693490019576552050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b235e11fae884549a95888b6fa462b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0
