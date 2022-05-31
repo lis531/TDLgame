@@ -10,14 +10,14 @@ public class PlayerData
     public float[] position;
     public bool[] inventory;
 
-    public PlayerData(Save Player)
+    public PlayerData(Save save)
     {
-        stamina = Save.stamina;
-        health = Save.health;
+        stamina = save.stamina;
+        health = save.health;
         position = new float[3];
-        position[0] = Player.transform.position.x;
-        position[1] = Player.transform.position.y;
-        position[2] = Player.transform.position.z;
+        position[0] = save.transform.position.x;
+        position[1] = save.transform.position.y;
+        position[2] = save.transform.position.z;
         inventory = new bool[3];
         inventory[0] = PlayerInventory.hasKeycard;
         inventory[1] = PlayerInventory.hasMedkit;

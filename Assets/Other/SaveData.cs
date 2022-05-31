@@ -2,22 +2,21 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public static class SaveData
+public static class SaveSystem
 {
-    public static void SavePlayer (Save PlayerData)
+    public static void SavePlayer(PlayerData data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/Player.data";
+        string path = Application.persistentDataPath + "/player.save";
         FileStream stream = new FileStream(path, FileMode.Create);
-
-        PlayerData data = new PlayerData(PlayerData);
 
         formatter.Serialize(stream, data);
         stream.Close();
     }
+
     public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/Player.data";
+        string path = Application.persistentDataPath + "/player.save";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
