@@ -845,7 +845,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxStamina: 350
-  stamina: 0
   staminaUsageRate: 100
   staminaRegenRate: 100
   tiredTime: 0.5
@@ -882,6 +881,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b235e11fae884549a95888b6fa462b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 21
+  stamina: 33
+  player: {fileID: 4347688154004759946}
 --- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0

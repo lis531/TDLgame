@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public static int health;
+    public static float health;
     private Slider healthBar;
     void Start()
     {   
