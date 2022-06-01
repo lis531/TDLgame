@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public float health = Health.health;
-    public float stamina = PlayerStamina.stamina;
+    public float health;
+    public float stamina;
     public float[] position;
     public bool[] inventory;
 

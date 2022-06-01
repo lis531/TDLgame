@@ -9,6 +9,8 @@ public class PlayerInteract : MonoBehaviour
     public string elevatorTag = "ElevatorPart";
     public string medkitTag = "Medkit";
     public string gogglesTag = "Goggles";
+    public string bezpiecznikTag = "Bezpiecznik";
+    public string bezpiecznikboxTag = "BezpiecznikBox";
 
     void Interact()
     {
@@ -30,6 +32,15 @@ public class PlayerInteract : MonoBehaviour
             {
                 PlayerInventory.hasGoggles = true;
                 Destroy(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag(bezpiecznikTag))
+            {
+                PlayerInventory.hasBezpiecznik = true;
+                Destroy(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag(bezpiecznikboxTag))
+            {
+                PlayerInventory.hasBezpiecznik = false;
             }
             else if (hit.collider.CompareTag(doorTag))
             {
