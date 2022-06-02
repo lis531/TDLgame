@@ -7,7 +7,8 @@ public class Medkit : MonoBehaviour
         if (PlayerInventory.hasMedkit && Input.GetKeyDown("h"))
         {
             Health.health = 100;
-            PlayerInventory.hasMedkit = false;
+            PlayerInventory.medkitCount -= 1;
+            PlayerInventory.MedkitCount();
         }
     }
 }

@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 1417080997626903325}
   - component: {fileID: 7381809975505975749}
   - component: {fileID: 6693490019576552050}
+  - component: {fileID: 3506106816364499781}
   - component: {fileID: 1491184426386336635}
   - component: {fileID: 7130535090279908347}
   - component: {fileID: 4347688154004759943}
@@ -869,6 +870,8 @@ MonoBehaviour:
   elevatorTag: ElevatorPart
   medkitTag: Medkit
   gogglesTag: Goggles
+  bezpiecznikTag: Bezpiecznik
+  bezpiecznikboxTag: BezpiecznikBox
 --- !u!114 &6693490019576552050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,7 +886,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 21
   stamina: 33
-  player: {fileID: 4347688154004759946}
+--- !u!114 &3506106816364499781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa862c7ed629e34f8251729b4e1ee40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemycialo: {fileID: 0}
+  enemy: {fileID: 0}
+  volumeObject: {fileID: 0}
+  volume: {fileID: 0}
+  NightVisonProfile: {fileID: 11400000, guid: 87433b1d7769ece47a148a3a6a972826, type: 2}
+  GlobalVolumeProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466,
+    type: 2}
 --- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,11 +31,11 @@ public class DoorController : MonoBehaviour
 
     public void Door()
     {
-        if (PlayerInventory.hasKeycard)
+        if (PlayerInventory.hasKeycard && canOpen && !anim.isPlaying)
         {
-            if(!isOpen && !anim.isPlaying && canOpen)
+            if(!isOpen)
                 StartCoroutine(OpenCoroutine());
-            else if(isOpen && !anim.isPlaying && canOpen)
+            else if(isOpen)
                 StartCoroutine(CloseCoroutine());
         }
         else if (!playingErrorSound)
