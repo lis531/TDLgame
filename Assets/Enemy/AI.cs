@@ -103,13 +103,6 @@ public class AI : MonoBehaviour
     }
     void UpdateBehaviour()
     {
-        //if player enter capsule ChasePlayer
-        if(Vector3.Distance(transform.position, m_PlayerTransform.position) < 1.2f || IsFlashlightVisible())
-        {
-            ChasePlayer();
-            return;
-        }
-
         if(!m_WalkingEnabled) 
         {
             m_NavMeshAgent.Warp(transform.position);
@@ -141,7 +134,7 @@ public class AI : MonoBehaviour
             }
         }
 
-        if(IsPointVisible(m_PlayerTransform.position) && playerInSightRange)
+        if((IsPointVisible(m_PlayerTransform.position) && playerInSightRange) || playerInAttackRange || IsFlashlightVisible())
         {
             if(playerInAttackRange)
                 AttackPlayer();
@@ -175,7 +168,7 @@ public class AI : MonoBehaviour
 
     private void AttackPlayer()
     {
-        SetWalkPoint(m_PlayerTransform.position);
+        ChasePlayer();
 
         if (!m_AlreadyAtacked)
         {

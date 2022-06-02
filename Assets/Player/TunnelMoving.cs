@@ -30,7 +30,7 @@ public class TunnelMoving : MonoBehaviour
     // METODY TunnelMoving.cs//
     bool PlayerMoves()
     {
-        if ((Input.GetAxis("Vertical") != 0) || ( Input.GetAxis("Horizontal") != 0))
+        if ((Input.GetAxisRaw("Vertical") != 0) || ( Input.GetAxisRaw("Horizontal") != 0))
             return true;
         else return false;
     }
@@ -51,7 +51,9 @@ public class TunnelMoving : MonoBehaviour
             currentSpeed = walkSpeed;
             currentStepOffset = walkStepOffset;
             isRunning = false;
-            PlayerStamina.instance.TryMakePlayerTired();
+
+            if(PlayerMoves())
+                PlayerStamina.instance.TryMakePlayerTired();
         }
     }
 
@@ -123,7 +125,7 @@ public class TunnelMoving : MonoBehaviour
 
         // Stamina
             // Zuzycie / Regeneracja staminy
-            if (isRunning)
+            if (isRunning && PlayerMoves())
                 PlayerStamina.instance.TryConsumeStamina();
             else
                 PlayerStamina.instance.TryRegenStamina();

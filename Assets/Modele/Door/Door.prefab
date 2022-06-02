@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ed71d90633934b8fe90c09d02f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canOpen: 1
   time: 1
   doorOpenSound: {fileID: 8300000, guid: c6fa52c195168bb40b6961ac40924e0f, type: 3}
   doorErrorSound: {fileID: 8300000, guid: 238f74c2edee4df4ab368f0e3610a11c, type: 3}

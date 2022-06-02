@@ -36,7 +36,7 @@ public class PlayerInventory : MonoBehaviour
         }
         if (bezpiecznikCount == 4)
         {
-            DoorController.canOpen = true;
+            DoorController.m_Locked = false;
             Debug.Log("Otwieranie drzwi");
         }
     }

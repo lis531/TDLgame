@@ -933,6 +933,9 @@ MonoBehaviour:
   m_Latarka1: {fileID: 4347688153388525663}
   m_LatarkaRange: 10
   m_LatarkaAngles: 45
+  m_LatarkaLayer:
+    serializedVersion: 2
+    m_Bits: 128
   latarkaUpdateTickRate: 10
   latarkaSubSteps: 2
 --- !u!143 &4347688154004759943

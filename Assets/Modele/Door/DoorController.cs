@@ -8,7 +8,9 @@ public class DoorController : MonoBehaviour
 
     private bool isOpen = false;
     bool playingErrorSound = false;
-    public static bool canOpen = false;
+    private bool canOpen = true;
+
+    public static bool m_Locked = false;
 
     public float time;
 
@@ -29,16 +31,16 @@ public class DoorController : MonoBehaviour
         aSource = transform.GetComponent<AudioSource>();
     }
 
-    public void Door()
+    public void OpenDoor()
     {
-        if (PlayerInventory.hasKeycard && canOpen && !anim.isPlaying)
+        if (PlayerInventory.hasKeycard && canOpen && !m_Locked)
         {
             if(!isOpen)
                 StartCoroutine(OpenCoroutine());
             else if(isOpen)
                 StartCoroutine(CloseCoroutine());
         }
-        else if (!playingErrorSound)
+        else if (!playingErrorSound && canOpen)
             StartCoroutine(PlayErrorSound());
     }
     

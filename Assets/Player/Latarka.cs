@@ -15,6 +15,8 @@ public class Latarka : MonoBehaviour
      
     private Vector3[] m_LatarkaPointDirs;
 
+    public LayerMask m_LatarkaLayer;
+
     [Header("Tego nie zmieniaj w Runtimie!:")]
 
     public int latarkaUpdateTickRate = 30;
@@ -85,7 +87,7 @@ public class Latarka : MonoBehaviour
                 Vector3 targetDir = Vector3.Slerp(m_LatarkaTransform.forward, dirRotated, i/subSteps);
 
                 RaycastHit hit;
-                if (Physics.Raycast(m_LatarkaTransform.position, targetDir, out hit, m_LatarkaRange))
+                if (Physics.Raycast(m_LatarkaTransform.position, targetDir, out hit, m_LatarkaRange, m_LatarkaLayer))
                     m_LatarkaPoints[pt] = hit.point;
                 else
                     m_LatarkaPoints[pt] = Vector3.positiveInfinity;
