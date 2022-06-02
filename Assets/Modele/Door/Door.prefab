@@ -441,7 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ed71d90633934b8fe90c09d02f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canOpen: 1
   time: 1
   doorOpenSound: {fileID: 8300000, guid: c6fa52c195168bb40b6961ac40924e0f, type: 3}
   doorErrorSound: {fileID: 8300000, guid: 238f74c2edee4df4ab368f0e3610a11c, type: 3}
@@ -454,7 +453,8 @@ AudioSource:
   m_GameObject: {fileID: 6854191106963977978}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3800105051408930967, guid: 3626945caa844e94798b32b0255d04d0,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c6fa52c195168bb40b6961ac40924e0f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

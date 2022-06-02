@@ -10,13 +10,10 @@ public class PlayerInventory : MonoBehaviour
     static public int bezpiecznikCount = 0;
     void Start()
     {
-<<<<<<< Updated upstream
-=======
         bezpiecznikCount = Random.Range(1, 3);
     }
     public static void MedkitCount()
     {
->>>>>>> Stashed changes
         if (medkitCount > 0)
         {
             hasMedkit = true;
@@ -26,12 +23,9 @@ public class PlayerInventory : MonoBehaviour
         {
             hasMedkit = false;
         }
-<<<<<<< Updated upstream
-=======
     }
     public static void BezpiecznikCount()
     {
->>>>>>> Stashed changes
         if (bezpiecznikCount > 0)
         {
             hasBezpiecznik = true;

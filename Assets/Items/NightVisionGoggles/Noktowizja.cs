@@ -10,6 +10,7 @@ public class Noktowizja : MonoBehaviour
     public VolumeProfile NightVisonProfile;
     public VolumeProfile GlobalVolumeProfile;
     bool TurnedOn = false;
+    
     void Update()
     {
         if (PlayerInventory.hasGoggles)

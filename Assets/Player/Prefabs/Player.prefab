@@ -900,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemycialo: {fileID: 0}
   enemy: {fileID: 0}
-  volumeObject: {fileID: 0}
+  localVolume: {fileID: 0}
   volume: {fileID: 0}
   NightVisonProfile: {fileID: 11400000, guid: 87433b1d7769ece47a148a3a6a972826, type: 2}
   GlobalVolumeProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466,
@@ -962,7 +962,8 @@ AudioSource:
   m_GameObject: {fileID: 4347688154004759946}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3800105051408930967, guid: 3626945caa844e94798b32b0255d04d0,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
