@@ -652,6 +652,11 @@ PrefabInstance:
       propertyPath: volumeObject
       value: 
       objectReference: {fileID: 1502748456}
+    - target: {fileID: 4347688153259844940, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688153376071521, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -665,6 +670,11 @@ PrefabInstance:
     - target: {fileID: 4347688153376071521, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525656, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
