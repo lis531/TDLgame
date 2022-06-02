@@ -13,6 +13,7 @@ public class Save : MonoBehaviour
     }
     public void LoadPlayer()
     {
+        SceneManager.LoadScene("Podziemie");
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {

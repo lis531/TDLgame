@@ -8,7 +8,7 @@ public class DoorController : MonoBehaviour
 
     private bool isOpen = false;
     bool playingErrorSound = false;
-    public bool canOpen = true;
+    public static bool canOpen = false;
 
     public float time;
 

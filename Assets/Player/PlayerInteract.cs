@@ -27,6 +27,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 PlayerInventory.hasMedkit = true;
                 Destroy(hit.collider.gameObject);
+                PlayerInventory.medkitCount =+ 1;
             }
             else if (hit.collider.CompareTag(gogglesTag))
             {
@@ -37,10 +38,12 @@ public class PlayerInteract : MonoBehaviour
             {
                 PlayerInventory.hasBezpiecznik = true;
                 Destroy(hit.collider.gameObject);
+                PlayerInventory.bezpiecznikCount =+ 1;
             }
-            else if (hit.collider.CompareTag(bezpiecznikboxTag))
+            else if (hit.collider.CompareTag(bezpiecznikboxTag) && PlayerInventory.hasBezpiecznik)
             {
                 PlayerInventory.hasBezpiecznik = false;
+                BezpiecznikBox.Add();
             }
             else if (hit.collider.CompareTag(doorTag))
             {
