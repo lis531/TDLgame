@@ -10,7 +10,7 @@ public class PlayerInventory : MonoBehaviour
     static public int bezpiecznikCount = 0;
     void Update()
     {
-        if (medkitCount => 0)
+        if (medkitCount > 0)
         {
             hasMedkit = true;
         }
@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
         {
             hasMedkit = false;
         }
-        if (bezpiecznikCount => 0)
+        if (bezpiecznikCount > 0)
         {
             hasBezpiecznik = true;
         }
