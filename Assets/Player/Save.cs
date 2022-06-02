@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class Save : MonoBehaviour
 {   
     private GameObject player;
-
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
@@ -12,6 +11,7 @@ public class Save : MonoBehaviour
     public void LoadPlayer()
     {
         SceneManager.LoadScene("Podziemie");
+        player = GameObject.FindGameObjectWithTag("Player");
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {
