@@ -3,26 +3,33 @@ using UnityEngine.SceneManagement;
 
 public class Save : MonoBehaviour
 {   
-    private GameObject player;
+    public float health = Health.health;
+    public float stamina = PlayerStamina.stamina;
+    public bool hasKeycard = PlayerInventory.hasKeycard;
+    public bool hasGoggles = PlayerInventory.hasGoggles;
+    public int medkitCount = PlayerInventory.medkitCount;
+    public GameObject player;
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
     }
     public void LoadPlayer()
     {
-        SceneManager.LoadScene("Podziemie");
-        player = GameObject.FindGameObjectWithTag("Player");
         PlayerData data = SaveSystem.LoadPlayer();
         if (data != null)
         {
+            SceneManager.LoadScene("Podziemie");
+            Debug.Log("file exists");
             if (SceneManager.GetActiveScene().name == "Podziemie")
             {
-                Health.health = data.health;
-                PlayerStamina.stamina = data.stamina;
-                transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
-                PlayerInventory.hasKeycard = data.inventory[0];
-                PlayerInventory.hasGoggles = data.inventory[1];
-                PlayerInventory.medkitCount = data.inventoryCountable;
+                Debug.Log("Scene is Podziemie");
+                player = GameObject.FindGameObjectWithTag("Player");
+                player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+                health = data.health;
+                stamina = data.stamina;
+                hasKeycard = data.inventory[0];
+                hasGoggles = data.inventory[1];
+                medkitCount = data.inventoryCountable;
             }
         }
         else
