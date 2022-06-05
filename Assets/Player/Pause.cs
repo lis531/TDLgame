@@ -5,7 +5,7 @@ public class Pause : MonoBehaviour
 {
     public GameObject Esc;
     public GameObject enemy;
-    bool escOpened;
+    public static bool escOpened;
 
     void Start()
     {

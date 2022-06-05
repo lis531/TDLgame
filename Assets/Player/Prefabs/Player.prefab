@@ -846,6 +846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxStamina: 350
+  volume: {fileID: 0}
+  GlobalVolumeProfile: {fileID: 0}
   staminaUsageRate: 100
   staminaRegenRate: 100
   tiredTime: 0.5
@@ -884,6 +886,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b235e11fae884549a95888b6fa462b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  stamina: 0
+  hasKeycard: 0
+  hasGoggles: 0
+  medkitCount: 0
+  player: {fileID: 0}
 --- !u!114 &3506106816364499781
 MonoBehaviour:
   m_ObjectHideFlags: 0

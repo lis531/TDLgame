@@ -10,7 +10,6 @@ public class PlayerStamina : MonoBehaviour
 
     [HideInInspector]
     public static float stamina;
-
     public float staminaUsageRate = 100.0f;
     public float staminaRegenRate = 100.0f;
 
