@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c1801adf387f8443b256e655dab225c
+guid: 838893f9bf7b63d42a67e4bfe1b6b114
 ModelImporter:
   serializedVersion: 22102
   internalIDToNameTable: []
@@ -14,7 +14,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 1
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -100,7 +100,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  importBlendShapeDeformPercent: 0
+  importBlendShapeDeformPercent: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
