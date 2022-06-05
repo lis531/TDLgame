@@ -99,6 +99,12 @@ public class TunnelMoving : MonoBehaviour
             isStepping = false;
     }
     
+    void ApplyGravity()
+    {
+        if (!character.isGrounded)
+            character.Move(Vector3.down * Time.deltaTime * 8.91f);
+    }
+
     // FUNCKCJE UNITY //
     void Start()
     {
@@ -115,6 +121,8 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
+        ApplyGravity();
+
         // Bieganie
             // Rozpoczynanie biegania
             if (Input.GetKey(KeyCode.LeftShift) && !PlayerStamina.instance.exhausted && PlayerMoves())
