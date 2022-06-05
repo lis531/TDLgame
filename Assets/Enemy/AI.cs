@@ -35,6 +35,8 @@ public class AI : MonoBehaviour
 
     private DoorController m_DoorInFront;
 
+    static public bool m_Enabled = true;
+
     Vector3 AtEnemyY(Vector3 vec)
     {
         return new Vector3(vec.x, transform.position.y, vec.z);
@@ -103,7 +105,13 @@ public class AI : MonoBehaviour
     }
     void UpdateBehaviour()
     {
-        if(!m_WalkingEnabled) 
+        if(gameObject.activeInHierarchy != m_Enabled)
+        {
+            gameObject.SetActive(m_Enabled);
+            SetWalkPoint(transform.position);
+        }
+
+        if(!m_WalkingEnabled || !m_Enabled || DevConsole.m_IsOpen) 
         {
             m_NavMeshAgent.Warp(transform.position);
             return;

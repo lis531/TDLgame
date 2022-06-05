@@ -17,6 +17,8 @@ public class PlayerStamina : MonoBehaviour
     [Header ("WAŻNE! - \"Exhausted Time\" MUSI być dłuższy od \"Tired Time\"")]
     [Space(10)]
 
+    static public bool staminaEnabled = true;
+
     public float tiredTime = 0.5f;
     public float exhaustedTime = 1.5f;
 
@@ -33,7 +35,7 @@ public class PlayerStamina : MonoBehaviour
 
     public void TryRegenStamina()
     {
-        if(tired) return;
+        if(tired || !staminaEnabled) return;
 
         stamina += staminaRegenRate * Time.deltaTime;
 
@@ -42,7 +44,7 @@ public class PlayerStamina : MonoBehaviour
     }
     public void TryConsumeStamina()
     {
-        if(exhausted) return;
+        if(exhausted || !staminaEnabled) return;
 
         stamina -= staminaUsageRate * Time.deltaTime;
 
@@ -68,13 +70,13 @@ public class PlayerStamina : MonoBehaviour
 
     public void TryMakePlayerTired()
     {
-        if(tired || exhausted) return;
+        if(tired || exhausted || !staminaEnabled) return;
 
         StartCoroutine(StaminaTiredCooldown());
     }
     public void TryMakePlayerExhausted()
     {
-        if(tired || exhausted) return;
+        if(tired || exhausted || !staminaEnabled) return;
 
         StartCoroutine(StaminaTiredCooldown());
         StartCoroutine(StaminaExhaustedCooldown());

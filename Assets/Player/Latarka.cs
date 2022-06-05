@@ -99,6 +99,9 @@ public class Latarka : MonoBehaviour
 
     void Update()
     {
+        if(DevConsole.m_IsOpen)
+            return;
+
         if (Input.GetKeyDown(KeyCode.T))
         {
             m_Latarka0.SetActive(!m_Latarka0.activeSelf);

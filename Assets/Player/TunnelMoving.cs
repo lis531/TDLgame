@@ -121,6 +121,9 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
+        if(DevConsole.m_IsOpen)
+            return;
+
         ApplyGravity();
 
         // Bieganie
