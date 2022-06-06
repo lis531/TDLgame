@@ -130,7 +130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6076810360945044544}
-  m_RootOrder: -1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7717263031873576702
 MeshFilter:
@@ -160,7 +160,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 7523804215795ce43b41bffa12adedd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -332,7 +332,7 @@ Transform:
   - {fileID: 7333198343657955635}
   - {fileID: 5601434656912804836}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7204335841001726949
 MeshFilter:
@@ -441,7 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2ed71d90633934b8fe90c09d02f30f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canOpen: 1
   time: 1
   doorOpenSound: {fileID: 8300000, guid: c6fa52c195168bb40b6961ac40924e0f, type: 3}
   doorErrorSound: {fileID: 8300000, guid: 238f74c2edee4df4ab368f0e3610a11c, type: 3}

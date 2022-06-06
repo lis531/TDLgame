@@ -10,8 +10,6 @@ public class AI : MonoBehaviour
     
     [Header("Pan Bialy Navigation")]
 
-    public LayerMask m_WalkingLayer;
-
     public Vector3 m_WalkPoint;
 
     [Header("Pan Bialy Properties")]
