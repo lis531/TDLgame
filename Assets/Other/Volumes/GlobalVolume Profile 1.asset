@@ -151,28 +151,6 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 0
     m_Value: 0.5
---- !u!114 &-6827292077262993611
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: 
-  active: 0
-  lift:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.10500319}
-  gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &-6454302441974906648
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -188,7 +166,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.15
+    m_Value: 0.08
 --- !u!114 &-6307133686178516004
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -294,7 +272,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.324
+    m_Value: 0.333
   smoothness:
     m_OverrideState: 1
     m_Value: 0.4
@@ -316,10 +294,10 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 9
+    m_Value: 5
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.4
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -340,7 +318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: -4842691179159604313}
-  - {fileID: -6827292077262993611}
   - {fileID: 1182028890649639013}
   - {fileID: -4235755013162200040}
   - {fileID: 2719295276741994583}
@@ -449,10 +426,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.37
+    m_Value: 0.7
   intensity:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1.6
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -560,10 +537,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 0
-    m_Value: 2.9
+    m_Value: 0.59
   contrast:
     m_OverrideState: 1
-    m_Value: 80
+    m_Value: 60
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 0.83569187, g: 0.740566, b: 1, a: 1}
