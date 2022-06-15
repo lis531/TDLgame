@@ -10,11 +10,15 @@ public class TunnelMoving : MonoBehaviour
     public float runSpeed  = 6.0f;
     float currentSpeed = 3.5f;
 
+    public float walkSmoothing = 5f;
+
     public float walkStepOffset;
     public float crouchStepOffset;
     public float runStepOffset;
     float currentStepOffset;
     public float crouchHeightOffset;
+
+    private Vector2 velocity;
 
     private Animation anim;
     private AudioSource aSource;
@@ -113,6 +117,8 @@ public class TunnelMoving : MonoBehaviour
         anim    = GetComponent<Animation>();
         cam    = transform.GetChild(0).gameObject;
 
+        velocity = new Vector2(0f,0f);
+
         currentSpeed = walkSpeed;
         currentStepOffset = walkStepOffset;
 
@@ -147,12 +153,12 @@ public class TunnelMoving : MonoBehaviour
             else if (Input.GetKeyUp(KeyCode.LeftControl))
                 EndCrouch();
 
+            Vector3 movement = (Input.GetAxisRaw("Vertical") * transform.forward + Input.GetAxisRaw("Horizontal") * transform.right).normalized;
+
+            velocity = Vector2.Lerp(velocity, new Vector2(movement.x, movement.z), Time.deltaTime * walkSmoothing);
 
         // Poruszanie sie postaci
-            character.Move(
-            ((Input.GetAxis("Vertical") * transform.forward) + // Przod / Tyl
-            (Input.GetAxis("Horizontal") * transform.right)) * // Lewo / Prawo
-            currentSpeed * Time.deltaTime);                    // Skalowanie
+            character.Move(new Vector3(velocity.x, 0f, velocity.y) * currentSpeed * Time.deltaTime);
             
             if (PlayerMoves() && !isStepping)
                 StartCoroutine(PlayStep());

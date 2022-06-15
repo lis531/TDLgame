@@ -706,6 +706,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4347688154004759942, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: walkSmoothing
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_Name
