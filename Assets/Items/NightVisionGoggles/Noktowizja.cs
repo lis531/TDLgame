@@ -16,10 +16,31 @@ public class Noktowizja : MonoBehaviour
         m_localVolume.SetActive(false);
         enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
         enemy.GetComponent<AudioSource>().volume = 0;
-    }    
+    }   
+
+    public void SwitchState(bool onOff)
+    {
+        if (onOff)
+        {
+            m_TurnedOn = true;
+            m_localVolume.SetActive(true);
+            volume.profile = NightVisonProfile;
+            enemy.GetComponent<AudioSource>().volume = 1;
+            enemycialo.transform.localScale = new Vector3(70f, 70f, 60f);
+        }
+        else
+        {
+            m_TurnedOn = false;
+            m_localVolume.SetActive(false);
+            volume.profile = GlobalVolumeProfile;
+            enemy.GetComponent<AudioSource>().volume = 0;
+            enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
+        }
+    }
+
     void Update()
     {
-        if (PlayerInventory.hasGoggles && !Pause.escOpened)
+        if ((PlayerInventory.hasGoggles && !Pause.escOpened))
         {
             if (Input.GetKeyDown("n") && !m_TurnedOn)
             {

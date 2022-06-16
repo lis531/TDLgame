@@ -22,6 +22,8 @@ public class Latarka : MonoBehaviour
     public int latarkaUpdateTickRate = 30;
     public int latarkaSubSteps = 1;
 
+    public static bool m_Enabled = false;
+
     void Start()
     {
         if(m_Latarka0 == null)
@@ -35,6 +37,8 @@ public class Latarka : MonoBehaviour
 
         m_Latarka0.SetActive(false);
         m_Latarka1.SetActive(false);
+
+        m_Enabled = m_Latarka0.activeSelf;
 
         m_LatarkaPoints = new Vector3[9 + (9 * (latarkaSubSteps-1))];
 
@@ -103,6 +107,9 @@ public class Latarka : MonoBehaviour
             return;
 
         if (Input.GetKeyDown(KeyCode.T))
+            m_Enabled = !m_Enabled;
+    
+        if(m_Latarka0.activeSelf != m_Enabled)
         {
             m_Latarka0.SetActive(!m_Latarka0.activeSelf);
             m_Latarka1.SetActive(!m_Latarka1.activeSelf);
