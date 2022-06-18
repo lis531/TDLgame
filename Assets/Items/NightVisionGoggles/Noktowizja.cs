@@ -40,9 +40,9 @@ public class Noktowizja : MonoBehaviour
 
     void Update()
     {
-        if ((PlayerInventory.hasGoggles && !Pause.escOpened))
+        if (PlayerInventory.hasGoggles && !Pause.escOpened && Input.GetKeyDown("n"))
         {
-            if (Input.GetKeyDown("n") && !m_TurnedOn)
+            if (!m_TurnedOn)
             {
                 m_TurnedOn = true;
                 m_localVolume.SetActive(true);
@@ -50,7 +50,7 @@ public class Noktowizja : MonoBehaviour
                 enemy.GetComponent<AudioSource>().volume = 1;
                 enemycialo.transform.localScale = new Vector3(70f, 70f, 60f);
             }
-            else if (Input.GetKeyDown("n") && m_TurnedOn && !Pause.escOpened)
+            else if (m_TurnedOn)
             {
                 m_TurnedOn = false;
                 m_localVolume.SetActive(false);

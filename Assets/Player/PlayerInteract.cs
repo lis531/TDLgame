@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     public string gogglesTag = "Goggles";
     public string bezpiecznikTag = "Bezpiecznik";
     public string bezpiecznikboxTag = "BezpiecznikBox";
+    public string gasMaskTag = "GasMask";
 
     void Interact()
     {
@@ -34,6 +35,11 @@ public class PlayerInteract : MonoBehaviour
                 PlayerInventory.hasGoggles = true;
                 Destroy(hit.collider.gameObject);
             }
+            else if (hit.collider.CompareTag(gasMaskTag))
+            {
+                PlayerInventory.hasGasMask = true;
+                Destroy(hit.collider.gameObject);
+            }
             else if (hit.collider.CompareTag(bezpiecznikTag))
             {
                 PlayerInventory.hasBezpiecznik = true;
@@ -45,6 +51,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 PlayerInventory.hasBezpiecznik = false;
                 PlayerInventory.bezpiecznikCount -= 1;
+                PlayerInventory.bezpiecznikIn += 1;
                 PlayerInventory.BezpiecznikCount();
             }
             else if (hit.collider.CompareTag(doorTag))

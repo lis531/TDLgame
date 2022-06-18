@@ -106,7 +106,7 @@ public class TunnelMoving : MonoBehaviour
     void ApplyGravity()
     {
         if (!character.isGrounded)
-            character.Move(Vector3.down * Time.deltaTime * 8.91f);
+            character.Move(Vector3.down * Time.deltaTime * 9.81f);
     }
 
     // FUNCKCJE UNITY //

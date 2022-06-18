@@ -26,15 +26,10 @@ public class AI : MonoBehaviour
     [Range(0.0f,180.0f)]
     public float m_FOVEulers;
     public uint  m_DebugFovRays = 16;
-
     private bool m_IsWalking = false;
-
     private bool m_WalkingEnabled = true;
-
     private DoorController m_DoorInFront;
-
     static public bool m_Enabled = true;
-
     Vector3 AtEnemyY(Vector3 vec)
     {
         return new Vector3(vec.x, transform.position.y, vec.z);

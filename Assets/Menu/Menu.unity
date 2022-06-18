@@ -1322,7 +1322,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427933282}
-  - component: {fileID: 427933281}
   m_Layer: 0
   m_Name: StaticLightingSky
   m_TagString: Untagged
@@ -1330,18 +1329,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &427933281
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427933280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &427933282
 Transform:
   m_ObjectHideFlags: 1
@@ -5416,7 +5403,6 @@ GameObject:
   - component: {fileID: 1722911178}
   - component: {fileID: 1722911180}
   - component: {fileID: 1722911179}
-  - component: {fileID: 1722911181}
   m_Layer: 5
   m_Name: TDLGame
   m_TagString: Untagged
@@ -5542,24 +5528,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722911177}
   m_CullTransparentMesh: 1
---- !u!114 &1722911181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722911177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b235e11fae884549a95888b6fa462b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: -25
-  stamina: 350
-  hasKeycard: 1
-  hasGoggles: 1
-  medkitCount: 1
-  player: {fileID: 0}
 --- !u!1 &1786108782
 GameObject:
   m_ObjectHideFlags: 0
