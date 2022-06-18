@@ -12,11 +12,8 @@ public class TunnelMoving : MonoBehaviour
 
     public float walkSmoothing = 5f;
 
-    public float walkStepOffset;
-    public float crouchStepOffset;
-    public float runStepOffset;
+    public float walkStepOffset, crouchStepOffset, runStepOffset, crouchHeightOffset;
     float currentStepOffset;
-    public float crouchHeightOffset;
 
     private Vector2 velocity;
 
@@ -28,11 +25,11 @@ public class TunnelMoving : MonoBehaviour
     public AudioClip[] stepSounds;
 
     bool isStepping = false;
-    bool isRunning = false;
-    bool isCrouching = false;
+    public static bool isRunning = false;
+    public static bool isCrouching = false;
 
     // METODY TunnelMoving.cs//
-    bool PlayerMoves()
+    public static bool PlayerMoves()
     {
         if ((Input.GetAxisRaw("Vertical") != 0) || ( Input.GetAxisRaw("Horizontal") != 0))
             return true;
@@ -79,8 +76,6 @@ public class TunnelMoving : MonoBehaviour
         anim.clip = anim.GetClip("UnCrouch");
         anim.Play();
     }
-
-
     IEnumerator PlayStep()
     {
         isStepping = true;

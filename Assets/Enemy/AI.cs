@@ -15,7 +15,7 @@ public class AI : MonoBehaviour
     [Header("Pan Bialy Properties")]
 
     public float m_TimeBetweenAtacks;
-    public float m_SightRange, m_AttackRange;
+    public float m_SightRange, m_AttackRange, m_Range, m_WalkRange, m_RunRange;
     private bool m_AlreadyAtacked;
 
     public int m_BehaviourUpdateTickRate = 40;
@@ -114,6 +114,9 @@ public class AI : MonoBehaviour
 
         bool playerInSightRange  = (distanceToPlayer < m_SightRange);
         bool playerInAttackRange = (distanceToPlayer < m_AttackRange);
+        bool playerInRange = (distanceToPlayer < m_Range);
+        bool playerInWalkRange = (distanceToPlayer < m_WalkRange);
+        bool playerInRunRange = (distanceToPlayer < m_RunRange);
 
         GameObject door = m_DoorDetector.CollidedWithDoor();
 
@@ -135,15 +138,17 @@ public class AI : MonoBehaviour
             }
         }
 
-        if((IsPointVisible(m_PlayerTransform.position) && playerInSightRange) || playerInAttackRange || IsFlashlightVisible())
+        if((IsPointVisible(m_PlayerTransform.position) && playerInSightRange) || playerInAttackRange || playerInRange || IsFlashlightVisible() || TunnelMoving.PlayerMoves() || TunnelMoving.isRunning)
         {
             if(playerInAttackRange)
                 AttackPlayer();
-
+            else if ((TunnelMoving.PlayerMoves() && playerInWalkRange) || (TunnelMoving.isRunning && playerInRunRange))
+            {
+                ChasePlayer();
+            }
             else
                 ChasePlayer();
         }
-        
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
             SearchWalkPoint();
 
