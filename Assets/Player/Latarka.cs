@@ -8,8 +8,8 @@ public class Latarka : MonoBehaviour
     Transform m_LatarkaTransform;
     Transform m_CameraTransform;
     
-    public float m_LatarkaRange = 10f;
-    public float m_LatarkaAngles = 45.0f;
+    public float m_LatarkaRange;
+    public float m_LatarkaAngles;
 
     static public Vector3[] m_LatarkaPoints;
      
@@ -19,13 +19,16 @@ public class Latarka : MonoBehaviour
 
     [Header("Tego nie zmieniaj w Runtimie!:")]
 
-    public int latarkaUpdateTickRate = 30;
-    public int latarkaSubSteps = 1;
-
+    public int latarkaUpdateTickRate;
+    public int latarkaSubSteps;
+    
+    public static float m_Battery;
+    public static float m_BatteryUsage = 1;
     public static bool m_Enabled = false;
 
     void Start()
     {
+        m_Battery = 100;
         if(m_Latarka0 == null)
             Debug.LogError("Latarka.Start() - latarka na Player jest null");
 
@@ -114,8 +117,20 @@ public class Latarka : MonoBehaviour
             m_Latarka0.SetActive(!m_Latarka0.activeSelf);
             m_Latarka1.SetActive(!m_Latarka1.activeSelf);
         }
+        if (m_Enabled)
+        {
+            UseBattery();
+        }
     }
-
+    void UseBattery()
+    {
+        m_Battery -= m_BatteryUsage * Time.deltaTime;
+        if (m_Battery <= 0)
+        {
+            m_Battery = 0;
+            m_Enabled = false;
+        }
+    }
     void OnDrawGizmos()
     {
         if(m_LatarkaPoints != null)
@@ -128,5 +143,4 @@ public class Latarka : MonoBehaviour
             Gizmos.DrawSphere(p, 0.1f);
         }
     }
-
 }

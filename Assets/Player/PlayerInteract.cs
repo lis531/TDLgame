@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public float interactionDistance = 3.0f;
+    public float interactionDistance;
 
     public string keycardTag = "Keycard";
     public string doorTag = "DoorPart";
@@ -12,6 +12,7 @@ public class PlayerInteract : MonoBehaviour
     public string bezpiecznikTag = "Bezpiecznik";
     public string bezpiecznikboxTag = "BezpiecznikBox";
     public string gasMaskTag = "GasMask";
+    public string batteryTag = "Battery";
 
     void Interact()
     {
@@ -39,6 +40,12 @@ public class PlayerInteract : MonoBehaviour
             {
                 PlayerInventory.hasGasMask = true;
                 Destroy(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag(batteryTag))
+            {
+                Destroy(hit.collider.gameObject);
+                PlayerInventory.batteryCount += 1;
+                PlayerInventory.batteryCounting();
             }
             else if (hit.collider.CompareTag(bezpiecznikTag))
             {

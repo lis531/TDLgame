@@ -4,10 +4,10 @@ using System.Collections;
 public class GasMask : MonoBehaviour
 {
     public GameObject image;
-    bool m_MaskOn;
+    bool m_MaskOn = false;
     bool PlayerIn;
     bool CoroutineRunning;
-    public GameObject gas;
+    public BoxCollider gas;
     void Start()
     {
         image.transform.localScale = new Vector3(0f, 0f, 0f);
@@ -35,17 +35,23 @@ public class GasMask : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        PlayerIn = true;
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerIn = true;
+        }
     }
     void OnTriggerExit(Collider other)
     {
-        PlayerIn = false;
+        if (other.gameObject.tag == "Player")
+        {
+            PlayerIn = false;
+        }
     }
     IEnumerator MaskOff()
     {
         CoroutineRunning = true;
         Health.health -= 10f;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         CoroutineRunning = false;
     }
 }

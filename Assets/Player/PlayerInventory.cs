@@ -7,8 +7,10 @@ public class PlayerInventory : MonoBehaviour
     static public bool hasGoggles;
     static public bool hasBezpiecznik;
     static public bool hasGasMask;
-    static public int medkitCount = 0;
-    static public int bezpiecznikCount = 0;
+    static public bool hasBatteries;
+    static public int batteryCount;
+    static public int medkitCount;
+    static public int bezpiecznikCount;
     static public int bezpiecznikIn;
     void Start()
     {
@@ -19,11 +21,21 @@ public class PlayerInventory : MonoBehaviour
         if (medkitCount > 0)
         {
             hasMedkit = true;
-            Debug.Log(medkitCount);
         }
         else
         {
             hasMedkit = false;
+        }
+    }
+    public static void batteryCounting()
+    {
+        if (batteryCount > 0)
+        {
+            hasBatteries = true;
+        }
+        else
+        {
+            hasBatteries = false;
         }
     }
     public static void BezpiecznikCount()

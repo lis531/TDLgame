@@ -145,7 +145,6 @@ MonoBehaviour:
   m_TimeBetweenAtacks: 2
   m_SightRange: 7
   m_AttackRange: 2
-  m_Range: 1
   m_WalkRange: 6
   m_RunRange: 9
   m_BehaviourUpdateTickRate: 20

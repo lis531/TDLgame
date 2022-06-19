@@ -10,6 +10,8 @@ public class Noktowizja : MonoBehaviour
     public VolumeProfile NightVisonProfile;
     public VolumeProfile GlobalVolumeProfile;
     public static bool m_TurnedOn = false;
+    public static float m_Battery = 100;
+    public static float m_BatteryUsage = 2;
 
     void Start()
     {
@@ -57,6 +59,15 @@ public class Noktowizja : MonoBehaviour
                 volume.profile = GlobalVolumeProfile;
                 enemy.GetComponent<AudioSource>().volume = 0;
                 enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
+            }
+        }
+        if (m_TurnedOn)
+        {
+            m_Battery -= m_BatteryUsage * Time.deltaTime;
+            if (m_Battery <= 0)
+            {
+                m_Battery = 0;
+                SwitchState(false);
             }
         }
     }

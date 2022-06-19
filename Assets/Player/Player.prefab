@@ -483,13 +483,13 @@ GameObject:
   - component: {fileID: 4347688154004759942}
   - component: {fileID: 1417080997626903325}
   - component: {fileID: 7381809975505975749}
-  - component: {fileID: 3122362143864475689}
-  - component: {fileID: 3506106816364499781}
   - component: {fileID: 1491184426386336635}
+  - component: {fileID: 3506106816364499781}
   - component: {fileID: 7130535090279908347}
+  - component: {fileID: 359861461133519945}
+  - component: {fileID: 7583980402284195697}
   - component: {fileID: 4347688154004759943}
   - component: {fileID: 2802408337033953945}
-  - component: {fileID: 359861461133519945}
   - component: {fileID: 1962298302658853365}
   m_Layer: 0
   m_Name: Player
@@ -579,7 +579,8 @@ MonoBehaviour:
   bezpiecznikTag: Bezpiecznik
   bezpiecznikboxTag: BezpiecznikBox
   gasMaskTag: GasMask
---- !u!114 &3122362143864475689
+  batteryTag: Battery
+--- !u!114 &1491184426386336635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -588,11 +589,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4347688154004759946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c31e8c48eaeeb5448bdb0e68b9c9b29d, type: 3}
+  m_Script: {fileID: 11500000, guid: 186a4d00d18bbb2418c66fa420fd07e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  gas: {fileID: 0}
 --- !u!114 &3506106816364499781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,18 +611,6 @@ MonoBehaviour:
   NightVisonProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466, type: 2}
   GlobalVolumeProfile: {fileID: 11400000, guid: 65146997a7923474cb86dae7ca67fff6,
     type: 2}
---- !u!114 &1491184426386336635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347688154004759946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 186a4d00d18bbb2418c66fa420fd07e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7130535090279908347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,6 +632,30 @@ MonoBehaviour:
     m_Bits: 128
   latarkaUpdateTickRate: 10
   latarkaSubSteps: 2
+--- !u!114 &359861461133519945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75862c604eb86243ba9d126560c0409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7583980402284195697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a998a103459ab9444a903e88ee0511b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &4347688154004759943
 CharacterController:
   m_ObjectHideFlags: 0
@@ -760,18 +771,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &359861461133519945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347688154004759946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f75862c604eb86243ba9d126560c0409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!111 &1962298302658853365
 Animation:
   m_ObjectHideFlags: 0
