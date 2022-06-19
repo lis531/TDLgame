@@ -4,7 +4,7 @@ public class Medkit : MonoBehaviour
 {
     void Update()
     {
-        if (PlayerInventory.hasMedkit && Input.GetKeyDown("h") && Health.health != 100)
+        if (PlayerInventory.hasMedkit && Input.GetKeyDown("h") && Health.health != 100 && !Pause.escOpened && !Inventory.on)
         {
             Health.health = 100;
             PlayerInventory.medkitCount -= 1;

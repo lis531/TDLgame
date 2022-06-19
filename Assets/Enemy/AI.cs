@@ -116,6 +116,7 @@ public class AI : MonoBehaviour
         bool playerInAttackRange = (distanceToPlayer < m_AttackRange);
         bool playerInWalkRange = (distanceToPlayer < m_WalkRange);
         bool playerInRunRange = (distanceToPlayer < m_RunRange);
+        bool playerAway = (distanceToPlayer > 10.0f);
 
         GameObject door = m_DoorDetector.CollidedWithDoor();
 
@@ -137,22 +138,19 @@ public class AI : MonoBehaviour
             }
         }
 
-        if((IsPointVisible(m_PlayerTransform.position) && playerInSightRange) || playerInAttackRange || IsFlashlightVisible() || TunnelMoving.PlayerMoves() || TunnelMoving.isRunning)
+        if((IsPointVisible(m_PlayerTransform.position) && playerInSightRange) || playerInAttackRange || IsFlashlightVisible() || (TunnelMoving.PlayerMoves() && playerInWalkRange) || (TunnelMoving.isRunning && playerInRunRange))
         {
             if(playerInAttackRange)
                 AttackPlayer();
-            else if ((TunnelMoving.PlayerMoves() && playerInWalkRange) || (TunnelMoving.isRunning && playerInRunRange))
-            {
-                ChasePlayer();
-            }
             else
                 ChasePlayer();
         }
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
             SearchWalkPoint();
-
         else if(!m_IsWalking)
             SearchWalkPoint();
+        if(playerAway)
+            m_NavMeshAgent.speed = 4.0f;
     }
     #endregion
 

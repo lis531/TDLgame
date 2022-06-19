@@ -74,7 +74,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("e"))
+        if(Input.GetKeyDown("e") && !Pause.escOpened && !Inventory.on)
         {
             Interact();
         }
