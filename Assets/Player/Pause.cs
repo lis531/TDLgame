@@ -3,13 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public GameObject Esc;
+    public static GameObject Esc;
     public static GameObject enemy;
     public static bool Paus;
 
     void Start()
     {
-        Esc.transform.localScale = new Vector3(0, 0, 0);
+        enemy = GameObject.Find("Enemy");
+        Esc = GameObject.Find("Esc");
     }
 
     void Update()
@@ -24,35 +25,35 @@ public class Pause : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && Paus)
         {
             Esc.transform.localScale = new Vector3(0, 0, 0);
+            Debug.Log("Trying");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             UnPaused();
         }
+        Debug.Log(Paus);
     }
-    public void Paused()
+    public static void Paused()
     {
         Paus = true;
         Time.timeScale = 0;
         enemy.GetComponent<AudioSource>().volume = 0;
     }
-    public void UnPaused()
+    public static void UnPaused()
     {
         Paus = false;
+        Esc.transform.localScale = new Vector3(0, 0, 0);
+        Inventory.inv.transform.localScale = new Vector3(0f, 0f, 0f);
         Time.timeScale = 1;
         enemy.GetComponent<AudioSource>().volume = 1;
     }
     public void Play()
     {
-        escOpened = false;
-        Esc.transform.localScale = new Vector3(0, 0, 0);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        Time.timeScale = 1;
-        enemy.GetComponent<AudioSource>().volume = 1;
+        Debug.Log("Play");
+        UnPaused();
     }
     public void Menu()
     {
         SceneManager.LoadScene("Menu");
-        Time.timeScale = 1;
+        UnPaused();
     }
 }

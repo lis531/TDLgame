@@ -140,7 +140,7 @@ public class DevConsole : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Q) && !Pause.escOpened)
+        if(Input.GetKey(KeyCode.Tab) && Input.GetKeyDown(KeyCode.Q) && !Pause.Paus)
         {
             m_IsOpen = !m_IsOpen;
 
@@ -149,7 +149,7 @@ public class DevConsole : MonoBehaviour
             else
                 CloseConsole();
         }
-        else if(m_IsOpen && Pause.escOpened)
+        else if(m_IsOpen && Pause.Paus)
             CloseConsole(false);
 
         if(m_IsOpen && !Input.GetKey(KeyCode.Tab))

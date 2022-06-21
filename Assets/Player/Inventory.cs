@@ -7,18 +7,17 @@ public class Inventory : MonoBehaviour
     //public GameObject bezpiecznik;
     //public GameObject gasMask;
     //public GameObject batteries;
-    public GameObject inv;
-    public static bool on;
+    public static GameObject inv;
+    bool on;
     void Start()
     {
-        inv.transform.localScale = new Vector3(0, 0, 0);
+        inv = GameObject.Find("Inventory");
     }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Tab) && !Pause.Paus)
         {
             Pause.Paused();
-            Time.timeScale = 0;
             inv.transform.localScale = new Vector3(1f, 1f, 1f);
             //if(PlayerInventory.hasBatteries)
             //    batteries.transform.localScale = new Vector3(1f, 1f, 1f);
@@ -36,8 +35,6 @@ public class Inventory : MonoBehaviour
         else if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape)) && Pause.Paus)
         {
             Pause.UnPaused();
-            Time.timeScale = 1;
-            inv.transform.localScale = new Vector3(0f, 0f, 0f);
             medkit.transform.localScale = new Vector3(0f, 0f, 0f);
             keycard.transform.localScale = new Vector3(0f, 0f, 0f);
             googles.transform.localScale = new Vector3(0f, 0f, 0f);

@@ -109,7 +109,7 @@ public class Latarka : MonoBehaviour
         if(DevConsole.m_IsOpen)
             return;
 
-        if (Input.GetKeyDown(KeyCode.T) && m_Battery > 0 && !Pause.escOpened && !Inventory.on)
+        if (Input.GetKeyDown(KeyCode.T) && m_Battery > 0 )
             m_Enabled = !m_Enabled;
     
         if(m_Latarka0.activeSelf != m_Enabled)

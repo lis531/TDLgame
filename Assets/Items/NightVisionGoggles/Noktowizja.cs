@@ -42,7 +42,7 @@ public class Noktowizja : MonoBehaviour
 
     void Update()
     {
-        if (PlayerInventory.hasGoggles && !Pause.escOpened && !Inventory.on && Input.GetKeyDown("n") && m_Battery > 0 )
+        if (PlayerInventory.hasGoggles && !Pause.Paus && Input.GetKeyDown("n") && m_Battery > 0 )
         {
             if (!m_TurnedOn)
             {
