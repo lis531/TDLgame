@@ -2350,6 +2350,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -4318,6 +4323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -5799,6 +5809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -7886,6 +7901,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}

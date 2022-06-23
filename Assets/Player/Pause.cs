@@ -24,7 +24,6 @@ public class Pause : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && Paus)
         {
-            Esc.transform.localScale = new Vector3(0, 0, 0);
             Debug.Log("Trying");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -48,7 +47,6 @@ public class Pause : MonoBehaviour
     }
     public void Play()
     {
-        Debug.Log("Play");
         UnPaused();
     }
     public void Menu()

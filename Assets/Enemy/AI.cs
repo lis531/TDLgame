@@ -166,11 +166,13 @@ public class AI : MonoBehaviour
 
     private void ChasePlayer()
     {
+        m_NavMeshAgent.speed = 3.0f;
         SetWalkPoint(m_PlayerTransform.position);
     }
 
     private void AttackPlayer()
     {
+        m_NavMeshAgent.speed = 0.0f;
         ChasePlayer();
 
         if (!m_AlreadyAtacked)
