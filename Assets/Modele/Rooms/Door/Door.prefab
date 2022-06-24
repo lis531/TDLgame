@@ -17,7 +17,7 @@ GameObject:
   m_TagString: DoorEnemyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3897641243908934605
 Transform:
@@ -115,7 +115,7 @@ GameObject:
   m_TagString: DoorPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 127
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5601434656912804836
 Transform:
@@ -212,7 +212,7 @@ GameObject:
   m_TagString: DoorEnemyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7333198343657955635
 Transform:
@@ -309,12 +309,13 @@ GameObject:
   - component: {fileID: 6298405074724585779}
   - component: {fileID: 516498969950073248}
   - component: {fileID: -2533046163444710018}
+  - component: {fileID: 1307967745299469410}
   m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6076810360945044544
 Transform:
@@ -332,7 +333,7 @@ Transform:
   - {fileID: 7333198343657955635}
   - {fileID: 5601434656912804836}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &7204335841001726949
 MeshFilter:
@@ -541,3 +542,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!205 &1307967745299469410
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854191106963977978}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0.001690808}
+  m_Size: 0.015
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.04
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6511798323942893591}
+    - renderer: {fileID: 4908367305904559919}
+    - renderer: {fileID: 2746347046512159372}
+    - renderer: {fileID: 8092703713214470656}
+  m_Enabled: 1

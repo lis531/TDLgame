@@ -27,6 +27,7 @@ public class TunnelMoving : MonoBehaviour
     bool isStepping = false;
     public static bool isRunning = false;
     public static bool isCrouching = false;
+    public bool isPlaying = false;
 
     // METODY TunnelMoving.cs//
     public static bool PlayerMoves()
@@ -60,21 +61,29 @@ public class TunnelMoving : MonoBehaviour
 
     void BeginCrouch()
     {
+        //if(!isPlaying)
+        //    StartCoroutine(Playing());
         isCrouching = true;
         currentSpeed = crouchSpeed;
         currentStepOffset = crouchStepOffset;
-
         anim.clip = anim.GetClip("Crouch");
         anim.Play();
     }
     void EndCrouch()
     {
+        //if (!isPlaying)
+        //    StartCoroutine(Playing());//
         isCrouching = false;
         currentSpeed = walkSpeed;
         currentStepOffset = walkStepOffset;
-
         anim.clip = anim.GetClip("UnCrouch");
         anim.Play();
+    }
+    IEnumerator Playing()
+    {
+        isPlaying = true;
+        yield return new WaitForSeconds(1.0f);
+        isPlaying = false;
     }
     IEnumerator PlayStep()
     {
@@ -143,7 +152,7 @@ public class TunnelMoving : MonoBehaviour
                 PlayerStamina.instance.TryRegenStamina();
 
         // Kucanie
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.LeftControl) && !isPlaying)
                 BeginCrouch();
             else if (Input.GetKeyUp(KeyCode.LeftControl))
                 EndCrouch();

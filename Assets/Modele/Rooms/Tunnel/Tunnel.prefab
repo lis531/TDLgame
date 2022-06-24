@@ -36,7 +36,7 @@ Transform:
   - {fileID: 3119810968970446341}
   - {fileID: 5619524675833847983}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9034021952744322683
 MeshFilter:
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: d7b6c6ad5f7708040b4ac19682ecd2d1, type: 2}
-  - {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
+  - {fileID: 2100000, guid: 5cfa153daa453f843b218f8d471667ff, type: 2}
   - {fileID: 2100000, guid: 3a76b94ec533f1a4badf701b4cf68ef4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -171,6 +171,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLamp (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
@@ -282,6 +292,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
+      propertyPath: m_Range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
       propertyPath: m_UseViewFrustumForShadowCasterCull
       value: 0
       objectReference: {fileID: 0}
@@ -387,6 +407,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
@@ -510,6 +540,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallLamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}

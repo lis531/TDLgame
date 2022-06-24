@@ -143,6 +143,7 @@ public class AI : MonoBehaviour
             if(playerInAttackRange)
                 AttackPlayer();
             else
+                m_NavMeshAgent.speed = 3.0f;
                 ChasePlayer();
         }
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
@@ -166,7 +167,6 @@ public class AI : MonoBehaviour
 
     private void ChasePlayer()
     {
-        m_NavMeshAgent.speed = 3.0f;
         SetWalkPoint(m_PlayerTransform.position);
     }
 
