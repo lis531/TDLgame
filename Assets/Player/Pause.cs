@@ -5,8 +5,7 @@ public class Pause : MonoBehaviour
 {
     public static GameObject Esc;
     public static GameObject enemy;
-    public static bool Paus;
-
+    public static bool inWork;
     void Start()
     {
         enemy = GameObject.Find("Enemy");
@@ -15,35 +14,33 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !Paus)
+        if (Input.GetKeyDown(KeyCode.Escape) && !inWork && !Inventory.invOn)
         {
+            inWork = true;
             Esc.transform.localScale = new Vector3(1, 1, 1);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Paused();
+            enemy.GetComponent<AudioSource>().volume = 0;
+            Time.timeScale = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && Paus)
+        else if (Input.GetKeyDown(KeyCode.Escape) && inWork && !Inventory.invOn)
         {
-            Debug.Log("Trying");
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            inWork = false;
             UnPaused();
         }
-        Debug.Log(Paus);
+        else if (Input.GetKeyDown(KeyCode.Escape) && !inWork && Inventory.invOn)
+        {
+            Inventory.invOn = false;
+            UnPaused();
+        }
     }
-    public static void Paused()
+    void UnPaused()
     {
-        Paus = true;
-        Time.timeScale = 0;
-        enemy.GetComponent<AudioSource>().volume = 0;
-    }
-    public static void UnPaused()
-    {
-        Paus = false;
         Esc.transform.localScale = new Vector3(0, 0, 0);
-        Inventory.inv.transform.localScale = new Vector3(0f, 0f, 0f);
         Time.timeScale = 1;
         enemy.GetComponent<AudioSource>().volume = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void Play()
     {

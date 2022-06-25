@@ -8,17 +8,21 @@ public class Inventory : MonoBehaviour
     //public GameObject gasMask;
     //public GameObject batteries;
     public static GameObject inv;
-    bool on;
+    public static bool invOn;
     void Start()
     {
         inv = GameObject.Find("Inventory");
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab) && !Pause.Paus)
+        if(Input.GetKeyDown(KeyCode.Tab) && !Pause.inWork && !invOn)
         {
-            Pause.Paused();
             inv.transform.localScale = new Vector3(1f, 1f, 1f);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            Pause.enemy.GetComponent<AudioSource>().volume = 0;
+            invOn = true;
             //if(PlayerInventory.hasBatteries)
             //    batteries.transform.localScale = new Vector3(1f, 1f, 1f);
             //if(PlayerInventory.hasGasMask)
@@ -32,25 +36,23 @@ public class Inventory : MonoBehaviour
             if(PlayerInventory.hasGoggles)
                 googles.transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        else if ((Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape)) && Pause.Paus)
+        else if (Input.GetKeyDown(KeyCode.Tab) && !Pause.inWork && invOn)
         {
-            Pause.UnPaused();
+            inv.transform.localScale = new Vector3(0f, 0f, 0f);
+            Time.timeScale = 1;
+            Pause.enemy.GetComponent<AudioSource>().volume = 1;
             medkit.transform.localScale = new Vector3(0f, 0f, 0f);
             keycard.transform.localScale = new Vector3(0f, 0f, 0f);
             googles.transform.localScale = new Vector3(0f, 0f, 0f);
+            invOn = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             //bezpiecznik.transform.localScale = new Vector3(0f, 0f, 0f);
             //gasMask.transform.localScale = new Vector3(0f, 0f, 0f);
             //batteries.transform.localScale = new Vector3(0f, 0f, 0f);
         }
     }
-/*using UnityEngine;
-using UnityEngine.UI;
-
-public class NVIconDisplay : MonoBehaviour
-{
-    RawImage m_Image;
-
-    public Texture m_OnTexture;
+/*  public Texture m_OnTexture;
     public Texture m_OffTexture;
 
     private bool m_LastState = false; 
@@ -68,6 +70,5 @@ public class NVIconDisplay : MonoBehaviour
             m_Image.texture = Noktowizja.m_TurnedOn ? m_OnTexture : m_OffTexture;
 
         m_LastState = Noktowizja.m_TurnedOn;
-    }
-}*/
+    }*/
 }

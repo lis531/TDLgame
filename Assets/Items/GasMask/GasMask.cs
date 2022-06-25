@@ -14,7 +14,7 @@ public class GasMask : MonoBehaviour
     }
     void Update()
     {
-        if (PlayerInventory.hasGasMask && !Pause.Paus && Input.GetKeyDown("g"))
+        if (PlayerInventory.hasGasMask && Time.timeScale != 0 && Input.GetKeyDown("g"))
         {
             image.transform.localScale = new Vector3(1f, 1f, 1f);
             if (!m_MaskOn)

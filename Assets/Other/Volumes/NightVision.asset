@@ -151,28 +151,6 @@ MonoBehaviour:
   proceduralSoftness:
     m_OverrideState: 0
     m_Value: 0.5
---- !u!114 &-6827292077262993611
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: 
-  active: 0
-  lift:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.10500319}
-  gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &-6454302441974906648
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -188,7 +166,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.192
+    m_Value: 0.2
 --- !u!114 &-6307133686178516004
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -257,22 +235,6 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 0
     m_Value: 1
---- !u!114 &-4842691179159604313
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
-  m_Name: Tonemapping
-  m_EditorClassIdentifier: 
-  active: 1
-  mode:
-    m_OverrideState: 1
-    m_Value: 1
 --- !u!114 &-4235755013162200040
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -290,16 +252,16 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   center:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
     m_Value: 0.257
   smoothness:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.349
   rounded:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
 --- !u!114 &-2502893857873602068
 MonoBehaviour:
@@ -339,9 +301,6 @@ MonoBehaviour:
   m_Name: NightVision
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -4842691179159604313}
-  - {fileID: -6827292077262993611}
-  - {fileID: 1182028890649639013}
   - {fileID: -4235755013162200040}
   - {fileID: 2719295276741994583}
   - {fileID: -6454302441974906648}
@@ -435,46 +394,6 @@ MonoBehaviour:
   directionalLightsOnly:
     m_OverrideState: 0
     m_Value: 0
---- !u!114 &1182028890649639013
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  threshold:
-    m_OverrideState: 1
-    m_Value: 0.37
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.84
-  scatter:
-    m_OverrideState: 1
-    m_Value: 0.7
-  clamp:
-    m_OverrideState: 0
-    m_Value: 65472
-  tint:
-    m_OverrideState: 1
-    m_Value: {r: 0.584966, g: 1, b: 0.5518868, a: 1}
-  highQualityFiltering:
-    m_OverrideState: 0
-    m_Value: 0
-  skipIterations:
-    m_OverrideState: 0
-    m_Value: 1
-  dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
-  dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 0
 --- !u!114 &2067565602726577381
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -561,13 +480,13 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.75
+    m_Value: 6
   contrast:
     m_OverrideState: 1
-    m_Value: 100
+    m_Value: 50
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.22611004, g: 0.6792453, b: 0.1505874, a: 1}
+    m_Value: {r: 0.055904973, g: 0.3773585, b: 0, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 11
@@ -614,7 +533,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: -0.208
+    m_Value: -0.15
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -625,5 +544,5 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   scale:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1

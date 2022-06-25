@@ -74,7 +74,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown("e") && !Pause.Paus)
+        if(Input.GetKeyDown("e") && Time.timeScale != 0)
         {
             Interact();
         }

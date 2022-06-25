@@ -556,6 +556,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7d6080677aeb4554486ee5b72125db70, type: 3}
   - {fileID: 8300000, guid: 7cd9ca2f52010db48b3a9f099e19943f, type: 3}
   - {fileID: 8300000, guid: 83d7bab1ddea6bf4093f4965df7de692, type: 3}
+  isPlaying: 0
 --- !u!114 &1417080997626903325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,9 +641,9 @@ MonoBehaviour:
   enemy: {fileID: 0}
   m_localVolume: {fileID: 0}
   volume: {fileID: 0}
-  NightVisonProfile: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466, type: 2}
-  GlobalVolumeProfile: {fileID: 11400000, guid: 65146997a7923474cb86dae7ca67fff6,
+  NightVisonGlobalVolume: {fileID: 11400000, guid: 4f8da7d63388f39449a414dd95de4466,
     type: 2}
+  MainGlobalVolume: {fileID: 11400000, guid: 96e67a5ce10f0ac4597305a24c3fc319, type: 2}
 --- !u!114 &7130535090279908347
 MonoBehaviour:
   m_ObjectHideFlags: 0
