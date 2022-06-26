@@ -40,10 +40,14 @@ public class SaveManager : MonoBehaviour
             PlayerStamina.stamina,
             new float[3]{player.position.x, player.position.y, player.position.z},
             player.eulerAngles.y,
+            TunnelMoving.isCrouching,
             Latarka.m_Enabled,
-            PlayerInventory.medkitCount,
             PlayerInventory.hasGoggles,
             PlayerInventory.hasKeycard,
+            PlayerInventory.hasGasMask,
+            PlayerInventory.medkitCount,
+            PlayerInventory.bezpiecznikCount,
+            PlayerInventory.batteryCount,
             new float[3]{enemy.position.x, enemy.position.y, enemy.position.z},
             enemy.eulerAngles.y,
             Noktowizja.m_TurnedOn
@@ -89,11 +93,16 @@ public class SaveManager : MonoBehaviour
             player.transform.eulerAngles = new Vector3(0, data.yRotation, 0);
             controller.enabled = true;
 
+            TunnelMoving.isCrouching = data.isCrouching;
+
             Latarka.m_Enabled = data.latarkaOn;
 
             player.GetComponent<Noktowizja>().SwitchState(data.nvGogglesEnabled);
 
+            PlayerInventory.batteryCount = data.batteryCount;
+            PlayerInventory.bezpiecznikCount = data.bezpiecznikCount;
             PlayerInventory.medkitCount = data.medkitCount;
+            PlayerInventory.hasGasMask = data.hasGasMask;
             PlayerInventory.hasGoggles = data.hasNVGoggles;
             PlayerInventory.hasKeycard = data.hasKeycard;
 
