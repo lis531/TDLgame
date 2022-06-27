@@ -38,9 +38,10 @@ public class Pause : MonoBehaviour
     {
         Esc.transform.localScale = new Vector3(0, 0, 0);
         Time.timeScale = 1;
-        enemy.GetComponent<AudioSource>().volume = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if (Noktowizja.m_TurnedOn)
+            enemy.GetComponent<AudioSource>().volume = 1;
     }
     public void Play()
     {

@@ -41,9 +41,6 @@ public class Inventory : MonoBehaviour
             inv.transform.localScale = new Vector3(0f, 0f, 0f);
             Time.timeScale = 1;
             Pause.enemy.GetComponent<AudioSource>().volume = 1;
-            medkit.transform.localScale = new Vector3(0f, 0f, 0f);
-            keycard.transform.localScale = new Vector3(0f, 0f, 0f);
-            googles.transform.localScale = new Vector3(0f, 0f, 0f);
             invOn = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

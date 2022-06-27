@@ -5,6 +5,7 @@ public class AI : MonoBehaviour
 {
     private NavMeshAgent m_NavMeshAgent;
     private Transform    m_PlayerTransform;
+    private Transform m_PlayerTransformLast;
     private Latarka      m_Latarka;
     private DetectDoor   m_DoorDetector;
     
@@ -164,10 +165,10 @@ public class AI : MonoBehaviour
 
         SetWalkPoint(nodePos);
     }
-
+    //save last player position
     private void ChasePlayer()
     {
-        SetWalkPoint(m_PlayerTransform.position);
+        SetWalkPoint(m_PlayerTransformLast.position);
     }
 
     private void AttackPlayer()

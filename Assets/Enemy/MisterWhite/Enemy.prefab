@@ -146,8 +146,8 @@ MonoBehaviour:
   m_TimeBetweenAtacks: 2
   m_SightRange: 7
   m_AttackRange: 2
-  m_WalkRange: 6
-  m_RunRange: 9
+  m_WalkRange: 4
+  m_RunRange: 7
   m_BehaviourUpdateTickRate: 20
   m_DoorOpenTime: 5
   m_FOVEulers: 130
@@ -187,7 +187,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ff5e8eee73567b24c944c4ec2095ad33, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
