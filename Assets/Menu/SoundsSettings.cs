@@ -4,11 +4,12 @@ using UnityEngine.Audio;
 
 public class SoundsSettings : MonoBehaviour
 {
-    Slider m_MainSlider;
-    Slider m_SfxSlider;
-    Slider m_AmbientSlider;
+    public Slider m_MainSlider;
+    public Slider m_SfxSlider;
+    public Slider m_AmbientSlider;
 
     public AudioMixer m_MainMixer;
+    public static float[] m_MainVolume;
 
     private void Start()
     {
@@ -22,5 +23,9 @@ public class SoundsSettings : MonoBehaviour
         m_MainMixer.SetFloat("MasterVolume", m_MainSlider.value);
         m_MainMixer.SetFloat("AmbientVolume", m_AmbientSlider.value);
         m_MainMixer.SetFloat("SFXVolume", m_SfxSlider.value);
+
+        m_MainVolume[0] = m_MainSlider.value;
+        m_MainVolume[1] = m_AmbientSlider.value;
+        m_MainVolume[2] = m_SfxSlider.value;
     }
 }

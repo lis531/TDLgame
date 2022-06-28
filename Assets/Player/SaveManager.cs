@@ -2,7 +2,6 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,10 +11,13 @@ public class SaveManager : MonoBehaviour
 
     void Start()
     {
+        string path = Application.persistentDataPath + "/Settings.dat";
         Instance = this;
 
         if(m_QueueLoad)
             LoadPlayer();
+        if (File.Exists(path))
+            LoadSettings();
     }
 
     public void QueueLoad()
@@ -23,6 +25,27 @@ public class SaveManager : MonoBehaviour
         m_QueueLoad = true;
     }
 
+    public void SaveSettings()
+    {
+        string path = Application.persistentDataPath + "/Settings.dat";
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(path);
+        SettingsData data = new SettingsData(Screen.fullScreen, QualitySettings.vSyncCount, QualitySettings.GetQualityLevel(), SoundsSettings.m_MainVolume);
+        bf.Serialize(file, data);
+        file.Close();
+    }
+    void LoadSettings()
+    {
+        string path = Application.persistentDataPath + "/Settings.dat";
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(path, FileMode.Open);
+        SettingsData data = (SettingsData)bf.Deserialize(file);
+        file.Close();
+        Screen.fullScreen = data.fullScreen;
+        QualitySettings.SetQualityLevel(data.qualityLevel);
+        QualitySettings.vSyncCount = data.isVsync;
+        SoundsSettings.m_MainVolume = data.m_MainVolume;
+    }
     public void SavePlayer()
     {
         string path = Application.persistentDataPath + "/player.save";
@@ -64,8 +87,6 @@ public class SaveManager : MonoBehaviour
 
         if (File.Exists(path))
         {
-            //MainMenu.PlayGame();
-
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 

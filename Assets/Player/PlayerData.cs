@@ -39,3 +39,17 @@ public class PlayerData
         this.nvGogglesEnabled = nvGogglesEnabled;
     }
 }
+public class SettingsData
+{
+    public bool fullScreen;
+    public int isVsync;
+    public int qualityLevel;
+    public float[] m_MainVolume;
+    public SettingsData(bool fullScreen, bool isVsync, int qualityLevel, float[] m_MainVolume)
+    {
+        this.fullScreen = fullScreen;
+        this.isVsync = isVsync ? 1 : 0;
+        this.qualityLevel = qualityLevel;
+        this.m_MainVolume = m_MainVolume;
+    }
+}
