@@ -25,6 +25,7 @@ public class TunnelMoving : MonoBehaviour
     public AudioClip[] stepSounds;
 
     bool isStepping = false;
+    bool CoroutineIsRunning;
     public static bool isRunning = false;
     public static bool isCrouching = false;
     public bool isPlaying = false;
@@ -62,7 +63,7 @@ public class TunnelMoving : MonoBehaviour
 
     void Crouching()
     {
-        StartCoroutine(CrouchCoroutine());
+        isCrouching = true;
         currentSpeed = crouchSpeed;
         currentStepOffset = crouchStepOffset;
         anim.clip = anim.GetClip("Crouch");
@@ -70,21 +71,30 @@ public class TunnelMoving : MonoBehaviour
     }
     void EndCrouching()
     {
-        CrouchCoroutine2();
+        isCrouching = false;
         currentSpeed = walkSpeed;
         currentStepOffset = walkStepOffset;
         anim.clip = anim.GetClip("UnCrouch");
         anim.Play();
     }
-    IEnumerator CrouchCoroutine()
+    IEnumerator CrouchingCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
-        isCrouching = true;
+        CoroutineIsRunning = true;
+        Crouching();
+        yield return new WaitForSeconds(0.3f);
+        CoroutineIsRunning = false;
     }
-    IEnumerator CrouchCoroutine2()
+    IEnumerator EndCrouchingCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
-        isCrouching = false;
+        CoroutineIsRunning = true;
+        EndCrouching();
+        yield return new WaitForSeconds(0.3f);
+        CoroutineIsRunning = false;
+    }
+    IEnumerator EndCrouchingFixCoroutine()
+    {
+        yield return new WaitForSeconds(0.4f);
+        EndCrouching();
     }
     IEnumerator PlayStep()
     {
@@ -132,7 +142,6 @@ public class TunnelMoving : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isCrouching);
         if(DevConsole.m_IsOpen)
             return;
 
@@ -154,10 +163,12 @@ public class TunnelMoving : MonoBehaviour
                 PlayerStamina.instance.TryRegenStamina();
 
         // Kucanie
-            if (Input.GetKeyDown(KeyCode.LeftControl) && !isCrouching)
-                Crouching();
-            else if (Input.GetKeyUp(KeyCode.LeftControl) && isCrouching)
-                EndCrouching();
+            if (Input.GetKeyDown(KeyCode.LeftControl) && !isCrouching && !isRunning && !CoroutineIsRunning)
+                StartCoroutine(CrouchingCoroutine());
+            else if (Input.GetKeyUp(KeyCode.LeftControl) && isCrouching && !CoroutineIsRunning)
+                StartCoroutine(EndCrouchingCoroutine());
+            else if (Input.GetKeyUp(KeyCode.LeftControl) && CoroutineIsRunning && isCrouching)
+                StartCoroutine(EndCrouchingFixCoroutine());
             Vector3 movement = (Input.GetAxisRaw("Vertical") * transform.forward + Input.GetAxisRaw("Horizontal") * transform.right).normalized;
 
             velocity = Vector2.Lerp(velocity, new Vector2(movement.x, movement.z), Time.deltaTime * walkSmoothing);

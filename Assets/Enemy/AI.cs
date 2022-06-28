@@ -145,14 +145,21 @@ public class AI : MonoBehaviour
                 AttackPlayer();
             else
                 m_NavMeshAgent.speed = 3.0f;
+                m_PlayerTransformLast = m_PlayerTransform;
                 ChasePlayer();
         }
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
+        {
             SearchWalkPoint();
+        }
         else if(!m_IsWalking)
+        {
             SearchWalkPoint();
+        }
         if(playerAway)
+        {
             m_NavMeshAgent.speed = 4.0f;
+        }
     }
     #endregion
 
@@ -165,10 +172,10 @@ public class AI : MonoBehaviour
 
         SetWalkPoint(nodePos);
     }
-    //save last player position
     private void ChasePlayer()
     {
         SetWalkPoint(m_PlayerTransformLast.position);
+        Debug.Log("ChasePlayer");
     }
 
     private void AttackPlayer()
