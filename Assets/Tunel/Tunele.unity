@@ -792,10 +792,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 900060016, guid: 42631bbb30302c549bd82458a5178ed8, type: 3}
-      propertyPath: m_CameraType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: medkit
@@ -811,16 +807,6 @@ PrefabInstance:
       propertyPath: keycard
       value: 
       objectReference: {fileID: 936441730}
-    - target: {fileID: 2063654032321185194, guid: 42631bbb30302c549bd82458a5178ed8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2063654032321185194, guid: 42631bbb30302c549bd82458a5178ed8,
-        type: 3}
-      propertyPath: showReflectionsOnly
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3506106816364499781, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: enemy
@@ -841,11 +827,6 @@ PrefabInstance:
       propertyPath: m_localVolume
       value: 
       objectReference: {fileID: 427050212}
-    - target: {fileID: 4347688153376071520, guid: 42631bbb30302c549bd82458a5178ed8,
-        type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_Name
@@ -4432,11 +4413,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4680039948621580629, guid: a8174305fe58ce34ab816086a1a56b8c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 18
-      objectReference: {fileID: 0}
     - target: {fileID: 6069962393280702354, guid: a8174305fe58ce34ab816086a1a56b8c,
         type: 3}
       propertyPath: m_Name

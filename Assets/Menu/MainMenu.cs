@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
         fadeOutAnim.Play();
 
         yield return new WaitForSeconds(cameraAnim.clip.length);
-        SceneManager.LoadScene("Podziemie");
+        SceneManager.LoadScene("Tunele");
     }
     IEnumerator WaitForAnimation()
     {
@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
         Animation = false;
     }
 
-    public void PlayGame ()
+    public void PlayGame()
     {
         StartCoroutine(FlyAndLoad());
     }

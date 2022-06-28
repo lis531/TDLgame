@@ -187,7 +187,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 2147483647
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 3bdeb0c8a4a7c7045b66bc39fc293e77, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   downSample: 3
   blurAmount: 1
-  showReflectionsOnly: 0
+  showReflectionsOnly: 1
 --- !u!1 &4347688153388525663
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ Transform:
   m_Children:
   - {fileID: 4347688153376071521}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4347688154004759942
 MonoBehaviour:
@@ -557,6 +557,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7cd9ca2f52010db48b3a9f099e19943f, type: 3}
   - {fileID: 8300000, guid: 83d7bab1ddea6bf4093f4965df7de692, type: 3}
   isPlaying: 0
+  isPlaying2: 0
 --- !u!114 &1417080997626903325
 MonoBehaviour:
   m_ObjectHideFlags: 0

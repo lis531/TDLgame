@@ -34,22 +34,24 @@ public class Pause : MonoBehaviour
             UnPaused();
         }
     }
-    void UnPaused()
+    public void UnPaused()
     {
         Esc.transform.localScale = new Vector3(0, 0, 0);
-        Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Time.timeScale = 1;
         if (Noktowizja.m_TurnedOn)
             enemy.GetComponent<AudioSource>().volume = 1;
     }
     public void Play()
     {
+        inWork = false;
         UnPaused();
     }
     public void Menu()
     {
         SceneManager.LoadScene("Menu");
-        UnPaused();
+        Esc.transform.localScale = new Vector3(0, 0, 0);
+        Time.timeScale = 1;
     }
 }

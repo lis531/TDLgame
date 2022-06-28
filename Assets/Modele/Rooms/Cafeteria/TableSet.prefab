@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89495658550055650}
   - component: {fileID: 6507571526419751902}
+  - component: {fileID: 3695540540821701750}
   m_Layer: 0
   m_Name: TableSet
   m_TagString: Untagged
@@ -44,7 +45,7 @@ LODGroup:
   m_GameObject: {fileID: 1409724852964406855}
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0, y: 0, z: 0.001690808}
-  m_Size: 0.015
+  m_Size: 1
   m_FadeMode: 1
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
@@ -56,6 +57,19 @@ LODGroup:
     - renderer: {fileID: 4996759456676688527}
     - renderer: {fileID: 1661222121808466183}
   m_Enabled: 1
+--- !u!65 &3695540540821701750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409724852964406855}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4, y: 1.7, z: 3.1}
+  m_Center: {x: 1.4, y: -1.4, z: 2.3}
 --- !u!1001 &57505652364840323
 PrefabInstance:
   m_ObjectHideFlags: 0
