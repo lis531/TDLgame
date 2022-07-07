@@ -5027,6 +5027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365680442de5d0c4b859bd90a97a4624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MainSlider: {fileID: 316710520}
+  m_SFXSlider: {fileID: 2081473219}
+  m_MusicSlider: {fileID: 236098192}
   m_MainMixer: {fileID: 24100000, guid: 3626945caa844e94798b32b0255d04d0, type: 2}
 --- !u!1 &1662243632
 GameObject:
@@ -5356,7 +5359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "RUN\n  RUN"
+  m_text: "RUN\n RUN"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42e089d4843c990428ead5958fcb6254, type: 2}
   m_sharedMaterial: {fileID: 2101269993870270637, guid: 42e089d4843c990428ead5958fcb6254,

@@ -31,7 +31,7 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: 3765df01a4f79e340b8b9ef3f4d12452
-    name: AmbientVolume
+    name: MusicVolume
   - guid: 833a9c54a1ed34a46815c35bbf98b992
     name: MasterVolume
   - guid: 7b404902410bc8148abfe3d65c802529
@@ -97,7 +97,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ambient
+  m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 728345279c8c19d44bf076bfdf18e828
   m_Children: []

@@ -42,8 +42,8 @@ public class SaveManager : MonoBehaviour
         SettingsData data = (SettingsData)bf.Deserialize(file);
         file.Close();
         Screen.fullScreen = data.fullScreen;
-        QualitySettings.SetQualityLevel(data.qualityLevel);
         QualitySettings.vSyncCount = data.isVsync;
+        QualitySettings.SetQualityLevel(data.qualityLevel);
         SoundsSettings.m_MainVolume = data.m_MainVolume;
     }
     public void SavePlayer()
