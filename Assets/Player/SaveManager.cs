@@ -16,35 +16,11 @@ public class SaveManager : MonoBehaviour
 
         if(m_QueueLoad)
             LoadPlayer();
-        if (File.Exists(path))
-            LoadSettings();
     }
 
     public void QueueLoad()
     {
         m_QueueLoad = true;
-    }
-
-    public void SaveSettings()
-    {
-        string path = Application.persistentDataPath + "/Settings.dat";
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(path);
-        SettingsData data = new SettingsData(Screen.fullScreen, QualitySettings.vSyncCount, QualitySettings.GetQualityLevel(), SoundsSettings.m_MainVolume);
-        bf.Serialize(file, data);
-        file.Close();
-    }
-    void LoadSettings()
-    {
-        string path = Application.persistentDataPath + "/Settings.dat";
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(path, FileMode.Open);
-        SettingsData data = (SettingsData)bf.Deserialize(file);
-        file.Close();
-        Screen.fullScreen = data.fullScreen;
-        QualitySettings.vSyncCount = data.isVsync;
-        QualitySettings.SetQualityLevel(data.qualityLevel);
-        SoundsSettings.m_MainVolume = data.m_MainVolume;
     }
     public void SavePlayer()
     {

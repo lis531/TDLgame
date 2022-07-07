@@ -9,7 +9,7 @@ public class GraphicsSettings : MonoBehaviour
     private Toggle lowToggle;
     private GameObject blocker;
     public GameObject graphicalSettings;
-    public bool isFullScreen;
+    public static int FullScreenToogle;
 
     public void CheckSetting(Toggle toggle)
     {
@@ -59,7 +59,11 @@ public class GraphicsSettings : MonoBehaviour
     #endregion
     public void SetFullScreen()
     {
-        Screen.fullScreen = isFullScreen;
+        Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen == true)
+            FullScreenToogle = 1;
+        else
+            FullScreenToogle = 0;
     }
 
     void Start()

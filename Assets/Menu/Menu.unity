@@ -2243,7 +2243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   graphicalSettings: {fileID: 2096257586}
-  isFullScreen: 0
 --- !u!1 &638959514
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,9 +3332,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114430418}
-        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
-        m_MethodName: SaveSettings
+      - m_Target: {fileID: 1114430419}
+        m_TargetAssemblyTypeName: SaveSettings, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4074,6 +4073,8 @@ GameObject:
   - component: {fileID: 1114430415}
   - component: {fileID: 1114430414}
   - component: {fileID: 1114430418}
+  - component: {fileID: 1114430419}
+  - component: {fileID: 1114430420}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4175,6 +4176,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d47d0c6bea57e048bdfbd0fd037f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1114430419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114430413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c33185b4a381644967649da2c60770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveButton: {fileID: 872604214}
+--- !u!114 &1114430420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114430413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365680442de5d0c4b859bd90a97a4624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1173125376
@@ -4946,7 +4972,6 @@ GameObject:
   - component: {fileID: 1639173469}
   - component: {fileID: 1639173471}
   - component: {fileID: 1639173470}
-  - component: {fileID: 1639173472}
   m_Layer: 5
   m_Name: Volume
   m_TagString: Untagged
@@ -5015,22 +5040,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639173468}
   m_CullTransparentMesh: 1
---- !u!114 &1639173472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639173468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365680442de5d0c4b859bd90a97a4624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MainSlider: {fileID: 316710520}
-  m_SFXSlider: {fileID: 2081473219}
-  m_MusicSlider: {fileID: 236098192}
-  m_MainMixer: {fileID: 24100000, guid: 3626945caa844e94798b32b0255d04d0, type: 2}
 --- !u!1 &1662243632
 GameObject:
   m_ObjectHideFlags: 0
