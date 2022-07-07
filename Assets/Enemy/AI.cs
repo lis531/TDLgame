@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class AI : MonoBehaviour
 {
@@ -190,9 +192,20 @@ public class AI : MonoBehaviour
             Invoke("ResetAttack", m_TimeBetweenAtacks);
 
             Health.health -= 20;
+            StartCoroutine(Bleeding());
         }
     }
-
+    IEnumerator Bleeding()
+    {
+        //repeat 5 times
+        for (int i = 0; i < 5; i++)
+        {
+            //wait for 0.5 seconds
+            yield return new WaitForSeconds(0.5f);
+            //apply damage
+            Health.health -= 10;
+        }
+    }
     private void ResetAttack()
     {   
         m_AlreadyAtacked = false;
