@@ -101,6 +101,7 @@ public class AI : MonoBehaviour
     }
     void UpdateBehaviour()
     {
+        Debug.Log(Health.health);
         if(gameObject.activeInHierarchy != m_Enabled)
         {
             gameObject.SetActive(m_Enabled);
@@ -177,7 +178,6 @@ public class AI : MonoBehaviour
     private void ChasePlayer()
     {
         SetWalkPoint(m_PlayerTransformLast.position);
-        Debug.Log("ChasePlayer");
     }
 
     private void AttackPlayer()
@@ -197,13 +197,10 @@ public class AI : MonoBehaviour
     }
     IEnumerator Bleeding()
     {
-        //repeat 5 times
         for (int i = 0; i < 5; i++)
         {
-            //wait for 0.5 seconds
             yield return new WaitForSeconds(0.5f);
-            //apply damage
-            Health.health -= 10;
+            Health.health -= 2;
         }
     }
     private void ResetAttack()

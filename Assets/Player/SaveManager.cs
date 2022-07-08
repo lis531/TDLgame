@@ -2,6 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class SaveManager : MonoBehaviour
 
     public void QueueLoad()
     {
+        m_QueueLoad = true;
+    }
+    public void LoadFromGameOver()
+    {
+        SceneManager.LoadScene("Tunele");
         m_QueueLoad = true;
     }
     public void SavePlayer()
