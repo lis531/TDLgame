@@ -1513,7 +1513,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: -90, z: 0}
 --- !u!111 &430492353
 Animation:
   m_ObjectHideFlags: 0
@@ -3313,7 +3313,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 139358790}
+  m_TargetGraphic: {fileID: 872604217}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3991,7 +3991,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 139358790}
+  m_TargetGraphic: {fileID: 1066185158}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -6704,8 +6704,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.3
   m_Range: 10
-  m_SpotAngle: 50
-  m_InnerSpotAngle: 25
+  m_SpotAngle: 85
+  m_InnerSpotAngle: 50
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -6759,14 +6759,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044820230}
-  m_LocalRotation: {x: 0.08265189, y: -0.3160972, z: 0.027654935, w: 0.944715}
+  m_LocalRotation: {x: 0.07898997, y: -0.42101005, z: 0.03683362, w: 0.90285903}
   m_LocalPosition: {x: 0, y: 0.5, z: 1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 10, y: -37, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: -50, z: 0}
 --- !u!114 &2044820234
 MonoBehaviour:
   m_ObjectHideFlags: 0
