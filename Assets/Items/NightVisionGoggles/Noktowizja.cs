@@ -10,14 +10,18 @@ public class Noktowizja : MonoBehaviour
     public VolumeProfile NightVisonGlobalVolume;
     public VolumeProfile MainGlobalVolume;
     public static bool m_TurnedOn;
+    public static bool canBe;
     public static float m_Battery = 100;
     public static float m_BatteryUsage = 2;
 
     void Start()
     {
         m_localVolume.SetActive(false);
-        enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
-        enemy.GetComponent<AudioSource>().volume = 0;
+        if (!m_TurnedOn)
+        {
+            enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
+            enemy.GetComponent<AudioSource>().volume = 0;
+        }
     }   
 
     public void SwitchState(bool onOff)
@@ -25,6 +29,7 @@ public class Noktowizja : MonoBehaviour
         if (onOff)
         {
             m_TurnedOn = true;
+            canBe = true;
             m_localVolume.SetActive(true);
             volume.profile = NightVisonGlobalVolume;
             enemy.GetComponent<AudioSource>().volume = 1;
@@ -46,19 +51,12 @@ public class Noktowizja : MonoBehaviour
         {
             if (!m_TurnedOn)
             {
-                m_TurnedOn = true;
-                m_localVolume.SetActive(true);
-                volume.profile = NightVisonGlobalVolume;
-                enemy.GetComponent<AudioSource>().volume = 1;
-                enemycialo.transform.localScale = new Vector3(70f, 70f, 60f);
+                SwitchState(true);
             }
             else if (m_TurnedOn)
             {
-                m_TurnedOn = false;
-                m_localVolume.SetActive(false);
-                volume.profile = MainGlobalVolume;
-                enemy.GetComponent<AudioSource>().volume = 0;
-                enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
+                SwitchState(false);
+                canBe = false;
             }
         }
         if (m_TurnedOn)

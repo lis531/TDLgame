@@ -6,8 +6,10 @@ public class Pause : MonoBehaviour
     public static GameObject Esc;
     public static GameObject enemy;
     public static bool inWork;
+    GameObject player;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.Find("Enemy");
         Esc = GameObject.Find("Esc");
     }
@@ -22,6 +24,10 @@ public class Pause : MonoBehaviour
             Cursor.visible = true;
             enemy.GetComponent<AudioSource>().volume = 0;
             Time.timeScale = 0;
+            if (Noktowizja.canBe)
+            {
+                player.GetComponent<Noktowizja>().SwitchState(false);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && inWork)
         {
@@ -41,8 +47,10 @@ public class Pause : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
-        if (Noktowizja.m_TurnedOn)
-            enemy.GetComponent<AudioSource>().volume = 1;
+        if (Noktowizja.canBe)
+        {
+            player.GetComponent<Noktowizja>().SwitchState(true);
+        }
     }
     public void Play()
     {

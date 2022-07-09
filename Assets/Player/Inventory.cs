@@ -9,8 +9,10 @@ public class Inventory : MonoBehaviour
     //public GameObject batteries;
     public static GameObject inv;
     public static bool invOn;
+    GameObject player;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         inv = GameObject.Find("Inventory");
     }
     void Update()
@@ -23,6 +25,10 @@ public class Inventory : MonoBehaviour
             Time.timeScale = 0;
             Pause.enemy.GetComponent<AudioSource>().volume = 0;
             invOn = true;
+            if (Noktowizja.canBe)
+            {
+                player.GetComponent<Noktowizja>().SwitchState(false);
+            }
             //if(PlayerInventory.hasBatteries)
             //    batteries.transform.localScale = new Vector3(1f, 1f, 1f);
             //if(PlayerInventory.hasGasMask)
@@ -44,9 +50,10 @@ public class Inventory : MonoBehaviour
             invOn = false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            //bezpiecznik.transform.localScale = new Vector3(0f, 0f, 0f);
-            //gasMask.transform.localScale = new Vector3(0f, 0f, 0f);
-            //batteries.transform.localScale = new Vector3(0f, 0f, 0f);
+            if (Noktowizja.canBe)
+            {
+                player.GetComponent<Noktowizja>().SwitchState(true);
+            }
         }
     }
 /*  public Texture m_OnTexture;
