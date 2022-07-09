@@ -23,7 +23,7 @@ public class Pause : MonoBehaviour
             enemy.GetComponent<AudioSource>().volume = 0;
             Time.timeScale = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && inWork && !Inventory.invOn)
+        else if (Input.GetKeyDown(KeyCode.Escape) && inWork)
         {
             inWork = false;
             UnPaused();
@@ -31,6 +31,7 @@ public class Pause : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Escape) && !inWork && Inventory.invOn)
         {
             Inventory.invOn = false;
+            Inventory.inv.transform.localScale = new Vector3(0f, 0f, 0f);
             UnPaused();
         }
     }

@@ -7,9 +7,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.8BEC98E7" = ""
+	"last_search.8BEC98E7" = "audio source"
 	"OpenInspectorPreview.8BEC98E7" = "0"
-	"currentGroup.8BEC98E7" = "scene"
+	"currentGroup.8BEC98E7" = "all"
 }
 providers = {
 	adb = {
@@ -56,6 +56,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"a"
 ]
 searchItemFavorites = [
 ]

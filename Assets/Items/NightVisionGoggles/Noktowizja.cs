@@ -9,7 +9,7 @@ public class Noktowizja : MonoBehaviour
     public Volume volume;
     public VolumeProfile NightVisonGlobalVolume;
     public VolumeProfile MainGlobalVolume;
-    public static bool m_TurnedOn = false;
+    public static bool m_TurnedOn;
     public static float m_Battery = 100;
     public static float m_BatteryUsage = 2;
 
