@@ -10,6 +10,9 @@ scopes = {
 	"last_search.8BEC98E7" = "audio source"
 	"OpenInspectorPreview.8BEC98E7" = "0"
 	"currentGroup.8BEC98E7" = "all"
+	"last_search.8C24D059" = "t:AudioSource"
+	"OpenInspectorPreview.8C24D059" = "0"
+	"currentGroup.8C24D059" = "asset"
 }
 providers = {
 	adb = {
@@ -52,19 +55,41 @@ providers = {
 		priority = 50
 		defaultAction = null
 	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = true
+		priority = 85
+		defaultAction = null
+	}
 }
 objectSelectors = {
 }
 recentSearches = [
+	"t:AudioSource"
+	"i"
 	"a"
 ]
 searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
-showSavedSearchPanel = false
+showSavedSearchPanel = true
 expandedQueries = [
 ]
-queryBuilder = false
+queryBuilder = true
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
