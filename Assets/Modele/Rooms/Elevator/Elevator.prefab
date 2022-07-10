@@ -367,7 +367,7 @@ MonoBehaviour:
   elevatorBeep: {fileID: 8300000, guid: d0129ad097dba5c438ac03dfa029f035, type: 3}
   otherElevator: {fileID: 0}
   elevatorRideTime: 3
-  openByDefault: 0
+  openByDefault: 1
   isRiding: 0
 --- !u!82 &4149774103655102725
 AudioSource:
