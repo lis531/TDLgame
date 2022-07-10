@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerStamina : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class PlayerStamina : MonoBehaviour
 
     public bool tired = false;
     public bool exhausted = false;
+    public VolumeProfile MainGlobalVolume;
 
     public static PlayerStamina instance;
 
@@ -80,5 +83,36 @@ public class PlayerStamina : MonoBehaviour
 
         StartCoroutine(StaminaTiredCooldown());
         StartCoroutine(StaminaExhaustedCooldown());
+    }
+    void Update()
+    {
+        if(stamina <= 150 && stamina > 60)
+        {
+            Debug.Log("Stamina is low!");
+            MainGlobalVolume.TryGet<Vignette>(out var vignette);
+            MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
+            colorAdjustments.postExposure.overrideState = true;
+            colorAdjustments.postExposure.value = (stamina / 50 - 3f);
+            vignette.intensity.overrideState = true;
+            vignette.intensity.value = (0.8f - stamina / 220);
+        }
+        else if (stamina <= 60)
+        {
+            MainGlobalVolume.TryGet<Vignette>(out var vignette);
+            MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
+            colorAdjustments.postExposure.overrideState = true;
+            vignette.intensity.overrideState = true;
+            colorAdjustments.postExposure.value = -1.8f;
+            vignette.intensity.value = 0.5f;
+        }
+        else
+        {
+            MainGlobalVolume.TryGet<Vignette>(out var vignette);
+            vignette.intensity.overrideState = true;
+            MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
+            colorAdjustments.postExposure.overrideState = true;
+            colorAdjustments.postExposure.value = 0f;
+            vignette.intensity.value = 0.3f;
+        }
     }
 }

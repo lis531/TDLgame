@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4680039948621580629}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 80, y: 80, z: 70}
+  m_LocalScale: {x: 70, y: 70, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6069962393280702446}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 2711586236870063451}
   - component: {fileID: 593930504266748981}
   - component: {fileID: 3383168391677737244}
-  - component: {fileID: 6779716494703961605}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -120,7 +119,7 @@ Transform:
   - {fileID: 5456400279208088559}
   - {fileID: 3334506953974293626}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6069962393280702447
 MeshFilter:
@@ -305,25 +304,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   m_DetectRange: 3
---- !u!205 &6779716494703961605
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069962393280702354}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0.001690808}
-  m_Size: 1
-  m_FadeMode: 1
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.008
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 6625406353057097856}
-  m_Enabled: 1
 --- !u!1 &9181014725490550505
 GameObject:
   m_ObjectHideFlags: 0

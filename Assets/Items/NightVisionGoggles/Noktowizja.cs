@@ -17,10 +17,13 @@ public class Noktowizja : MonoBehaviour
     void Start()
     {
         m_localVolume.SetActive(false);
-        if (!m_TurnedOn)
+        if (m_TurnedOn)
         {
-            enemycialo.transform.localScale = new Vector3(0f, 0f, 0f);
-            enemy.GetComponent<AudioSource>().volume = 0;
+            SwitchState(true);
+        }
+        else if (!m_TurnedOn)
+        {
+            SwitchState(false);
         }
     }   
 

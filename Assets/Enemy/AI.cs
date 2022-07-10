@@ -31,6 +31,7 @@ public class AI : MonoBehaviour
     public uint  m_DebugFovRays = 16;
     private bool m_IsWalking = false;
     private bool m_WalkingEnabled = true;
+    bool Chase;
     private DoorController m_DoorInFront;
     static public bool m_Enabled = true;
     Vector3 AtEnemyY(Vector3 vec)
@@ -124,7 +125,7 @@ public class AI : MonoBehaviour
 
         GameObject door = m_DoorDetector.CollidedWithDoor();
 
-        if(door != null)
+        if(door != null && !Chase)
         {
             m_DoorInFront = door.GetComponent<DoorController>();
 
@@ -149,6 +150,7 @@ public class AI : MonoBehaviour
             else
                 m_NavMeshAgent.speed = 3.0f;
                 m_PlayerTransformLast = m_PlayerTransform;
+                Chase = true;
                 ChasePlayer();
         }
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
@@ -169,6 +171,8 @@ public class AI : MonoBehaviour
     #region AI Actions
     private void SearchWalkPoint()
     {
+        Chase = false;
+
         int randomNodeIndex = Random.Range(0, Nodes.nodes.Length);
 
         Vector3 nodePos = AtEnemyY(Nodes.nodes[randomNodeIndex].position);

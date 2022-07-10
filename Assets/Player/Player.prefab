@@ -489,6 +489,7 @@ GameObject:
   - component: {fileID: 7130535090279908347}
   - component: {fileID: 359861461133519945}
   - component: {fileID: 7583980402284195697}
+  - component: {fileID: 576161282948328596}
   - component: {fileID: 4347688154004759943}
   - component: {fileID: 2802408337033953945}
   - component: {fileID: 1962298302658853365}
@@ -513,7 +514,7 @@ Transform:
   m_Children:
   - {fileID: 4347688153376071521}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4347688154004759942
 MonoBehaviour:
@@ -561,6 +562,7 @@ MonoBehaviour:
   exhaustedTime: 1.5
   tired: 0
   exhausted: 0
+  volume: {fileID: 0}
 --- !u!114 &7381809975505975749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,6 +676,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a998a103459ab9444a903e88ee0511b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &576161282948328596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347688154004759946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc406ad1de03efd489d529fa59876bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 350
+  staminaUsageRate: 100
+  staminaRegenRate: 100
+  tiredTime: 0.5
+  exhaustedTime: 1.5
+  tired: 0
+  exhausted: 0
+  volume: {fileID: 0}
 --- !u!143 &4347688154004759943
 CharacterController:
   m_ObjectHideFlags: 0
