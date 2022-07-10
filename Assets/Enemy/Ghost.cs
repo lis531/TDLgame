@@ -97,7 +97,6 @@ public class Ghost : MonoBehaviour
     }
     void UpdateBehaviour()
     {
-        Debug.Log(Health.health);
         if(gameObject.activeInHierarchy != m_Enabled)
         {
             gameObject.SetActive(m_Enabled);
