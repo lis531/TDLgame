@@ -44,7 +44,7 @@ public class DoorController : MonoBehaviour
             StartCoroutine(PlayErrorSound());
     }
     
-    #region AI
+    #region Core
     public bool IsOpen()
     {
         return isOpen;

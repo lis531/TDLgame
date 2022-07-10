@@ -108,10 +108,10 @@ public class PlayerStamina : MonoBehaviour
         else
         {
             MainGlobalVolume.TryGet<Vignette>(out var vignette);
-            vignette.intensity.overrideState = true;
             MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
             colorAdjustments.postExposure.overrideState = true;
             colorAdjustments.postExposure.value = 0f;
+            vignette.intensity.overrideState = true;
             vignette.intensity.value = 0.3f;
         }
     }

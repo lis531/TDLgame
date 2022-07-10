@@ -73,7 +73,7 @@ public class DevConsole : MonoBehaviour
     }
     void mrwhite()
     {
-        AI.m_Enabled = m_Arguments[0].Equals("on");
+        AICore.m_Enabled = m_Arguments[0].Equals("on");
     }
     void stamina()
     {
