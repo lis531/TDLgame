@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class AICore : MonoBehaviour
 {
-    public NavMeshAgent m_NavMeshAgent;
+    private NavMeshAgent m_NavMeshAgent;
     private Transform    m_PlayerTransform;
     private Transform m_PlayerTransformLast;
     private Latarka      m_Latarka;
@@ -29,8 +29,8 @@ public class AICore : MonoBehaviour
     [Range(0.0f,180.0f)]
     public float m_FOVEulers;
     public uint  m_DebugFovRays;
-    private bool m_IsWalking;
-    private bool m_WalkingEnabled;
+    private bool m_IsWalking = false;
+    private bool m_WalkingEnabled = true;
     bool Chase;
     private DoorController m_DoorInFront;
     static public bool m_Enabled = true;
@@ -90,7 +90,7 @@ public class AICore : MonoBehaviour
     }
     #endregion
 
-    #region Core Core
+    #region AI Core
     private void Awake()
     {
         m_PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -102,6 +102,8 @@ public class AICore : MonoBehaviour
     }
     void UpdateBehaviour()
     {
+        Debug.Log(Health.health);
+        //Debug.Log(Health.health);
         if(gameObject.activeInHierarchy != m_Enabled)
         {
             gameObject.SetActive(m_Enabled);
@@ -167,7 +169,7 @@ public class AICore : MonoBehaviour
     }
     #endregion
 
-    #region Core Actions
+    #region AI Actions
     private void SearchWalkPoint()
     {
         Chase = false;

@@ -92,9 +92,9 @@ public class PlayerStamina : MonoBehaviour
             MainGlobalVolume.TryGet<Vignette>(out var vignette);
             MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
             colorAdjustments.postExposure.overrideState = true;
-            colorAdjustments.postExposure.value = (stamina / 50 - 3f);
+            colorAdjustments.postExposure.value = (stamina / 75 - 2f);
             vignette.intensity.overrideState = true;
-            vignette.intensity.value = (0.8f - stamina / 220);
+            vignette.intensity.value = (1f - stamina / 350 - 0.3f);
         }
         else if (stamina <= 60)
         {
@@ -102,8 +102,8 @@ public class PlayerStamina : MonoBehaviour
             MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
             colorAdjustments.postExposure.overrideState = true;
             vignette.intensity.overrideState = true;
-            colorAdjustments.postExposure.value = -1.8f;
-            vignette.intensity.value = 0.5f;
+            colorAdjustments.postExposure.value = -1.2f;
+            vignette.intensity.value = 0.53f;
         }
         else
         {
@@ -112,7 +112,7 @@ public class PlayerStamina : MonoBehaviour
             colorAdjustments.postExposure.overrideState = true;
             colorAdjustments.postExposure.value = 0f;
             vignette.intensity.overrideState = true;
-            vignette.intensity.value = 0.3f;
+            vignette.intensity.value = 0.28f;
         }
     }
 }
