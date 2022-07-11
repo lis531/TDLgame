@@ -26,6 +26,7 @@ public class SaveManager : MonoBehaviour
     public void LoadFromGameOver()
     {
         SceneManager.LoadScene("Tunele");
+        Cursor.lockState = CursorLockMode.Locked;
         m_QueueLoad = true;
     }
     public void SavePlayer()

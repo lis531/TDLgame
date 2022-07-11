@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4680039948621580629}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 70, y: 70, z: 60}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6069962393280702446}
   - component: {fileID: 6069962393280702447}
-  - component: {fileID: 6069962393280702441}
+  - component: {fileID: 1085375624407129728}
   - component: {fileID: 2711586236870063451}
   - component: {fileID: 593930504266748981}
   - component: {fileID: 3383168391677737244}
@@ -119,7 +119,7 @@ Transform:
   - {fileID: 5456400279208088559}
   - {fileID: 3334506953974293626}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6069962393280702447
 MeshFilter:
@@ -129,7 +129,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6069962393280702354}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6069962393280702441
+--- !u!114 &1085375624407129728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,8 +148,8 @@ MonoBehaviour:
   m_AttackRange: 2
   m_WalkRange: 4
   m_RunRange: 7
-  m_BehaviourUpdateTickRate: 20
-  m_DoorOpenTime: 5
+  m_BehaviourUpdateTickRate: 10
+  m_DoorOpenTime: 3
   m_FOVEulers: 130
   m_DebugFovRays: 32
 --- !u!195 &2711586236870063451

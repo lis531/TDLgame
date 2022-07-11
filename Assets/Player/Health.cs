@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
