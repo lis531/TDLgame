@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mCamera;
     public GameObject fadeOut;
     public GameObject options;
-
+    public GameObject light;
     bool Animation = false;
 
     Animation elevatorAnim;
@@ -16,27 +16,29 @@ public class MainMenu : MonoBehaviour
     Animation menuAnim;
     Animation fadeOutAnim;
     Animation optionsAnim;
+    Animation lightAnim;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
 
+        lightAnim = light.GetComponent<Animation>();
         elevatorAnim = elevator.GetComponent<Animation>();
         cameraAnim = mCamera.GetComponent<Animation>();
         menuAnim = transform.GetComponent<Animation>();
-        fadeOutAnim = fadeOut.GetComponent<Animation>();
         optionsAnim = options.GetComponent<Animation>();
+        fadeOutAnim = fadeOut.GetComponent<Animation>();
     }
 
     IEnumerator FlyAndLoad()
     {
         cameraAnim.clip = cameraAnim.GetClip("FlyToElevator");
         menuAnim.clip = menuAnim.GetClip("DisappearMenu");
-
+        
         cameraAnim.Play();
         elevatorAnim.Play();
         menuAnim.Play();
-        fadeOutAnim.Play();
+        StartCoroutine(WaitForFade());
 
         yield return new WaitForSeconds(cameraAnim.clip.length);
         SceneManager.LoadScene("Tunele");
@@ -45,6 +47,18 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Animation = false;
+    }
+    IEnumerator WaitForFading()
+    {
+        yield return new WaitForSeconds(1.4f);
+        Application.Quit();
+    }
+    IEnumerator WaitForFade()
+    {
+        lightAnim.clip = lightAnim.GetClip("lightFade");
+        lightAnim.Play();
+        yield return new WaitForSeconds(1.2f);
+        fadeOutAnim.Play();
     }
 
     public void PlayGame()
@@ -57,6 +71,9 @@ public class MainMenu : MonoBehaviour
         if (!Animation)
         {
             Animation = true;
+            //play lightAtOptions animation
+            lightAnim.clip = lightAnim.GetClip("lightAtOptions");
+            lightAnim.Play();
             cameraAnim.clip = cameraAnim.GetClip("GoToOptions");
             cameraAnim.Play();
 
@@ -73,6 +90,8 @@ public class MainMenu : MonoBehaviour
         if (!Animation)
         {
             Animation = true;
+            lightAnim.clip = lightAnim.GetClip("lightAtMenu");
+            lightAnim.Play();
             cameraAnim.clip = cameraAnim.GetClip("GoToMenu");
             cameraAnim.Play();
 
@@ -87,6 +106,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        fadeOutAnim.Play();
+        StartCoroutine(WaitForFading());
     }
 }

@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3261756316890010081}
   - {fileID: 2015832781352141952}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8473717406964835900
 MeshFilter:
@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4560923380747567611, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5223663821422502783, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
       propertyPath: m_Name
@@ -182,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
       propertyPath: m_Intensity
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -256,6 +261,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4560923380747567611, guid: d25d5d487f501c54fbd107fa8eeac065,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5223663821422502783, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
       propertyPath: m_Name
@@ -274,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 5583988420904409331, guid: d25d5d487f501c54fbd107fa8eeac065,
         type: 3}
       propertyPath: m_Intensity
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

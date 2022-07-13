@@ -333,7 +333,7 @@ Animation:
   - {fileID: 7400000, guid: 9810390dc8b7c8848b93c408ffa7fc5f, type: 2}
   - {fileID: 7400000, guid: bc16ebcd6e5171f46b7583535333022d, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!64 &1087704378556480296
