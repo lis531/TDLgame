@@ -145,7 +145,7 @@ MonoBehaviour:
   m_TimeBetweenAtacks: 2
   m_SightRange: 7
   m_AttackRange: 2
-  m_WalkRange: 5
+  m_WalkRange: 4
   m_RunRange: 7
   m_BehaviourUpdateTickRate: 10
   m_DoorOpenTime: 2
@@ -162,14 +162,14 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3
-  m_Acceleration: 10
+  m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 90
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.15
+  m_Height: 1.4
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

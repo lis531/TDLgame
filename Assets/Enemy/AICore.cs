@@ -31,7 +31,7 @@ public class AICore : MonoBehaviour
     public uint  m_DebugFovRays;
     private bool m_IsWalking = false;
     private bool m_WalkingEnabled = true;
-    bool Chase;
+    public static bool Chase;
     private DoorController m_DoorInFront;
     static public bool m_Enabled = true;
     Vector3 AtEnemyY(Vector3 vec)
@@ -102,8 +102,6 @@ public class AICore : MonoBehaviour
     }
     void UpdateBehaviour()
     {
-        Debug.Log(Health.health);
-        //Debug.Log(Health.health);
         if(gameObject.activeInHierarchy != m_Enabled)
         {
             gameObject.SetActive(m_Enabled);
