@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Listener : MonoBehaviour
 {
-    public NavMeshAgent m_NavMeshAgent;
+    private NavMeshAgent m_NavMeshAgent;
     private Transform    m_PlayerTransform;
     private Transform m_PlayerTransformLast;
     private Latarka      m_Latarka;

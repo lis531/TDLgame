@@ -28,7 +28,7 @@ public class AICore : MonoBehaviour
 
     [Range(0.0f,180.0f)]
     public float m_FOVEulers;
-    public uint  m_DebugFovRays;
+    public uint  m_DebugFovRays = 16;
     private bool m_IsWalking = false;
     private bool m_WalkingEnabled = true;
     public static bool Chase;

@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &5456400279208088559
 Transform:
@@ -146,11 +146,11 @@ MonoBehaviour:
   m_SightRange: 7
   m_AttackRange: 2
   m_WalkRange: 4
-  m_RunRange: 7
+  m_RunRange: 6
   m_BehaviourUpdateTickRate: 10
   m_DoorOpenTime: 2
   m_FOVEulers: 130
-  m_DebugFovRays: 32
+  m_DebugFovRays: 16
 --- !u!195 &3306240400934770166
 NavMeshAgent:
   m_ObjectHideFlags: 0

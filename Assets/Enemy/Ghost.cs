@@ -26,7 +26,7 @@ public class Ghost : MonoBehaviour
 
     [Range(0.0f,180.0f)]
     public float m_FOVEulers;
-    public uint  m_DebugFovRays;
+    public uint  m_DebugFovRays = 16;
     private bool m_IsWalking;
     private bool m_WalkingEnabled;
     static public bool m_Enabled;

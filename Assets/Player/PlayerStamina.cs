@@ -88,7 +88,6 @@ public class PlayerStamina : MonoBehaviour
     {
         if(stamina <= 150 && stamina > 60)
         {
-            Debug.Log("Stamina is low!");
             MainGlobalVolume.TryGet<Vignette>(out var vignette);
             MainGlobalVolume.TryGet<ColorAdjustments>(out var colorAdjustments);
             colorAdjustments.postExposure.overrideState = true;

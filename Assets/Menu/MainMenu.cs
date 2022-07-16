@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject mCamera;
     public GameObject fadeOut;
     public GameObject options;
-    public GameObject light;
+    public GameObject menuLight;
     bool Animation = false;
 
     Animation elevatorAnim;
@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        lightAnim = light.GetComponent<Animation>();
+        lightAnim = menuLight.GetComponent<Animation>();
         elevatorAnim = elevator.GetComponent<Animation>();
         cameraAnim = mCamera.GetComponent<Animation>();
         menuAnim = transform.GetComponent<Animation>();

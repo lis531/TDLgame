@@ -3,17 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public static GameObject Esc;
-    public static GameObject enemy;
+    public GameObject Esc;
+    public GameObject enemy;
     public static bool inWork;
-    GameObject player;
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        enemy = GameObject.Find("Enemy");
-        Esc = GameObject.Find("Esc");
-    }
-
+    public GameObject player;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !inWork && !Inventory.invOn)
