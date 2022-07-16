@@ -24,6 +24,10 @@ public class Inventory : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetMouseButtonDown(0) && invOn)
+        {
+            Combine();
+        }
         if(Input.GetKeyDown(KeyCode.Tab) && !Pause.inWork && !invOn)
         {
             inv.transform.localScale = new Vector3(1f, 1f, 1f);
@@ -61,6 +65,25 @@ public class Inventory : MonoBehaviour
             if (Noktowizja.canBe)
             {
                 player.GetComponent<Noktowizja>().SwitchState(true);
+            }
+        }
+    }
+    void Combine()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionDistance))
+        {
+            if (hit.transform.tag == "NVGoggles")
+            {
+                hit.transform.GetComponent<Item>().Combine();
+            }
+            if (hit.transform.tag == "Keycard")
+            {
+                hit.transform.GetComponent<Item>().Combine();
+            }
+            if (hit.transform.tag == "Medkit")
+            {
+                hit.transform.GetComponent<Item>().Combine();
             }
         }
     }

@@ -25,8 +25,8 @@ public class Listener : MonoBehaviour
 
     public float m_DoorOpenTime;
     [Header("FOV of Pan Bialy")]
-    private bool m_IsWalking;
-    private bool m_WalkingEnabled;
+    private bool m_IsWalking = false;
+    private bool m_WalkingEnabled = true;
     bool Chase;
     private DoorController m_DoorInFront;
     static public bool m_Enabled = true;
