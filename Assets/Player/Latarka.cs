@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Latarka : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public class Latarka : MonoBehaviour
 
     [Header("Tego nie zmieniaj w Runtimie!:")]
 
+    bool Chaseing;
     public int latarkaUpdateTickRate;
     public int latarkaSubSteps;
     public static bool m_Enabled = false;
@@ -113,6 +116,19 @@ public class Latarka : MonoBehaviour
             m_Latarka0.SetActive(!m_Latarka0.activeSelf);
             m_Latarka1.SetActive(!m_Latarka1.activeSelf);
         }
+        if((Ghost.Chase || Listener.Chase) && !Chaseing)
+        {
+            StartCoroutine(Chase());
+            Chaseing = true;
+        }
+    }
+    IEnumerator Chase()
+    {
+        yield return new WaitForSeconds(Random.Range(0.05f, 0.2f));
+        m_Enabled = false;
+        yield return new WaitForSeconds(Random.Range(0.1f, 0.2f));
+        m_Enabled = true;
+        Chaseing = false;
     }
     void OnDrawGizmos()
     {

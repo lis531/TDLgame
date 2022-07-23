@@ -30,6 +30,7 @@ public class Ghost : MonoBehaviour
     private bool m_IsWalking = false;
     private bool m_WalkingEnabled = true;
     static public bool m_Enabled = true;
+    static public bool Chase;
     Vector3 AtEnemyY(Vector3 vec)
     {
         return new Vector3(vec.x, transform.position.y, vec.z);
@@ -124,6 +125,7 @@ public class Ghost : MonoBehaviour
             else
                 m_NavMeshAgent.speed = 3.0f;
                 m_PlayerTransformLast = m_PlayerTransform;
+                Chase = true;
                 ChasePlayer();
         }
         else if(DistanceToWalkPoint() < 1.0f && m_IsWalking)
@@ -144,6 +146,7 @@ public class Ghost : MonoBehaviour
     #region AI Actions
     private void SearchWalkPoint()
     {
+        Chase = false;
         int randomNodeIndex = Random.Range(0, Nodes.nodes.Length);
 
         Vector3 nodePos = AtEnemyY(Nodes.nodes[randomNodeIndex].position);

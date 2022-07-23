@@ -790,6 +790,11 @@ PrefabInstance:
       objectReference: {fileID: 873919639}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: goggles
+      value: 
+      objectReference: {fileID: 890133112}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: googles
       value: 
       objectReference: {fileID: 890133112}
@@ -808,6 +813,21 @@ PrefabInstance:
       propertyPath: batteries
       value: 
       objectReference: {fileID: 47352369}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: canvasRect
+      value: 
+      objectReference: {fileID: 2073953230}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Raycaster
+      value: 
+      objectReference: {fileID: 2073953227}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_EventSystem
+      value: 
+      objectReference: {fileID: 1165257820}
     - target: {fileID: 3506106816364499781, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: enemy
@@ -909,7 +929,7 @@ GameObject:
   - component: {fileID: 255118616}
   - component: {fileID: 255118615}
   m_Layer: 5
-  m_Name: Background
+  m_Name: BatteryBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1979,7 +1999,7 @@ GameObject:
   - component: {fileID: 475244260}
   - component: {fileID: 475244259}
   m_Layer: 5
-  m_Name: Background
+  m_Name: NVBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2410,7 +2430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.18799292, g: 0.4433962, b: 0.17777678, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2584,6 +2604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -4152,6 +4177,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6069962393280702354, guid: a8174305fe58ce34ab816086a1a56b8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6069962393280702446, guid: a8174305fe58ce34ab816086a1a56b8c,
         type: 3}
       propertyPath: m_RootOrder
@@ -4496,6 +4526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -6012,6 +6047,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -6067,7 +6107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6683,7 +6723,7 @@ GameObject:
   - component: {fileID: 1696371120}
   - component: {fileID: 1696371119}
   m_Layer: 5
-  m_Name: Background
+  m_Name: MedkitBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7047,7 +7087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.6509804}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7238,6 +7278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -7658,7 +7703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7714,7 +7759,7 @@ GameObject:
   - component: {fileID: 1922302507}
   - component: {fileID: 1922302506}
   m_Layer: 5
-  m_Name: Background
+  m_Name: GasMaskBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8199,7 +8244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.11743506, g: 0.8584906, b: 0.18136935, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8297,6 +8342,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -8618,13 +8668,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1984073656}
+  - {fileID: 1783952658}
   - {fileID: 1347950444}
   - {fileID: 485538376}
   - {fileID: 461996831}
   - {fileID: 808763861}
   - {fileID: 1887948152}
   - {fileID: 274407789}
-  - {fileID: 1783952658}
   - {fileID: 259846766}
   - {fileID: 1915682743}
   m_Father: {fileID: 0}
@@ -8767,7 +8817,7 @@ GameObject:
   - component: {fileID: 2079421956}
   - component: {fileID: 2079421955}
   m_Layer: 5
-  m_Name: Background
+  m_Name: KeycardBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11465,7 +11515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7872940052730398322
 Transform:
   m_ObjectHideFlags: 0

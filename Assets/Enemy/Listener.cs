@@ -27,7 +27,7 @@ public class Listener : MonoBehaviour
     [Header("FOV of Pan Bialy")]
     private bool m_IsWalking = false;
     private bool m_WalkingEnabled = true;
-    bool Chase;
+    static public bool Chase;
     private DoorController m_DoorInFront;
     static public bool m_Enabled = true;
     Vector3 AtEnemyY(Vector3 vec)

@@ -1,8 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
 public class Inventory : MonoBehaviour
 {
-    public GameObject googles;
+    [SerializeField]  GraphicRaycaster m_Raycaster;
+    PointerEventData m_PointerEventData;
+    [SerializeField] EventSystem m_EventSystem;
+    [SerializeField] RectTransform canvasRect;
+    public GameObject goggles;
     public GameObject keycard;
     public GameObject medkit;
     //public GameObject bezpiecznik;
@@ -12,9 +18,9 @@ public class Inventory : MonoBehaviour
     public static bool invOn;
     Texture m_OnTexture;
     Texture m_OffTexture;
-    public RawImage m_Image;
+    //public RawImage m_Image;
     GameObject player;
-    bool googlesSelected = false;
+    bool gogglesSelected = false;
     bool keycardSelected = false;
     bool medkitSelected = false;
     //bool bezpiecznikSelected = false;
@@ -24,9 +30,9 @@ public class Inventory : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inv = GameObject.Find("Inventory");
-        m_OnTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOn");
-        m_OffTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOff");
-        m_Image = GetComponent<RawImage>();
+        //m_OnTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOn");
+        //m_OffTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOff");
+        //m_Image = GetComponent<RawImage>();
     }
     void Update()
     {
@@ -58,7 +64,7 @@ public class Inventory : MonoBehaviour
                 keycard.transform.localScale = new Vector3(1f, 1f, 1f);
             if(PlayerInventory.hasGoggles)
             {
-                googles.transform.localScale = new Vector3(1f, 1f, 1f);
+                goggles.transform.localScale = new Vector3(1f, 1f, 1f);
                 //m_Image.texture = Noktowizja.m_TurnedOn ? m_OnTexture : m_OffTexture;
             }
         }
@@ -78,93 +84,93 @@ public class Inventory : MonoBehaviour
 //selecting items
     void CombineRay()
     {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100))
+        m_PointerEventData = new PointerEventData(m_EventSystem);
+        m_PointerEventData.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        m_Raycaster.Raycast(m_PointerEventData, results);
+        if(results.Count > 0) Debug.Log("Hit " + results[0].gameObject.name);
+        if (results[0].gameObject.name == "NVIcon")
         {
-            if (hit.collider.tag == "Goggles")
+            if (!gogglesSelected)
             {
-                if (!googlesSelected)
-                {
-                    googles.transform.localScale = new Vector3(1f, 1f, 1f);
-                    googlesSelected = true;
-                }
-                else
-                {
-                    googles.transform.localScale = new Vector3(0f, 0f, 0f);
-                    googlesSelected = false;
-                }
+                gogglesSelected = true;
+                goggles.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
             }
-            else if (hit.collider.tag == "Keycard")
+            else
             {
-                if (!keycardSelected)
-                {
-                    keycard.transform.localScale = new Vector3(1f, 1f, 1f);
-                    keycardSelected = true;
-                }
-                else
-                {
-                    keycard.transform.localScale = new Vector3(0f, 0f, 0f);
-                    keycardSelected = false;
-                }
+                gogglesSelected = false;
+                goggles.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
             }
-            else if (hit.collider.tag == "Medkit")
+        }
+        if (results[0].gameObject.name == "KeycardIcon")
+        {
+            if (!keycardSelected)
             {
-                if (!medkitSelected)
-                {
-                    medkit.transform.localScale = new Vector3(1f, 1f, 1f);
-                    medkitSelected = true;
-                }
-                else
-                {
-                    medkit.transform.localScale = new Vector3(0f, 0f, 0f);
-                    medkitSelected = false;
-                }
+                keycardSelected = true;
+                keycard.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
             }
-            /*else if (hit.collider.tag == "Bezpiecznik")
+            else
             {
-                if (!bezpiecznikSelected)
-                {
-                    bezpiecznik.transform.localScale = new Vector3(1f, 1f, 1f);
-                    bezpiecznikSelected = true;
-                }
-                else
-                {
-                    bezpiecznik.transform.localScale = new Vector3(0f, 0f, 0f);
-                    bezpiecznikSelected = false;
-                }
-            }*/
-            else if (hit.collider.tag == "GasMask")
-            {
-                if (!gasMaskSelected)
-                {
-                    gasMask.transform.localScale = new Vector3(1f, 1f, 1f);
-                    gasMaskSelected = true;
-                }
-                else
-                {
-                    gasMask.transform.localScale = new Vector3(0f, 0f, 0f);
-                    gasMaskSelected = false;
-                }
+                keycardSelected = false;
+                keycard.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
             }
-            else if (hit.collider.tag == "Batteries")
+        }
+        if (results[0].gameObject.name == "MedkitIcon")
+        {
+            if (!medkitSelected)
             {
-                if (!batteriesSelected)
-                {
-                    batteries.transform.localScale = new Vector3(1f, 1f, 1f);
-                    batteriesSelected = true;
-                }
-                else
-                {
-                    batteries.transform.localScale = new Vector3(0f, 0f, 0f);
-                    batteriesSelected = false;
-                }
+                medkitSelected = true;
+                medkit.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
+            }
+            else
+            {
+                medkitSelected = false;
+                medkit.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            }
+        }
+        /*if (results[0].gameObject.name == "Bezpiecznik")
+        {
+            if (!bezpiecznikSelected)
+            {
+                bezpiecznikSelected = true;
+                bezpiecznik.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
+            }
+            else
+            {
+                bezpiecznikSelected = false;
+                bezpiecznik.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            }
+        }*/
+        if (results[0].gameObject.name == "GasMaskIcon")
+        {
+            if (!gasMaskSelected)
+            {
+                gasMaskSelected = true;
+                gasMask.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
+            }
+            else
+            {
+                gasMaskSelected = false;
+                gasMask.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            }
+        }
+        if (results[0].gameObject.name == "BatteriesIcon")
+        {
+            if (!batteriesSelected)
+            {
+                batteriesSelected = true;
+                batteries.gameObject.transform.GetChild(0).transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else
+            {
+                batteriesSelected = false;
+                batteries.gameObject.transform.GetChild(0).transform.localScale = new Vector3(0f, 0f, 0f);
             }
         }
     }
     void Combine()
     {
-        if (batteriesSelected && googlesSelected)
+        if (batteriesSelected && gogglesSelected)
         {
             if(PlayerInventory.hasBatteries && Noktowizja.m_Battery != 100)
             {
