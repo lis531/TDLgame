@@ -4,7 +4,9 @@ public class PlayerInteract : MonoBehaviour
 {
     public float interactionDistance;
 
-    public string keycardTag = "Keycard";
+    public string keycard1Tag = "Keycard1";
+    public string keycard2Tag = "Keycard2";
+    public string keycard3Tag = "Keycard3";
     public string doorTag = "DoorPart";
     public string elevatorTag = "ElevatorPart";
     public string medkitTag = "Medkit";
@@ -20,9 +22,19 @@ public class PlayerInteract : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionDistance))
         {
-            if (hit.collider.CompareTag(keycardTag) && !PlayerInventory.hasKeycard)
+            if (hit.collider.CompareTag(keycard1Tag) && !PlayerInventory.hasKeycard1)
             {
-                PlayerInventory.hasKeycard = true;
+                PlayerInventory.hasKeycard1 = true;
+                Destroy(hit.collider.gameObject);
+            }
+            if (hit.collider.CompareTag(keycard2Tag) && !PlayerInventory.hasKeycard2)
+            {
+                PlayerInventory.hasKeycard2 = true;
+                Destroy(hit.collider.gameObject);
+            }
+            if (hit.collider.CompareTag(keycard3Tag) && !PlayerInventory.hasKeycard3)
+            {
+                PlayerInventory.hasKeycard3 = true;
                 Destroy(hit.collider.gameObject);
             }
             else if (hit.collider.CompareTag(medkitTag))

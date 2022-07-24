@@ -33,7 +33,7 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
-        if (PlayerInventory.hasKeycard && canOpen && !m_Locked)
+        if (PlayerInventory.hasKeycard1 && canOpen && !m_Locked)
         {
             if(!isOpen)
                 StartCoroutine(OpenCoroutine());

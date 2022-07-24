@@ -823,7 +823,7 @@ Transform:
   - {fileID: 4347688153376071521}
   - {fileID: 1150711362}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &4347688154004759942
 MonoBehaviour:
@@ -918,10 +918,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8642755ea54582f4983ce96e5bb7c423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  googles: {fileID: 0}
+  m_Raycaster: {fileID: 0}
+  m_EventSystem: {fileID: 0}
+  canvasRect: {fileID: 0}
+  goggles: {fileID: 0}
   keycard: {fileID: 0}
   medkit: {fileID: 0}
-  m_Image: {fileID: 0}
+  gasMask: {fileID: 0}
+  batteries: {fileID: 0}
 --- !u!114 &3506106816364499781
 MonoBehaviour:
   m_ObjectHideFlags: 0

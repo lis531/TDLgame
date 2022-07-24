@@ -50,7 +50,7 @@ public class SaveManager : MonoBehaviour
             TunnelMoving.isCrouching,
             Latarka.m_Enabled,
             PlayerInventory.hasGoggles,
-            PlayerInventory.hasKeycard,
+            PlayerInventory.hasKeycard1,
             PlayerInventory.hasGasMask,
             PlayerInventory.medkitCount,
             PlayerInventory.bezpiecznikCount,
@@ -83,7 +83,7 @@ public class SaveManager : MonoBehaviour
             Debug.Log("Latarka: " + data.latarkaOn);
             Debug.Log("Medkit count: " + data.medkitCount);
             Debug.Log("Has NV Goggles: " + data.hasNVGoggles);
-            Debug.Log("Has keycard: " + data.hasKeycard);
+            Debug.Log("Has keycard: " + data.hasKeycard1);
 
             Debug.Log("Enemy position: " + data.enemyPosition[0] + ", " + data.enemyPosition[1] + ", " + data.enemyPosition[2]);
             Debug.Log("Enemy Y Rotation: " + data.enemyYRotation);
@@ -111,7 +111,7 @@ public class SaveManager : MonoBehaviour
             PlayerInventory.medkitCount = data.medkitCount;
             PlayerInventory.hasGasMask = data.hasGasMask;
             PlayerInventory.hasGoggles = data.hasNVGoggles;
-            PlayerInventory.hasKeycard = data.hasKeycard;
+            PlayerInventory.hasKeycard1 = data.hasKeycard1;
 
             GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
             NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();

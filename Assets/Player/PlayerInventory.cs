@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    static public bool hasKeycard;
+    static public bool hasKeycard1;
+    static public bool hasKeycard2;
+    static public bool hasKeycard3;
     static public bool hasMedkit;
     static public bool hasGoggles;
     static public bool hasBezpiecznik;
     static public bool hasGasMask;
     static public bool hasBatteries;
+    static public bool hasFilter;
+    static public int filterCount;
     static public int batteryCount;
     static public int medkitCount;
     static public int bezpiecznikCount;
@@ -50,8 +54,23 @@ public class PlayerInventory : MonoBehaviour
         }
         if (bezpiecznikIn == 4)
         {
-            DoorController.m_Locked = false;
-            Debug.Log("Otwieranie drzwi");
+            UnlockElevator();
+            Debug.Log("Unlocked");
+        }
+    }
+    public static void UnlockElevator()
+    {
+        //GameObject.Find("Elevator").GetComponent<Elevator>().Unlock();
+    }
+    public static void GasMaskFilterCount()
+    {
+        if (hasFilter && hasGasMask)
+        {
+            hasGoggles = true;
+        }
+        else
+        {
+            hasGoggles = false;
         }
     }
 }

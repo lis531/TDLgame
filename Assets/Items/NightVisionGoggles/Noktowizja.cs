@@ -32,9 +32,7 @@ public class Noktowizja : MonoBehaviour
     {
         if (onOff)
         {
-            //change enviroment lighting ambient color
             RenderSettings.ambientLight = new Color32(0, 45, 0, 0);
-
             m_TurnedOn = true;
             canBe = true;
             m_localVolume.SetActive(true);
@@ -55,6 +53,7 @@ public class Noktowizja : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(m_Battery);
         if (PlayerInventory.hasGoggles && Time.timeScale != 0 && Input.GetKeyDown("n") && m_Battery > 0 )
         {
             if (!m_TurnedOn)

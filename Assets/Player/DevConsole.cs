@@ -67,7 +67,7 @@ public class DevConsole : MonoBehaviour
         else if(item.Equals("nv"))
             PlayerInventory.hasGoggles = state;
         else if(item.Equals("keycard"))
-            PlayerInventory.hasKeycard = state;
+            PlayerInventory.hasKeycard1 = state;
         else
             PrintOutput("Unknown item!", 2f);
     }

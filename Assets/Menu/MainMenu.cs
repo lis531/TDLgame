@@ -71,7 +71,6 @@ public class MainMenu : MonoBehaviour
         if (!Animation)
         {
             Animation = true;
-            //play lightAtOptions animation
             lightAnim.clip = lightAnim.GetClip("lightAtOptions");
             lightAnim.Play();
             cameraAnim.clip = cameraAnim.GetClip("GoToOptions");

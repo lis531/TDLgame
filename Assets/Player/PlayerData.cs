@@ -6,7 +6,7 @@ public class PlayerData
     public float yRotation;
     public bool latarkaOn;
     public bool hasNVGoggles;
-    public bool hasKeycard;
+    public bool hasKeycard1;
     public bool nvGogglesEnabled;
     public bool hasGasMask;
     public bool isCrouching;
@@ -18,14 +18,14 @@ public class PlayerData
     public float[] enemyPosition;
     public float enemyYRotation;
 
-    public PlayerData(float health, float stamina, float[] position, float yRotation, bool isCrouching, bool latarkaOn, bool hasNVGoggles, bool hasKeycard, bool hasGasMask, int medkitCount, int bezpiecznikCount, int batteryCount, float[] enemyPosition, float enemyYRotation, bool nvGogglesEnabled)
+    public PlayerData(float health, float stamina, float[] position, float yRotation, bool isCrouching, bool latarkaOn, bool hasNVGoggles, bool hasKeycard1, bool hasGasMask, int medkitCount, int bezpiecznikCount, int batteryCount, float[] enemyPosition, float enemyYRotation, bool nvGogglesEnabled)
     {
         this.health       = health;
         this.position     = position;
         this.yRotation    = yRotation;
         this.latarkaOn    = latarkaOn;
         this.hasNVGoggles = hasNVGoggles;
-        this.hasKeycard   = hasKeycard;
+        this.hasKeycard1   = hasKeycard1;
         this.hasGasMask   = hasGasMask;
         this.batteryCount = batteryCount;
         this.bezpiecznikCount = bezpiecznikCount;
