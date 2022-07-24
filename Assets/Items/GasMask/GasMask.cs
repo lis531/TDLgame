@@ -5,7 +5,7 @@ public class GasMask : MonoBehaviour
 {
     public GameObject image;
     bool m_MaskOn = false;
-    bool PlayerIn;
+    public static bool PlayerIn;
     bool CoroutineRunning;
     public BoxCollider gas;
     void Start()

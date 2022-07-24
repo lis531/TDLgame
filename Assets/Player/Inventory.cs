@@ -157,5 +157,9 @@ public class Inventory : MonoBehaviour
                 Noktowizja.m_Battery = 100;
             }
         }
+        if (gasMaskSelected && gasMaskFilterSelected && PlayerInventory.hasFilter)
+        {
+            PlayerInventory.filterCount -= 1;
+        }
     }
 }

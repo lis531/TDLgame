@@ -62,15 +62,4 @@ public class PlayerInventory : MonoBehaviour
     {
         //GameObject.Find("Elevator").GetComponent<Elevator>().Unlock();
     }
-    public static void GasMaskFilterCount()
-    {
-        if (hasFilter && hasGasMask)
-        {
-            hasGoggles = true;
-        }
-        else
-        {
-            hasGoggles = false;
-        }
-    }
 }
