@@ -8,12 +8,14 @@ public class GasMask : MonoBehaviour
     public static bool PlayerIn;
     bool CoroutineRunning;
     public BoxCollider gas;
+    public static float filterTime = 100f;
     void Start()
     {
         image.transform.localScale = new Vector3(0f, 0f, 0f);
     }
     void Update()
     {
+        Debug.Log(filterTime);
         if (PlayerInventory.hasGasMask && Time.timeScale != 0 && Input.GetKeyDown("g"))
         {
             image.transform.localScale = new Vector3(1f, 1f, 1f);
@@ -28,9 +30,16 @@ public class GasMask : MonoBehaviour
                 image.transform.localScale = new Vector3(0f, 0f, 0f);
             }
         }
-        if (PlayerIn && !m_MaskOn && !CoroutineRunning)
+        if (PlayerIn && !CoroutineRunning)
         {
-            StartCoroutine(MaskOff());
+            if (filterTime > 0 && m_MaskOn)
+            {
+                filterTime -= Time.deltaTime * 2;
+            }
+            else
+            {
+                StartCoroutine(MaskOff());
+            }
         }
     }
     void OnTriggerEnter(Collider other)

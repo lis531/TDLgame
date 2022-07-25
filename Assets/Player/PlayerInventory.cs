@@ -32,7 +32,7 @@ public class PlayerInventory : MonoBehaviour
             hasMedkit = false;
         }
     }
-    public static void batteryCounting()
+    public static void BatteryCount()
     {
         if (batteryCount > 0)
         {
@@ -57,6 +57,17 @@ public class PlayerInventory : MonoBehaviour
         {
             unlocked = true;
             Debug.Log("Unlocked");
+        }
+    }
+    public static void FilterCount()
+    {
+        if (filterCount > 0)
+        {
+            hasFilter = true;
+        }
+        else
+        {
+            hasFilter = false;
         }
     }
 }

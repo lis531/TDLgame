@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     public GameObject bezpiecznik;
     public GameObject gasMask;
     public GameObject battery;
+    public GameObject filter;
     public static GameObject inv;
     public static bool invOn;
     Texture m_OnTexture;
@@ -23,7 +24,7 @@ public class Inventory : MonoBehaviour
     public RawImage m_Image;
     GameObject player;
     bool gogglesSelected = false;
-    bool gasMaskFilterSelected = false;
+    bool filterSelected = false;
     bool gasMaskSelected = false;
     bool batterySelected = false;
     void Start()
@@ -67,16 +68,24 @@ public class Inventory : MonoBehaviour
             if(PlayerInventory.hasKeycard3)
                 keycard3.transform.localScale = new Vector3(1f, 1f, 1f);
             if(PlayerInventory.hasFilter)
-                goggles.transform.localScale = new Vector3(1f, 1f, 1f);
+                filter.transform.localScale = new Vector3(1f, 1f, 1f);
             if(PlayerInventory.hasGoggles)
             {
                 goggles.transform.localScale = new Vector3(1f, 1f, 1f);
-                m_Image.texture = Noktowizja.m_TurnedOn ? m_OnTexture : m_OffTexture;
+                //m_Image.texture = Noktowizja.m_TurnedOn ? m_OnTexture : m_OffTexture;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && !Pause.inWork && invOn)
         {
             inv.transform.localScale = new Vector3(0f, 0f, 0f);
+            goggles.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            gasMask.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            filter.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
+            battery.gameObject.transform.GetChild(0).transform.localScale = new Vector3(0f, 0f, 0f);
+            gogglesSelected = false;
+            filterSelected = false;
+            gasMaskSelected = false;
+            batterySelected = false;
             Time.timeScale = 1;
             invOn = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -120,17 +129,17 @@ public class Inventory : MonoBehaviour
                 gasMask.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
             }
         }
-        if (results[0].gameObject.name == "GasMaskFilterIcon")
+        if (results[0].gameObject.name == "FilterIcon")
         {
-            if(!gasMaskFilterSelected)
+            if(!filterSelected)
             {
-                gasMaskFilterSelected = true;
-                gasMask.gameObject.transform.GetChild(1).localScale = new Vector3(1f, 1f, 1f);
+                filterSelected = true;
+                filter.gameObject.transform.GetChild(0).localScale = new Vector3(1f, 1f, 1f);
             }
             else
             {
-                gasMaskFilterSelected = false;
-                gasMask.gameObject.transform.GetChild(1).localScale = new Vector3(0f, 0f, 0f);
+                filterSelected = false;
+                filter.gameObject.transform.GetChild(0).localScale = new Vector3(0f, 0f, 0f);
             }
         }
         if (results[0].gameObject.name == "BatteryIcon")
@@ -149,17 +158,17 @@ public class Inventory : MonoBehaviour
     }
     void Combine()
     {
-        if (batterySelected && gogglesSelected)
+        if (batterySelected && gogglesSelected && PlayerInventory.hasBatteries && Noktowizja.m_Battery != 100)
         {
-            if(PlayerInventory.hasBatteries && Noktowizja.m_Battery != 100)
-            {
-                PlayerInventory.batteryCount -= 1;
-                Noktowizja.m_Battery = 100;
-            }
+            PlayerInventory.batteryCount -= 1;
+            PlayerInventory.BatteryCount();
+            Noktowizja.m_Battery = 100;
         }
-        if (gasMaskSelected && gasMaskFilterSelected && PlayerInventory.hasFilter)
+        if (gasMaskSelected && filterSelected && PlayerInventory.hasFilter)
         {
             PlayerInventory.filterCount -= 1;
+            PlayerInventory.FilterCount();
+            GasMask.filterTime = 100;
         }
     }
 }

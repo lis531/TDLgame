@@ -57,12 +57,13 @@ public class PlayerInteract : MonoBehaviour
             {
                 Destroy(hit.collider.gameObject);
                 PlayerInventory.filterCount += 1;
+                PlayerInventory.FilterCount();
             }
             else if (hit.collider.CompareTag(batteryTag))
             {
                 Destroy(hit.collider.gameObject);
                 PlayerInventory.batteryCount += 1;
-                PlayerInventory.batteryCounting();
+                PlayerInventory.BatteryCount();
             }
             else if (hit.collider.CompareTag(bezpiecznikTag))
             {
