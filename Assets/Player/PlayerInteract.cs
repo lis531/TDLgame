@@ -22,18 +22,17 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionDistance))
         {
-            Debug.Log("Interact with " + hit.transform.name);
             if (hit.collider.CompareTag(keycard1Tag) && !PlayerInventory.hasKeycard1)
             {
                 PlayerInventory.hasKeycard1 = true;
                 Destroy(hit.collider.gameObject);
             }
-            if (hit.collider.CompareTag(keycard2Tag) && !PlayerInventory.hasKeycard2)
+            else if (hit.collider.CompareTag(keycard2Tag) && !PlayerInventory.hasKeycard2)
             {
                 PlayerInventory.hasKeycard2 = true;
                 Destroy(hit.collider.gameObject);
             }
-            if (hit.collider.CompareTag(keycard3Tag) && !PlayerInventory.hasKeycard3)
+            else if (hit.collider.CompareTag(keycard3Tag) && !PlayerInventory.hasKeycard3)
             {
                 PlayerInventory.hasKeycard3 = true;
                 Destroy(hit.collider.gameObject);
@@ -56,8 +55,8 @@ public class PlayerInteract : MonoBehaviour
             }
             else if (hit.collider.CompareTag(filterTag))
             {
-                PlayerInventory.filterCount += 1;
                 Destroy(hit.collider.gameObject);
+                PlayerInventory.filterCount += 1;
             }
             else if (hit.collider.CompareTag(batteryTag))
             {
@@ -67,14 +66,12 @@ public class PlayerInteract : MonoBehaviour
             }
             else if (hit.collider.CompareTag(bezpiecznikTag))
             {
-                PlayerInventory.hasBezpiecznik = true;
                 Destroy(hit.collider.gameObject);
-                PlayerInventory.bezpiecznikCount =+ 1;
+                PlayerInventory.bezpiecznikCount += 1;
                 PlayerInventory.BezpiecznikCount();
             }
             else if (hit.collider.CompareTag(bezpiecznikboxTag) && PlayerInventory.hasBezpiecznik)
             {
-                PlayerInventory.hasBezpiecznik = false;
                 PlayerInventory.bezpiecznikCount -= 1;
                 PlayerInventory.bezpiecznikIn += 1;
                 PlayerInventory.BezpiecznikCount();
@@ -92,6 +89,11 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("medkitCount: " + PlayerInventory.medkitCount);
+        Debug.Log("filterCount: " + PlayerInventory.filterCount);
+        Debug.Log("batteryCount: " + PlayerInventory.batteryCount);
+        Debug.Log("bezpiecznikCount: " + PlayerInventory.bezpiecznikCount);
+        Debug.Log("bezpiecznikIn: " + PlayerInventory.bezpiecznikIn);
         if(Input.GetKeyDown("e") && Time.timeScale != 0)
         {
             Interact();

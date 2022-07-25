@@ -15,6 +15,7 @@ public class Health : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(health);
         healthBar.value = health;
         alpha = health / 100;
         if (health <= 40)

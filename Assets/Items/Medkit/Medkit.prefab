@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4429976813049948327}
   - component: {fileID: 1918119170912803949}
   - component: {fileID: 322711816583800913}
-  - component: {fileID: 2226960315681129336}
   m_Layer: 0
   m_Name: Medkit
   m_TagString: Medkit
@@ -101,28 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0057599996, y: 0.015199996, z: 0.012}
   m_Center: {x: 0, y: 0, z: 0.002}
---- !u!205 &2226960315681129336
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116666194319146424}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0.001690808}
-  m_Size: 1
-  m_FadeMode: 1
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.04
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 7415023136152969976}
-    - renderer: {fileID: 8920005532463376164}
-    - renderer: {fileID: 8757836900579797399}
-    - renderer: {fileID: 1918119170912803949}
-  m_Enabled: 1
 --- !u!1 &1264779486572113048
 GameObject:
   m_ObjectHideFlags: 0

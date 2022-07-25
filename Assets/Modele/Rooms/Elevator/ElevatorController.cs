@@ -49,6 +49,7 @@ public class ElevatorController : MonoBehaviour
     {
         if(PlayerInventory.unlocked && !opened)
         {
+            opened = true;
             openByDefault = true;
             OpenElevator();        
         }

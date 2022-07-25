@@ -124,7 +124,7 @@ public class Latarka : MonoBehaviour
     }
     IEnumerator Chase()
     {
-        yield return new WaitForSeconds(Random.Range(0.05f, 0.2f));
+        yield return new WaitForSeconds(Random.Range(0.1f, 0.2f));
         m_Enabled = false;
         yield return new WaitForSeconds(Random.Range(0.1f, 0.2f));
         m_Enabled = true;

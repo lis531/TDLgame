@@ -515,7 +515,6 @@ GameObject:
   - component: {fileID: 327814321824985619}
   - component: {fileID: 2551383929017403097}
   - component: {fileID: 8712315523956513536}
-  - component: {fileID: 6430702631151228269}
   m_Layer: 0
   m_Name: NVGoggles
   m_TagString: Goggles
@@ -603,32 +602,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.03, z: 0.02}
   m_Center: {x: 0, y: 0.01, z: 0.002}
---- !u!205 &6430702631151228269
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4064685968569313036}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0.001690808}
-  m_Size: 1
-  m_FadeMode: 1
-  m_AnimateCrossFading: 1
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.04
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 4201781499148870448}
-    - renderer: {fileID: 9010423550247958102}
-    - renderer: {fileID: 1640177140738599699}
-    - renderer: {fileID: 9111422894555718368}
-    - renderer: {fileID: 2551383929017403097}
-    - renderer: {fileID: 4535426652462197462}
-    - renderer: {fileID: 3345687156957459860}
-    - renderer: {fileID: 4267674446825925915}
-  m_Enabled: 1
 --- !u!1 &5952884437587497077
 GameObject:
   m_ObjectHideFlags: 0
