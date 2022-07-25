@@ -525,7 +525,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a52d69a4c3fff7e4d8ce8dfa6761558b, type: 2}
@@ -852,6 +852,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1150711361, guid: 42631bbb30302c549bd82458a5178ed8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299622267, guid: 42631bbb30302c549bd82458a5178ed8, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: medkit
@@ -922,10 +930,30 @@ PrefabInstance:
       propertyPath: m_localVolume
       value: 
       objectReference: {fileID: 5050540549656250229}
+    - target: {fileID: 4347688153259844947, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153376071526, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688153388525663, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4347688154004759946, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4347688154004759947, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
@@ -2748,11 +2776,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -4675,11 +4698,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -6100,11 +6118,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -6233,7 +6246,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a52d69a4c3fff7e4d8ce8dfa6761558b, type: 2}
@@ -6367,7 +6380,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 7523804215795ce43b41bffa12adedd4, type: 2}
@@ -7332,11 +7345,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -8396,11 +8404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TunnelShortMesh
       objectReference: {fileID: 0}
-    - target: {fileID: 5943702986004763382, guid: 6560e7ef687bc134097de6f2de0ad06b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 6560e7ef687bc134097de6f2de0ad06b, type: 3}
@@ -9889,7 +9892,7 @@ MonoBehaviour:
   elevatorBeep: {fileID: 8300000, guid: d0129ad097dba5c438ac03dfa029f035, type: 3}
   otherElevator: {fileID: 537812554}
   elevatorRideTime: 3
-  openByDefault: 1
+  openByDefault: 0
   isRiding: 0
 --- !u!82 &3548989632951596457
 AudioSource:
@@ -10543,12 +10546,12 @@ PrefabInstance:
     - target: {fileID: 2643117879302357435, guid: 30ea4c14c7a170142889af357b2ac2d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8260246
+      value: -0.25001
       objectReference: {fileID: 0}
     - target: {fileID: 2643117879302357435, guid: 30ea4c14c7a170142889af357b2ac2d6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.181
+      value: -0.25001
       objectReference: {fileID: 0}
     - target: {fileID: 2643117879302357435, guid: 30ea4c14c7a170142889af357b2ac2d6,
         type: 3}
@@ -11960,7 +11963,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a7f597ef56e69ec49919044e1982cf19, type: 2}

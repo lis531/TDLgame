@@ -36,7 +36,7 @@ Transform:
   - {fileID: 4866790660669653200}
   - {fileID: 7191162127953165065}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4429976813049948327
 MeshFilter:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f915c5b06566c2b4ab8f9fea0313e6d4, type: 2}

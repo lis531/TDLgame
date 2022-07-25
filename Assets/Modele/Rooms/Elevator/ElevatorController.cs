@@ -18,6 +18,7 @@ public class ElevatorController : MonoBehaviour
     public float elevatorRideTime = 3.0f;
 
     public bool openByDefault = false;
+    bool opened;
 
     [HideInInspector]
     public bool isRiding = false;
@@ -44,6 +45,14 @@ public class ElevatorController : MonoBehaviour
             OpenElevator();
     }
 
+    void Update()
+    {
+        if(PlayerInventory.unlocked && !opened)
+        {
+            openByDefault = true;
+            OpenElevator();        
+        }
+    }
     void RideToAnotherLevel()
     {
         Vector3 diff = playerTransform.position - elevatorCenter.position;

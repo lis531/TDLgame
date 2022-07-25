@@ -16,6 +16,7 @@ public class PlayerInventory : MonoBehaviour
     static public int medkitCount;
     static public int bezpiecznikCount;
     static public int bezpiecznikIn;
+    static public bool unlocked;
     void Start()
     {
         bezpiecznikIn = Random.Range(1, 3);
@@ -54,12 +55,8 @@ public class PlayerInventory : MonoBehaviour
         }
         if (bezpiecznikIn == 4)
         {
-            UnlockElevator();
+            unlocked = true;
             Debug.Log("Unlocked");
         }
-    }
-    public static void UnlockElevator()
-    {
-        //GameObject.Find("Elevator").GetComponent<Elevator>().Unlock();
     }
 }

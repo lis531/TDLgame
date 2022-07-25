@@ -14,14 +14,15 @@ public class PlayerInteract : MonoBehaviour
     public string bezpiecznikTag = "Bezpiecznik";
     public string bezpiecznikboxTag = "BezpiecznikBox";
     public string gasMaskTag = "GasMask";
+    public string filterTag = "Filter";
     public string batteryTag = "Battery";
 
     void Interact()
     {
         RaycastHit hit;
-
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionDistance))
         {
+            Debug.Log("Interact with " + hit.transform.name);
             if (hit.collider.CompareTag(keycard1Tag) && !PlayerInventory.hasKeycard1)
             {
                 PlayerInventory.hasKeycard1 = true;
@@ -51,6 +52,11 @@ public class PlayerInteract : MonoBehaviour
             else if (hit.collider.CompareTag(gasMaskTag))
             {
                 PlayerInventory.hasGasMask = true;
+                Destroy(hit.collider.gameObject);
+            }
+            else if (hit.collider.CompareTag(filterTag))
+            {
+                PlayerInventory.filterCount += 1;
                 Destroy(hit.collider.gameObject);
             }
             else if (hit.collider.CompareTag(batteryTag))

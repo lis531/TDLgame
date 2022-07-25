@@ -3,7 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Battery
+  - Bezpiecznik
+  - Gas
+  - BezpiecznikBox
+  - Enemy
+  - ElevatorPart
+  - TunnelPart
+  - DoorEnemyPart
+  - DoorPart
+  - Filter
+  - Goggles
+  - GasMask
+  - Medkit
+  - Keycard1
+  - Keycard2
+  - Keycard3
   layers:
   - Default
   - TransparentFX
