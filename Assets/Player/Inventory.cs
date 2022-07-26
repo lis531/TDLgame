@@ -19,9 +19,9 @@ public class Inventory : MonoBehaviour
     public GameObject filter;
     public static GameObject inv;
     public static bool invOn;
-    Texture m_OnTexture;
-    Texture m_OffTexture;
-    public RawImage m_Image;
+    public Sprite m_OnTexture;
+    public Sprite m_OffTexture;
+    Image m_Image;
     GameObject player;
     bool gogglesSelected = false;
     bool filterSelected = false;
@@ -31,9 +31,7 @@ public class Inventory : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         inv = GameObject.Find("Inventory");
-        m_OnTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOn");
-        m_OffTexture = Resources.Load<Texture>("Assets/Items/NightVisionGoggles/Resources/NVIconOff");
-        m_Image = GetComponent<RawImage>();
+        m_Image = GameObject.Find("Canvas/Inventory/NVIcon").GetComponent<Image>();
     }
     void Update()
     {
@@ -72,7 +70,14 @@ public class Inventory : MonoBehaviour
             if(PlayerInventory.hasGoggles)
             {
                 goggles.transform.localScale = new Vector3(1f, 1f, 1f);
-                //m_Image.texture = Noktowizja.m_TurnedOn ? m_OnTexture : m_OffTexture;
+                if (Noktowizja.canBe)
+                {
+                    m_Image.sprite = m_OnTexture;
+                }
+                else
+                {
+                    m_Image.sprite = m_OffTexture;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && !Pause.inWork && invOn)

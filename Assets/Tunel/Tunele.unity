@@ -796,7 +796,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Image
       value: 
-      objectReference: {fileID: 890133115}
+      objectReference: {fileID: 890133117}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: keycard1
@@ -819,9 +819,21 @@ PrefabInstance:
       objectReference: {fileID: 198328714}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
+      propertyPath: m_OnTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 12c3eb22b14872c44bbaea20bc750236,
+        type: 3}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
       propertyPath: m_Raycaster
       value: 
       objectReference: {fileID: 2073953227}
+    - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
+        type: 3}
+      propertyPath: m_OffTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: b2ea4d63caff6e04c8c8d2d96245d5a5,
+        type: 3}
     - target: {fileID: 364966244779439853, guid: 42631bbb30302c549bd82458a5178ed8,
         type: 3}
       propertyPath: m_EventSystem
@@ -3829,7 +3841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 890133113}
   - component: {fileID: 890133116}
-  - component: {fileID: 890133115}
+  - component: {fileID: 890133117}
   m_Layer: 5
   m_Name: NVIcon
   m_TagString: Untagged
@@ -3858,33 +3870,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &890133115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890133112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b2ea4d63caff6e04c8c8d2d96245d5a5, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!222 &890133116
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3893,6 +3878,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890133112}
   m_CullTransparentMesh: 1
+--- !u!114 &890133117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890133112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b2ea4d63caff6e04c8c8d2d96245d5a5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!20 &900060015 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4347688153376071520, guid: 42631bbb30302c549bd82458a5178ed8,
