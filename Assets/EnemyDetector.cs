@@ -12,15 +12,19 @@ public class EnemyDetector : MonoBehaviour
     private Transform m_Enemy;
     private MeshRenderer m_MeshRenderer;
     private MeshRenderer m_ScreenMeshRenderer;
+    private MeshRenderer m_HandleMeshRenderer;
+    private Transform m_Camera;
 
     private bool m_IsScannerOn = false;
 
     void Start()
     {
+        m_Camera = transform.parent.GetChild(0).transform;
         m_Enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
         m_AudioSource = GetComponent<AudioSource>();
         m_MeshRenderer = GetComponent<MeshRenderer>();
-        m_ScreenMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+        m_ScreenMeshRenderer = transform.GetChild(1).GetComponent<MeshRenderer>();
+        m_HandleMeshRenderer = transform.GetChild(0).GetComponent<MeshRenderer>();;
 
         m_ScreenMat.SetVector("_RelativeEnemyPos", new Vector2(100.0f, 100.0f));
 
@@ -28,6 +32,7 @@ public class EnemyDetector : MonoBehaviour
 
         m_MeshRenderer.enabled = false;
         m_ScreenMeshRenderer.enabled = false;
+        m_HandleMeshRenderer.enabled = false;
     }
 
     void Update()
@@ -42,6 +47,7 @@ public class EnemyDetector : MonoBehaviour
 
         m_MeshRenderer.enabled = m_IsScannerOn;
         m_ScreenMeshRenderer.enabled = m_IsScannerOn;
+        m_HandleMeshRenderer.enabled = m_IsScannerOn;
 
         m_ScreenMat.SetInt("_Enabled", m_IsScannerOn ? 1 : 0);
 
